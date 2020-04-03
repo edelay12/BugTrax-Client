@@ -1,0 +1,39 @@
+.Team-register-form {
+    width: 500px;
+    max-height: 400px;
+    margin: auto auto;
+    display: flex;
+flex-direction: column;
+    padding: 40px 30px;
+    align-items: center;
+    background: white;
+}
+
+.Team-register-dir {
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.Team-register-l {
+    font-size: 14px;
+margin: 10px 0;
+font-weight: 500;
+text-align: left;
+}
+
+.Team-register-c {
+    border: 1px solid var(--lightgrey);
+    background: none;
+    border-radius: 3px;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+}
+
+    .Team-register-submit-b {
+        margin: 20px 0;
+        padding: 10px 30px;
+
+    }

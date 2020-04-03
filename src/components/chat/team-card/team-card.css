@@ -1,0 +1,54 @@
+.fa-menuDots {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    color: var(--darkgrey);
+}
+
+.Team-card {
+    height: 170px;
+    width: 300px;
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    position: relative;
+    padding: 5px 10px;
+margin: 0 auto 20px;
+}
+
+.Tc-pic {
+   min-height: 90%;
+   width: 7px;
+   background: blue;
+    margin: auto 0;
+    border-radius: 10px;
+}
+
+.Tc-details {
+padding: 10px 20px;
+position: relative;
+display: flex;
+flex-direction: column;
+}
+
+#headshot1 {
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 10px;
+}
+
+.Tc-name {
+font-weight: 500;
+font-size: 18px;
+margin: 10px 0;
+}
+
+.Tc-pos {
+color: var(--darkgrey);
+font-size: 16px;
+}

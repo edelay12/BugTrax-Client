@@ -1,0 +1,17 @@
+.Message-sender-bubble {
+    padding: 5px 0;
+    margin: 10px 0;
+    width: 100%;
+    position: relative;
+    height: fit-content;
+    display: flex;
+}
+
+.Sender-message {
+margin-left: auto;
+margin-right: 15px;
+background: white;
+padding: 10px;
+border-radius: 10px;
+max-width: 55%;
+}

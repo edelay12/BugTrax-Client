@@ -1,0 +1,18 @@
+.Ts-container {
+margin-top: 20px;
+}
+
+.Ts-i {
+    width: 450px;
+    padding: 23px 30px;
+    color: #1D1D1F;
+    box-shadow: var(--boxshadow);
+    border: 0;
+    font-size: 1rem;
+    background: white;
+    margin: auto;
+}
+
+.Ts-i ::placeholder {
+    color: var(--darkgrey);
+    }

@@ -1,0 +1,66 @@
+.Register-page {
+    width: calc(100% -30px);
+    height: calc(100vh - 30px);
+    border: 15px solid var(--lightgrey);
+}
+
+
+.Register {
+width: 500px;
+max-height: 400px;
+margin: 100px auto auto;
+display: flex;
+flex-direction: column;
+padding: 20px 30px;
+border-radius: 4px;
+align-items: center;
+box-shadow: var(--boxshadowform);
+}
+
+.Register, .Register-user, .Register-password {
+    display: flex;
+flex-direction: column;
+align-content: flex-start;
+}
+
+.Register-title {
+    font-size: 21px;
+    text-align: center;
+}
+
+.Register-label {
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+#Register-password-input , #Register-user-input ,  #Register-passwordRe-input {
+border: 1px solid var(--lightgrey);
+background: none;
+border-radius: 3px;
+width: 200px;
+height: 20px;
+padding: 5px;
+}
+
+.Register-label-bottom , #Register-user-input, #Register-passwordRe-input {
+    margin-bottom: 10px;
+}
+
+.Register-label-bottom  {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Register-submit-b {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+    margin: 15px;
+    text-shadow: var(--boxshadow);
+    box-shadow: var(--boxshadowdeep);
+    background: linear-gradient(to right, #87B7F3, #7A8AEE);
+}

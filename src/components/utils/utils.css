@@ -1,0 +1,12 @@
+.Radial-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+    margin: 15px;
+    text-shadow: var(--boxshadow);
+    box-shadow: var(--boxshadowdeep);
+    background: linear-gradient(to right, #87B7F3, #7A8AEE);
+}

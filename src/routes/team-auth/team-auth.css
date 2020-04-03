@@ -1,0 +1,42 @@
+.Team-auth {
+    width: calc(100% -30px);
+    height: calc(100vh - 30px);
+    border: 15px solid var(--lightgrey);
+    background: #F6F5FA;
+}
+
+.Team-auth-form {
+    width: 500px;
+    max-height: 400px;
+    margin: 100px auto auto;
+    display: flex;
+flex-direction: column;
+    padding: 40px 30px;
+    border-radius: 4px;
+    align-items: center;
+    box-shadow: var(--boxshadowform);
+    background: white;
+}
+
+.Team-auth-form > * {
+margin: 10px 0;
+}
+
+.Team-auth-label {
+    font-size: 21px;
+    text-align: center;
+}
+
+.Team-auth-dir {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.Team-auth-i {
+    border: 1px solid var(--lightgrey);
+    background: none;
+    border-radius: 3px;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+}

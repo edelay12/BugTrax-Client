@@ -1,0 +1,166 @@
+.Dashboard , .Dashboard-closed {
+    display: grid;
+    grid-template-columns: .19fr 1fr;
+    grid-template-rows: 7vh 93vh;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+    transition: all 1s ease;
+}
+
+.Dashboard-closed {
+    grid-template-columns: 70px 1fr;
+transition: all 1s ease;
+}
+
+.Dashboard-header{
+min-height: 7vh;
+display: flex;
+align-items: center;
+grid-area: header;
+position: relative;
+background: #F6F5FA;
+}
+
+.Dashboard-sidebar, .Dashboard-sidebar-closed  {
+    grid-area: sidebar;
+    background: #2D303B;
+    position: relative;
+    transition: all 1s ease;
+}
+
+.Dashboard-sidebar-closed {
+max-width: 70px;
+}
+
+.Dashboard-main {
+    grid-area: main;
+    overflow: hidden;
+    background: #F6F5FA;
+}
+
+.Sidebar-links {
+list-style: none;
+padding: 0 5px;
+margin: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+max-width: 170px;
+}
+
+.SidebarL, .SidebarL-toggle-lines {
+    padding: 10px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: white;
+    min-width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.SidebarL > a {
+    text-decoration: none;
+    color: white;
+}
+.SidebarL-toggle-lines, .SidebarL-toggle-lines-closed {
+    border-top: 1px solid var(--darkgrey);
+    border-bottom: 1px solid var(--darkgrey);
+}
+
+.SidebarL-toggle-lines-closed {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+.Sidebar-toggle , .Sidebar-toggle-closed{
+    font-size: 20px;
+    color: #EEF4FC;
+    transition: all 1s ease;
+}
+
+.Sidebar-toggle-closed {
+transform: rotate(180deg);
+transition: all 1s ease;
+}
+
+
+.Sidebar-title-closed {
+    transition: all 1s ease;
+    display: none;
+}
+
+.faIcon {
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+}
+
+.faIssues {
+    color: #CF9047;
+}
+.faTeam {
+    color: #9065BC;
+}
+
+.faTrends {
+    color: #6CB6B8;
+}
+
+.faOverview {
+    color: #EEF4FC;
+}
+
+.d-num {
+    position: absolute;
+    right: 10px;
+}
+
+.d-num-closed {
+    display: none;
+}
+
+#Sidebar-logo {
+    text-align: center;
+    background: linear-gradient(to right, rgb(171, 209, 255), rgb(107, 121, 216));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#Sidebar-logo-closed {
+    text-align: center;
+    background: linear-gradient(to right, rgb(171, 209, 255), rgb(107, 121, 216));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+.SidebarL :focus{
+    background: blue;
+    border-radius: 290486px;
+    width: 100%;
+}
+
+.Team-name {
+    margin: 15px 40px 0;
+}
+
+#Header-profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.Header-left-c {
+position: absolute;
+right: 15px;
+min-height: 100%;
+}
+
+.Header-logout-link {
+    font-size: 18px;
+    color: var(--darkgrey);
+    margin-bottom: 20px;
+}

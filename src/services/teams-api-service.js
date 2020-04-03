@@ -1,0 +1,15 @@
+import config from "../config";
+//import TokenService from "./token-service";
+
+const TeamsApiService = {
+getTeams(){
+    return fetch(`${config.API_ENDPOINT}/teams`, {
+        headers: {}
+      }).then(res =>
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      );
+}
+
+}
+
+export default TeamsApiService
