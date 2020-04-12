@@ -3,11 +3,15 @@ import './team.css'
 import TeamCard from '../../../components/chat/team-card/team-card';
 import CReciever from '../../../components/chat/chat-reciever/chat-reciever';
 import CSender from '../../../components/chat/chat-sender/chat-sender';
+import DashboardRouteHeader from '../../../components/dashboard/dashboard-route-header/dashboard-route-header';
 
 
 export default function TeamChat () {
 
     return (
+        <section className='Team'>
+                        <DashboardRouteHeader title='Team' />
+
         <section className='Team-chat'>
             <div className='Team-list'>
                 <TeamCard />
@@ -37,6 +41,7 @@ export default function TeamChat () {
 <button type='submit' className='New-message-b'>Send</button>
 </div>
             </div>
+        </section>
         </section>
     )
 }

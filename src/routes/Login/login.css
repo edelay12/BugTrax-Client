@@ -13,7 +13,7 @@ background: white;
     width: calc(100% -30px);
     height: calc(100vh - 30px);
     border: 15px solid var(--lightgrey);
-    background: #F6F5FA;
+    background: var(--backgroundGrey);
 }
 
 .Login, .Login-user, .Login-password {
@@ -41,17 +41,4 @@ align-content: flex-start;
     height: 20px;
     padding: 5px;
     margin-bottom: 10px;
-    }
-
-    .Login-submit-b {
-        padding: 10px 30px;
-        border: none;
-        cursor: pointer;
-        border-radius: 3px;
-        font-size: 14px;
-        color: white;
-        margin: 20px;
-        text-shadow: var(--boxshadow);
-        box-shadow: var(--boxshadowdeep);
-        background: linear-gradient(to right, #87B7F3, #7A8AEE);
     }

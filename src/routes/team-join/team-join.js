@@ -7,17 +7,19 @@ import TeamRegister from '../../components/team-register/team-register';
 export default function TeamJoin(){
  const [register, showRegister] = useState(false);
         return (
-            <section className='Team-choose'>
+            <section className='Team-join'>
+            <div className='Team-choose'>
                { register ? <TeamRegister /> :
                <div>
-                <h1 className='Team-choose-dir'>Search for a team</h1>
+                <h2 className='Team-choose-dir'>Search for a team</h2>
                 <div className='Tc-search-container'>
                     <TeamSearch />
                 </div>
-                <h1 className='Team-choose-dir2'>...or register a new one</h1>
+                <h2 className='Team-choose-dir2'>...or register a new one</h2>
                 <button type='button' className='Team-choose-register-b Radial-button' onClick={() => showRegister(true)}>Register a team</button>
                 </div>
                }
+            </div>
             </section>
         )
 

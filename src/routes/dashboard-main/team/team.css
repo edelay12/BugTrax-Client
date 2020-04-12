@@ -1,14 +1,17 @@
 .Team-chat {
-display: flex;
 width: 100%;
+display: flex;
 overflow: hidden;
-height: 93vh;
-background: #F6F5FA;
+background: var(--backgroundGrey);
 }
-
+.Team {
+    padding: 0 20px;
+    overflow: hidden;
+height: 93vh;
+}
 .Team-list {
 min-width: 320px;
-min-height: 93vh;
+min-height: 100%;
 padding: 10px 10px 0;
 overflow-y: auto;
 border-right: 1px solid var(--darkgrey);
@@ -32,7 +35,6 @@ flex-direction: column;
     display: flex;
     position: relative;
     overflow-y: auto;
-
 }
 
 .Message-input-container {

@@ -285,7 +285,7 @@ export default class LandingPage extends Component {
               <h3>Stay on top of current, past, and in-progress bug reports</h3>
             </div>
             <div className="rBody-frame">
-              <h3 className="rBody-title">Enjoy pure freedome</h3>
+              <h3 className="rBody-title">Enjoy pure freedom</h3>
               <h4 className="rBody-sub">
                 Choose the events you want to track yourself. No need to pick
                 them from a list used by every dev in the universe. Break your

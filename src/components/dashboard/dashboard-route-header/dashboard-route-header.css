@@ -1,0 +1,10 @@
+.Dashboard-route-header {
+    border-bottom: 1px solid var(--lightgrey);
+    padding: 10px 20px;
+}
+
+.Dashboard-route-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0;
+}

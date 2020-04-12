@@ -3,11 +3,18 @@ import Collapsible from 'react-collapsible';
 import { Trigger } from '../../../components/utils/utils';
 import './dashboard-issues.css'
 import ReporterFilter from '../../../components/filters/reporter-filter/reporter-filter';
+import DashboardRouteHeader from '../../../components/dashboard/dashboard-route-header/dashboard-route-header';
+import { faFilter, faStream } from '@fortawesome/fontawesome-free-solid';
+
+
 export default function Issues(props){
+
+        
     return (
 <section className='Issues'>
+        <DashboardRouteHeader title='Issues' />
         <section className='Issues-filters'>
-        <Collapsible trigger={<Trigger name='Filters'/>}>
+        <Collapsible open={true} trigger={<Trigger name='Filters' icon={faFilter} iconClass='filter-icon' />}>
         <div className='Issues-frame'>
             <div className='Issue-grid-container'>
         <label className='issueLabel'>Assignee</label>
@@ -78,7 +85,7 @@ export default function Issues(props){
         </section>
 
         <section className='Issues-display'>
-        <Collapsible trigger={<Trigger name='Viewing issues 1/50 total'/>}>
+        <Collapsible open={true} trigger={<Trigger name='Viewing issues 1/50 total' icon={faStream} iconClass='results-icon'/>}>
         <div className='Overview-issues-frame'>
             <div className='O-issue'>
         <p>This is the collapsible content. It can be any element or React component you like.</p>

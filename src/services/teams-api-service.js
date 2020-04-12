@@ -8,8 +8,19 @@ getTeams(){
       }).then(res =>
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       );
+},
+
+getTeamUserList(teamId){
+  return fetch(`${config.API_ENDPOINT}/teams/${teamId}/users`, {
+    headers: {
+      //auth
+      //teamid
+      team_id : teamId
+    }
+  }).then(res =>
+    !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+  );
+}
 }
 
-}
-
-export default TeamsApiService
+export default TeamsApiService;

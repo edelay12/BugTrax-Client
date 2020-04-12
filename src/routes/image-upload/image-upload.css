@@ -1,0 +1,31 @@
+.Image-upload, .Image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.Image-upload {
+    width: calc(100% -30px);
+    height: calc(100vh - 30px);
+    border: 15px solid var(--lightgrey);
+    background: var(--backgroundGrey);
+}
+
+.Image-upload-container {
+    width: 500px;
+max-height: 400px;
+margin: 100px auto auto;
+padding: 20px 30px;
+border-radius: 4px;
+box-shadow: var(--boxshadowform);
+background: white;
+}
+
+.Use-demo-photo-b {
+    margin: 10px;
+}
+
+.Use-demo-photo-dir {
+    font-size: 12px;
+}

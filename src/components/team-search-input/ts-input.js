@@ -1,43 +1,46 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import TeamsApiService from '../../services/teams-api-service';
 import './ts-input.css'
 
 export default function TeamSearch(){
 
-    const [teams, change] = useState([])
+    const [teams, setTeams] = useState([])
     const [show, setShow] = useState(false)
-
-    let allteams = [];
+    const [allTeams , setAllTeams] = useState([])
     
     useEffect(() => {
       TeamsApiService.getTeams()
-      .then(teamsa => {
+      .then(res => {
           console.log('teams')
-          console.log(teamsa)
-          allteams = teamsa
-          console.log(allteams)
-        change(teamsa)})
+          console.log(res)
+          setAllTeams(res)
+          console.log(allTeams)
+        setTeams(res)
+    })
       .catch(err => console.log(err))
     },[]);
 
 
-   let handleChange = e => {
-    setShow(true)
+ const handleChange = (e) => {
+      let results;
     console.log(e)
-    if(!e){
+    console.log(allTeams)
+   if(!e){
         console.log('all')
         setShow(false)
-        change(allteams)
+        setTeams(allTeams)
         return console.log(teams)
     } else {
+        setShow(true)
         console.log('filter')
         console.log(show)
-        let results = allteams.filter(item => {
+        results = allTeams.filter(item => {
             console.log(item.team_name)
              return item.team_name.toLowerCase().startsWith(e.toLowerCase());
         });
         console.log(results)
-     change(results);
+     setTeams(results);
     }
  }
 /* e => change(teams.filter(team => team.toLowerCase().startsWith(e.target.value.toLowerCase()))) */
@@ -45,13 +48,17 @@ export default function TeamSearch(){
     return (
         <div className='Ts-container'>
               <input type='text' className='Ts-i' placeholder='Search for a team...' onChange={e => handleChange(e.target.value)}/>
+              {show && (
               <div className='Ts-results'>
                     <ul className='Ts-ul'>
-                {teams.map(team => 
-                    <li className='Ts-li'>{team.team_name}</li>
+
+                { teams.length < 1 ? <div className='Ts-results-empty'><span >No teams found...</span></div> :
+                    teams.map(team => 
+                    <li className='Ts-li'><Link to={`/team-join/${team.id}/${team.team_name}/auth`}>{team.team_name}</Link></li>
                     )}
                     </ul>
                 </div>
+                )}
         </div>
     )
 }

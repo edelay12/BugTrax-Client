@@ -1,0 +1,35 @@
+.Tjs {
+    width: 500px;
+    min-height: 400px;
+    margin: auto auto;
+    display: flex;
+flex-direction: column;
+    padding: 20px 30px;
+    align-items: center;
+    border-radius: 4px; 
+    justify-content: center;
+    box-shadow: var(--boxshadowform);
+    background: white;
+}
+
+.Team-join-successful {
+    width: calc(100% -30px);
+    height: calc(100vh - 30px);
+    border: 15px solid var(--lightgrey);
+    background: var(--backgroundGrey);
+    display: flex;
+    align-items: center;
+}
+
+.green-logo {
+    font-size: 105px;
+    color: var(--green);
+}
+
+.green-logo-div {
+    padding: 15px;
+}
+
+.Tjs-banner {
+    font-weight: 700;
+}

@@ -2,7 +2,7 @@
     width: calc(100% -30px);
     height: calc(100vh - 30px);
     border: 15px solid var(--lightgrey);
-    background: #F6F5FA;
+    background: var(--backgroundGrey);
 }
 
 .Team-auth-form {
@@ -39,4 +39,8 @@ margin: 10px 0;
     width: 200px;
     height: 20px;
     padding: 5px;
+}
+
+.Team-auth-e-alert {
+    color: red;
 }

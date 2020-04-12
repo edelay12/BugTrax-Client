@@ -1,3 +1,11 @@
+.Team-join {
+    width: calc(100% -30px);
+    min-height: calc(100vh - 30px);
+    border: 15px solid var(--lightgrey);
+    background: var(--backgroundGrey);
+    padding: 30px 0;
+}
+
 .Team-choose-results {
     display: flex;
     flex-direction: column;
@@ -37,21 +45,22 @@ box-shadow: var(--boxshadow);
 .Team-choose {
     text-align: center;
     width: 550px;
-    max-height: 500px;
-    margin: 100px auto auto;
+    min-height: 300px;
+    margin: 50px auto auto;
     padding: 20px 30px;
 border-radius: 4px;
+background: white;
     box-shadow: var(--boxshadowform);
 }
 
 
 .Team-choose-register-b, .Team-choose-dir {
-    margin: 20px auto 20px;
-
+    margin: 20px auto 20px !important;
 }
 
-.Team-choose-dir2 , .Team-choose-dir {
+ .Team-choose-dir, .Team-choose-dir2  {
     margin: 45px auto 20px;
     text-shadow: var(--boxshadowform);
-    font-weight: 500;
+    font-size: 21px;
 }
+
