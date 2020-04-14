@@ -99,3 +99,14 @@ background: none;
 color: #426ACB;
 font-size: 18px;
 }
+
+@media screen and (max-width: 812px) {
+
+    .SubmitIssueForm {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+}

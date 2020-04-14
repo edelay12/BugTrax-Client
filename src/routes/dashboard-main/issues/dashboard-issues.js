@@ -5,6 +5,7 @@ import './dashboard-issues.css'
 import ReporterFilter from '../../../components/filters/reporter-filter/reporter-filter';
 import DashboardRouteHeader from '../../../components/dashboard/dashboard-route-header/dashboard-route-header';
 import { faFilter, faStream } from '@fortawesome/fontawesome-free-solid';
+import DashboardFooter from '../../../components/dashboard/dashboard-footer/dashboard-footer';
 
 
 export default function Issues(props){
@@ -97,7 +98,7 @@ export default function Issues(props){
         </div>
  </Collapsible>
         </section>
-
         </section>
+
     )
 }

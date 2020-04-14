@@ -1,0 +1,49 @@
+.Sequence-footer-content {
+  position: relative;
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+  border-top: 1px solid var(--lightgrey);
+  align-items: center;
+}
+
+.Sequence-footer {
+  width: calc(100vw - 28px);
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  right: 14px;
+}
+.footer-right,
+.footer-left {
+  position: absolute;
+}
+.footer-right {
+  right: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer-left {
+  left: 14px;
+}
+.footer-madeby {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6em;
+  font-weight: 400;
+}
+
+.footer-name {
+  color: #007aff;
+}
+
+.f-li {
+  margin: 0 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}

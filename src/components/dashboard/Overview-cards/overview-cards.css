@@ -1,15 +1,18 @@
 .Overview-cards-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+position: relative;
+justify-content: center;
+align-items: center;
 }
 
 
 .O-card {
 display: flex;
 height: 120px;
-min-width: 220px;
+min-width: 120px;
+flex: 1;
+max-width: 50%;
 border-radius: 10px;
 flex-direction: column;
 padding: 20px;
@@ -21,11 +24,20 @@ color: white;
 .O-card-in {
 display: flex;
 flex: 1;
+position: relative;
+}
+
+.O-card-in-left , .O-card-in-right{
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 .O-card-icon , .O-card-in-right{
     font-size: 40px;
+    min-width: 40px;
     fill: white;
+    position: absolute;
+    right: 10px;
 }
 
 .O-card-footer {
@@ -40,6 +52,7 @@ flex: .3;
 
 .O-card-in-right {
  flex: .3;
+
 }
 
 .O-card-title {
@@ -71,4 +84,31 @@ display: block;
 .light-blue {
     background-color: #5ac8fa;
     box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
+}
+
+@media screen and (max-width: 1300px) {
+    .O-card {
+min-width: 42%;
+
+    }
+}
+@media screen and (max-width: 1000px) {
+    .O-card {
+min-width: 32%;
+    }
+}
+
+
+@media screen and (max-width: 812px) {
+    .O-card {
+min-width: 90% !important;
+
+    }
+
+
+    .Overview-cards-container {
+    
+    }
+        
+
 }

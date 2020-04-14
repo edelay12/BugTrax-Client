@@ -1,0 +1,49 @@
+
+#Sidebar-toggle-mobile, #Sidebar-toggle-mobile-closed {
+    display: none;
+}
+
+.Header-logout-link {
+    margin: 0 10px;
+}
+
+.header-profile-container {
+position: relative;
+display: flex;
+}
+
+.Header-right-c-closed {
+    min-height: 100%;
+    flex: .7;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+@media screen and (max-width: 812px) {
+    #Sidebar-toggle-mobile {
+        transform: rotate(-180deg);
+        transition: all 1s ease;
+}
+#Sidebar-toggle-mobile, #Sidebar-toggle-mobile-closed {
+    display: inline;
+    font-size: 18px;
+    margin-left: 20px;
+}
+#Sidebar-toggle-mobile-closed {
+transition: all 1s ease;
+}
+
+.Header-left-c {
+justify-content: unset;
+flex: unset;
+}
+
+
+.Team-name-closed, .Header-right-c-closed {
+    display: none;
+}
+
+
+}

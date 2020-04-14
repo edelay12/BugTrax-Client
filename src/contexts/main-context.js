@@ -8,6 +8,7 @@ const MainContext = React.createContext({
   setTeamId: () => {},
   setTeamList: () => {},
   setUserId: () => {},
+  setUser: () => {},
   setTeamIssues: () => {},
   clearProduct: () => {},
   addProduct: () => {}
@@ -19,6 +20,7 @@ export class MainProvider extends Component {
   state = {
     teamId: null,
     userId: null,
+    user: null,
     teamList: ['user'],
     error: null,
     teamIssues: ['issue,issue', 'isue']
@@ -41,6 +43,10 @@ export class MainProvider extends Component {
     this.setState({ userId });
   };
 
+  setUser = user => {
+    this.setState({ user });
+  };
+
   setTeamList = teamList => {
     this.setState({ teamList });
   };
@@ -54,6 +60,7 @@ export class MainProvider extends Component {
     const value = {
       teamId: this.state.teamId,
       userId: this.state.userId,
+      user: this.state.user,
       teamList: this.state.teamList,
       saleProducts: this.state.saleProducts,
       teamIssues: this.state.teamIssues,
@@ -65,6 +72,7 @@ export class MainProvider extends Component {
       setTeamId: this.setTeamId,
       setTeamIssues: this.setTeamIssues,
       setUserId: this.setUserId,
+      setUser: this.setUser,
       setTeamList: this.setTeamList
     };
     return (

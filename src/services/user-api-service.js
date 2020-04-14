@@ -1,7 +1,7 @@
 import config from "../config";
 import TokenService from "./token-service";
 
-const TeamsApiService = {
+const UserApiService = {
 getTeams(){
     return fetch(`${config.API_ENDPOINT}/teams`, {
         headers: {}
@@ -9,18 +9,22 @@ getTeams(){
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       );
 },
-
-getTeamUserList(teamId){
-  return fetch(`${config.API_ENDPOINT}/teams/${teamId}/users`, {
+userRandomProfileImage(userId){
+  return fetch(`${config.API_ENDPOINT}/users/imageupload/${userId}`, {
+    method: "POST",
     headers: {
       //auth
-      //teamid
-      team_id : teamId
+      user_id: userId
     }
   }).then(res =>
     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
   );
-}
+},
+
+//random profile images
+getRandomImage(){
+
+},
 }
 
-export default TeamsApiService;
+export default UserApiService;

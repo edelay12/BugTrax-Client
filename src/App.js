@@ -8,7 +8,6 @@ import TeamJoin from './routes/team-join/team-join';
 import Dashboard from './routes/dashboard-main/dashboard-main';
 import TeamAuth from './routes/team-auth/team-auth';
 import TeamJoinSuccessful from './routes/team-join/team-join-successful/team-join-successful';
-import ImageUpload from './routes/image-upload/image-upload';
 
 function App() {
   return (
@@ -20,8 +19,7 @@ function App() {
       <Switch>
       <Route exact path={"/"} component={LandingPage} />
       <Route exact path={"/login"} component={Login} />
-      <Route exact path={"/register"} component={Register} />
-      <Route exact path={"/register/photo"} component={ImageUpload} />
+      <Route path={"/register"} component={Register} />
       <Route exact path={"/team-join"} component={TeamJoin} />
       <Route exact path={"/team-join/:teamId/:teamName/auth"} component={TeamAuth} />
       <Route path={"/team-join/:teamId/:teamName/join=success"} component={TeamJoinSuccessful} />

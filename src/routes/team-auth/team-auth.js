@@ -19,6 +19,11 @@ export default function TeamAuth(props) {
       return setError(true);
     }
     setError(false);
+
+
+    //submit team password to team id
+
+   // check token service? 
     console.log("submit");
   };
 
@@ -35,7 +40,7 @@ export default function TeamAuth(props) {
         <input
           className="Team-auth-i"
           type="text"
-          name="Team-auth-i"
+          name="passwordInput"
           placeholder="Please enter password..."
           onChange={e => updatePassword(e.target.value)}
         />
