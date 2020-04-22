@@ -37,13 +37,15 @@ margin: 0 5px;
 position: absolute;
 right: 25px;
 background-color: rgba(52, 199, 89, 0.1);
-color: #34c759;
 font-size: 0.75em;
     font-weight: 400;
     line-height: 1em;
     padding: 0.5em 0.68em;
     border-radius: 4px;
     text-transform: uppercase;
+}
+.team-li-message > a {
+color: #34c759;
 }
 
 .team-li-name, .team-li-title {

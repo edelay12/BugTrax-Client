@@ -70,7 +70,9 @@ display: block;
     background-color: #007aff;
     box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
 }
-
+.O-card-footer > span {
+    font-size: 14px;
+}
 .green {
     background-color: #34c759;
    box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2)
@@ -111,4 +113,11 @@ min-width: 90% !important;
     }
         
 
+}
+
+@media screen and (max-width: 812px) {
+    .O-card {
+        min-width: 95% !important;
+        
+            }
 }

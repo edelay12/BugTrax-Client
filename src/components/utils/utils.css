@@ -53,7 +53,15 @@
 
 .filter-icon {
     background: #8e8e93 !important;
+}
 
+.events-icon {
+    background: var(--red) !important;
+}
+
+
+.timeline-icon {
+    background: var(--info) !important;
 }
 
 .Trigger-name {

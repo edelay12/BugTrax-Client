@@ -10,6 +10,7 @@ const MainContext = React.createContext({
   setUserId: () => {},
   setUser: () => {},
   setTeamIssues: () => {},
+  setTimeline: () => {},
   clearProduct: () => {},
   addProduct: () => {}
 });
@@ -23,7 +24,10 @@ export class MainProvider extends Component {
     user: null,
     teamList: ['user'],
     error: null,
-    teamIssues: ['issue,issue', 'isue']
+    teamIssues: [],
+    activeIssues: [],
+    resolvedIssues: [],
+    teamTimeline: [],
   };
 
   setError = error => {
@@ -53,7 +57,22 @@ export class MainProvider extends Component {
 
   setTeamIssues = teamIssues => {
       this.setState({ teamIssues })
+      console.log(teamIssues)
   }
+
+  setActiveIssues = activeIssues => {
+      this.setState({ activeIssues })
+  }
+
+  setResolvedIssues = resolvedIssues => {
+      this.setState({ resolvedIssues })
+  }
+
+  setTimeline = teamTimeline => {
+    this.setState({ teamTimeline })
+  }
+
+
 
 
   render() {
@@ -64,16 +83,22 @@ export class MainProvider extends Component {
       teamList: this.state.teamList,
       saleProducts: this.state.saleProducts,
       teamIssues: this.state.teamIssues,
-      setSaleProducts: this.setSaleProducts,
-      addProduct: this.addProduct,
+      teamTimeline: this.state.teamTimeline,
+      activeIssues: this.state.activeIssues,
+      resolvedIssues: this.state.resolvedIssues,
+      //change to use timeline resolved issues
+      newIssues: this.state.teamIssues.filter((v, i) => {return v.resolution === 'new'}),
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setTeamId: this.setTeamId,
       setTeamIssues: this.setTeamIssues,
+      setActiveIssues: this.setActiveIssues,
+      setResolvedIssues: this.setResolvedIssues,
       setUserId: this.setUserId,
       setUser: this.setUser,
-      setTeamList: this.setTeamList
+      setTeamList: this.setTeamList,
+      setTimeline: this.setTimeline,
     };
     return (
       <MainContext.Provider value={value}>

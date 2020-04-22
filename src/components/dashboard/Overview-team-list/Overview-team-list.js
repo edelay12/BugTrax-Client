@@ -1,9 +1,18 @@
 import React , { useContext } from 'react';
+import { Route, Link, useRouteMatch } from "react-router-dom";
 import MainContext from '../../../contexts/main-context';
 import './overview-team-list.css';
 
-export default function OverviewTeamList({users}){
+export default function OverviewTeamList({setPartnerId}){
     const ContextMain = useContext(MainContext);
+    let { path, url } = useRouteMatch();
+
+    const goToMessageList = user => {
+     console.log(user);
+        
+     //get chat where sender id = userId context
+     //and user is = user 
+    }
 
 
 return (
@@ -17,7 +26,7 @@ return (
                     <span className='team-li-name'>{user.full_name}</span>
                     <span className='team-li-title'>{user.title}</span>
                 </div>
-                <span className='team-li-message'>Chat</span>
+                <span className='team-li-message'  onClick={() => setPartnerId(user.id)}><Link to={`/dashboard/chat/team`} >Chat</Link></span>
                 </div>
             </li>
         )}

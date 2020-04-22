@@ -16,7 +16,7 @@
     justify-content: space-around;
     width: 100%;
     padding: 15px 10px;
-    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 
 }
 
@@ -37,11 +37,17 @@ margin: auto 5px;
 }
 
 .T-user-date, .T-user-event, .fa-Te {
-    font-size: 14px;
     font-weight: 500;
     line-height: 16px;
+}
+.T-user-event, .fa-Te {
+font-size: 14px;
 }
 
 .T-user-date , .fa-Te {
     color: rgba(0, 0, 0, 0.4);
+}
+
+.T-user-date {
+    font-size: 12px;
 }

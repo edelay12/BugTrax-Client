@@ -1,4 +1,3 @@
-
 .SubmitIssueForm {
 position: absolute;
 top: 20px;
@@ -89,10 +88,6 @@ padding: 5px;
     margin: auto;
 }
 
-.Sif-submit-b {
-    
-}
-
 .Sif-cancel-b {
 border: none;
 background: none;
@@ -100,8 +95,21 @@ color: #426ACB;
 font-size: 18px;
 }
 
-@media screen and (max-width: 812px) {
+.sif-success {
+    display: flex;
+    align-items: center;
+}
 
+.sif-success-banner {
+    font-weight: 500;
+}
+
+.green-logo-sif {
+    font-size: 65px;
+    color: var(--green);
+}
+
+@media screen and (max-width: 812px) {
     .SubmitIssueForm {
         position: absolute;
         top: 10px;

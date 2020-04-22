@@ -1,104 +1,58 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Collapsible from 'react-collapsible';
 import { Trigger } from '../../../components/utils/utils';
 import './dashboard-issues.css'
-import ReporterFilter from '../../../components/filters/reporter-filter/reporter-filter';
 import DashboardRouteHeader from '../../../components/dashboard/dashboard-route-header/dashboard-route-header';
 import { faFilter, faStream } from '@fortawesome/fontawesome-free-solid';
 import DashboardFooter from '../../../components/dashboard/dashboard-footer/dashboard-footer';
-
+import MainContext from '../../../contexts/main-context';
+import IssuesDisplay from '../../../components/dashboard/issues/issues-display/issues-display';
+import IssuesFilters from '../../../components/dashboard/issues/issues-filters/issues-filters';
 
 export default function Issues(props){
+        const ContextMain = useContext(MainContext);
 
-        
+        const [results, changeResults] = useState([])
+        const filteredResults = [];
+
+        /*
+        const handleFilter = (filter, data) => {
+          switch (filter) {
+            case 'category':
+              console.log('category')
+              console.log(data)
+              console.log(results)
+            break;
+            case 'priority':
+
+            break;
+            case 'status':
+
+            break;
+            case 'assignee':
+
+            break;
+            case 'category':
+
+            break;
+            default:
+              return changeResults(ContextMain.teamIssues)
+          }
+          changeResults([...data]);
+          console.log(data)
+          // clear results referesh page
+          // pass array of filtered items down to add to
+        } */
     return (
 <section className='Issues'>
         <DashboardRouteHeader title='Issues' />
         <section className='Issues-filters'>
-        <Collapsible open={true} trigger={<Trigger name='Filters' icon={faFilter} iconClass='filter-icon' />}>
-        <div className='Issues-frame'>
-            <div className='Issue-grid-container'>
-        <label className='issueLabel'>Assignee</label>
-        </div>
-
-        <div className='Issue-grid-container'>
-        <input className='reporterInput' type='text' />
-        </div>
-
-        <div className='Issue-grid-container'>
-        <label className='issueLabel'>Reporter</label>
-        </div>
-
-        <div className='Issue-grid-container'>
-        <ReporterFilter />
-        </div>
-
-        <div className='Issue-grid-container'>
-        <label className='issueLabel'>Category</label>
-     </div>
-
-     <div className='Issue-grid-container'>
-     <ReporterFilter />
-</div>
-
-<div className='Issue-grid-container'>
-        <label className='issueLabel'>Resolved by</label>
-      </div>
-
-      <div className='Issue-grid-container'>
-        <ReporterFilter />
-</div>
-
-<div className='Issue-grid-container'>
-        <label className='issueLabel'>Severity</label>
-        </div>
-        
-        <div className='Issue-grid-container'>
-        <ReporterFilter />
-</div>
-
-<div className='Issue-grid-container'>
-        <label className='issueLabel'>Status</label>
-       </div>
-        
-       <div className='Issue-grid-container'>
-        <ReporterFilter />
-</div>
-
-<div className='Issue-grid-container-b'>
-        <label className='issueLabel'>Priority</label>
-      </div>
-
-        <div className='Issue-grid-container-b'>
-        <ReporterFilter />
-</div>
-
-<div className='Issue-grid-container-b'>
-        <label className='issueLabel'>Priority</label>
-       </div>
-
-       <div className='Issue-grid-container-b'>
-        <ReporterFilter />
-</div>
-
-        </div>
- </Collapsible>
+        <IssuesFilters allIssues={ContextMain.teamIssues} filteredResults={changeResults} results={results} teamList={ContextMain.teamList}/>
         </section>
 
         <section className='Issues-display'>
-        <Collapsible open={true} trigger={<Trigger name='Viewing issues 1/50 total' icon={faStream} iconClass='results-icon'/>}>
-        <div className='Overview-issues-frame'>
-            <div className='O-issue'>
-        <p>This is the collapsible content. It can be any element or React component you like.</p>
-        </div>
-
-        <div className='O-issue'>
-        <p>It can even be another Collapsible component. Check out the next section!</p>
-        </div>
-        </div>
- </Collapsible>
+      <IssuesDisplay issues={results.length == 0 ? ContextMain.teamIssues : results}/>
         </section>
         </section>
-
     )
 }

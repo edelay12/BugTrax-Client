@@ -13,6 +13,7 @@ import IssueApiService from "../../services/issues-api-service";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
 import DashboardFooter from "../../components/dashboard/dashboard-footer/dashboard-footer";
+import EventsApiService from "../../services/issue-events-api-service";
 
 export default function Dashboard({ match }) {
   const ContextMain = useContext(MainContext);
@@ -21,11 +22,13 @@ export default function Dashboard({ match }) {
   let { teamId } = match.params;
   let [sidebar, sIsOpen] = useState(true);
   let [sif, showSif] = useState(false);
+  const [partnerId, setPartnerId] = useState(null);
 
   useEffect(() => {
     if(window.innerWidth <= 812) {
         sIsOpen(false);
     }
+    
     //get team member list
     TeamsApiService.getTeamUserList(2)
       .then(users => ContextMain.setTeamList(users))
@@ -37,9 +40,31 @@ export default function Dashboard({ match }) {
         console.log(issues);
         ContextMain.setTeamIssues(issues);
       })
-
       .catch(err => console.log(err));
-  }, []);
+
+      IssueApiService.getActiveIssues(2)
+      .then(issues => {
+        console.log(issues);
+        ContextMain.setActiveIssues(issues);
+      })
+      .catch(err => console.log(err));
+
+      IssueApiService.getResolvedIssues(2)
+      .then(issues => {
+        console.log(issues);
+        ContextMain.setResolvedIssues(issues);
+      })
+      .catch(err => console.log(err));
+
+      EventsApiService.getEventsByTeamId(2)
+      .then(events => {
+        console.log(events);
+        ContextMain.setTimeline(events);
+      })
+      .catch(err => console.log(err));
+
+
+  },[]);
 
   return (
     <div className={sidebar ? "Dashboard" : "Dashboard-closed"}>
@@ -49,8 +74,8 @@ export default function Dashboard({ match }) {
         {/* pass team id in route params from props */}
         <Route
           exact
-          path={`${path}/`}
-          render={props => <Overview teamId={teamId} />}
+          path={`${path}/overview`}
+          render={props => <Overview setPartnerId={setPartnerId} teamId={teamId} />}
         />
         <Route
           exact
@@ -62,18 +87,17 @@ export default function Dashboard({ match }) {
         <Route
           exact
           path={`${url}/team`}
-          render={props => <TeamChat teamId={teamId} />}
+          render={props => <TeamChat partnerId={partnerId} setPartnerId={setPartnerId} teamId={teamId} />}
         />
         <Route
           exact
           path={`${url}/trends`}
           render={props => <TeamTrends teamId={teamId} />}
         />
-        <Route exact path={`${url}/overview`} component={Overview} />
         <Route
-          exact
-          path={`${url}/issue/:issueId`}
-          render={props => <IssuePage />}
+         exact
+          path={`${url}/issues/:issueId`}
+          component={IssuePage}
         />
         {sif && <SubmitIssueForm closeSif={() => showSif(false)} />}
         <DashboardFooter />

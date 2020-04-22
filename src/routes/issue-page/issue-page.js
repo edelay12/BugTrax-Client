@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import './issue-page.css';
+import MainContext from "../../contexts/main-context";
+import IssueApiService from '../../services/issues-api-service';
+import DashboardRouteHeader from '../../components/dashboard/dashboard-route-header/dashboard-route-header';
+import IssueDetails from '../../components/issue-page/issue-details/issue-details';
+import IssueEvents from '../../components/issue-page/issue-events/issue-events';
+import EventsApiService from '../../services/issue-events-api-service';
+import NewEventForm from '../../components/issue-page/add-new-event-form/new-event-form';
 
-export default function IssuePage(){
+export default function IssuePage({match}){
+    const ContextMain = useContext(MainContext);
+    const [update, showUpdate] = useState(false);
+    const [issue , setIssue] = useState([]);
+    const [events, setEvents] = useState([])
 
+    useEffect(() => {
+        console.log(match)
+        const { issueId } = match.params;
+        IssueApiService.getIssueById(issueId)
+        .then(res => {
+            console.log(res);
+             setIssue(res);   
+        })
+        .catch(err => console.log(err));
+
+        //get events that match issue id
+        EventsApiService.getEventsByIssueId(issueId)
+        .then(res => {
+            console.log('events')
+            console.log(res);
+             setEvents(res);   
+        })
+        .catch(err => console.log(err));
+
+        //create form that lets you add event
+        console.log(issueId)
+
+    }, [])
+    const { issueId } = match.params;
     return (
         <section className='IssuePage'> 
-Issue Page
-
-issue display
-
-comments/updates
-
+        <DashboardRouteHeader title={`Issue #${issueId}`} />
+            <IssueDetails issue={issue} />
+            <button className='Add-update-button' onClick={() => {showUpdate(!update)}}>Add Update</button>
+            {update && <NewEventForm issueId={issueId} showUpdate={showUpdate}/> }
+            <IssueEvents events={events}/>
         </section>
     )
 }

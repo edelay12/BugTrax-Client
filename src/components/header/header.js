@@ -23,16 +23,20 @@ export default function Header({sidebar, showSif, sIsOpen}){
             <span className='header-link'>About</span>
         </div>
         <div className='Team-name-c'>
-        <h2 className={ sidebar ? 'Team-name-closed' : 'Team-name'}>Team Name</h2>
+        <h3 className={ sidebar ? 'Team-name-closed' : 'Team-name'}>Team Name</h3>
         </div>
     <div className={sidebar ? 'Header-right-c-closed' :'Header-right-c'}>
         <span className='Show-sif-toggle' onClick={showSif}><FontAwesomeIcon icon={faPlusCircle}/></span>
-        <span className='Header-logout-link' onClick={handleLogoutClick}>Logout</span>
-
-        <img id='Header-profile' src='https://images.unsplash.com/photo-1533075377664-f5c0cbc5a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=672&q=80' alt='headshot-1' />
+        <div className='header-profile-container'>
+         <img id='Header-profile' src='https://images.unsplash.com/photo-1533075377664-f5c0cbc5a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=672&q=80' alt='headshot-1' />
         <FontAwesomeIcon className='Profile-options-toggle' icon={faEllipsisV} />
-
+        </div>
     </div>
     </header>
     )
 }
+
+/* 
+
+        <span className='Header-logout-link' onClick={handleLogoutClick}>Logout</span>
+*/

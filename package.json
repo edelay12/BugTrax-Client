@@ -19,6 +19,8 @@
     "react-images-upload": "^1.2.8",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-scroll": "^1.7.16",
+    "react-scroll-to-component": "^1.0.2",
     "react-select": "^3.1.0",
     "typer-js": "^5.0.2"
   },

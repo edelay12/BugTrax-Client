@@ -13,9 +13,7 @@
     border-top: 1px solid var(--darkgrey);
     min-height: 400px;
     width: 99.8%;
-}
-
-.issueLabel {
+    overflow-y: scroll;
 }
 
 .filterSelect {
@@ -28,6 +26,19 @@
     padding-left: 15px;
 }
 
-.Issue-grid-container {
-    border-bottom: 1px solid var(--darkgrey);
+.Issue-grid-container, .Issue-grid-container-b {
+    padding: 15px;
+    border-top: 1px solid var(--darkgrey);
+}
+
+@media screen and (max-width: 812px) {
+
+.Issues-frame {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-template-rows: repeat(.5fr);
+    border-top: 1px solid var(--darkgrey);
+    min-height: 400px;
+    width: 99.8%;
+}
 }

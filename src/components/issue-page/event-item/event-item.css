@@ -1,0 +1,27 @@
+
+
+.Event-item-content {
+    padding-left: 60px;
+    width: calc(100%-60px);
+    position: relative;
+}
+
+.Ei-summary, .Ei-summary-label  {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.Ei-comments-container {
+    margin-top: 5px;
+}
+
+
+.Ei-summary-label {
+    display: block;
+}
+
+.Ei-comments {
+    font-size: 14px;
+    padding: 5px;
+}

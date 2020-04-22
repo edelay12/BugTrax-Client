@@ -22,9 +22,11 @@ export default class Login extends Component {
           password: password.value
         })
           .then(res => {
+            console.log(res)
             user_name.value = "";
             password.value = "";
            console.log('sucess')
+//get token & user
            this.props.history.push('/dashboard/team');
           })
           .catch(res => {

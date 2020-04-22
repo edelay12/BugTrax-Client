@@ -11,7 +11,7 @@ background: white;
 
 .Login-page {
     width: calc(100% -30px);
-    height: calc(100vh - 30px);
+    height: 100vh;
     border: 15px solid var(--lightgrey);
     background: var(--backgroundGrey);
 }

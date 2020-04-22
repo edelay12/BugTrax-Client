@@ -15,7 +15,8 @@ getTeamUserList(teamId){
     headers: {
       //auth
       //teamid
-      team_id : teamId
+      team_id : teamId, 
+      user_id: 1 // context
     }
   }).then(res =>
     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()

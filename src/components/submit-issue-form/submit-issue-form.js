@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Select from 'react-select';
 import './submit-issue-form.css';
 import { useForm } from 'react-hook-form';
 import IssueApiService from '../../services/issues-api-service';
 import TeamsApiService from '../../services/teams-api-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/fontawesome-free-solid';
+import MainContext from '../../contexts/main-context';
+import * as Scroll from 'react-scroll';
+
+
 
 export default function SubmitIssueForm(props){
     const { register, handleSubmit, errors, setError} = useForm();
@@ -11,13 +17,14 @@ export default function SubmitIssueForm(props){
     const [priority, changePriority] = useState(null);
     const [severity, changeSeverity] = useState(null);
     const [assignee, changeAssignee] = useState(null);
+    const [success , showSuccess] = useState(false);
 
     const defaultOptions = {
         priority : [
         { value: 'low', label: 'low' },
         { value: 'normal', label: 'normal' },
         { value: 'high', label: 'high' },
-        { value: 'urgen', label: 'urgent' }
+        { value: 'urgent', label: 'urgent' }
       ],
         severity : [
         { value: 'tweak', label: 'tweak' },
@@ -41,13 +48,13 @@ export default function SubmitIssueForm(props){
       assignee : [],
     }
 
+    const ContextMain = useContext(MainContext);
+
     useEffect(() => {
-        console.log('open');
         TeamsApiService.getTeamUserList(2)
         .then(users => {
             console.log(users)
             users.every((v, i) => defaultOptions.assignee.push({value: v.full_name, label: v.full_name}))
-            
         })
         .catch(err => console.log(err))
       //get options from team context 
@@ -61,25 +68,42 @@ const onSubmit = DATA => {
     DATA.severity = severity;
     DATA.priority = priority;
 
-    DATA.team_id = 1;
-    DATA.creator_id = 1;
+    DATA.team_id = 2; ///get team id from context
+    DATA.creator_id = 1; //from context
+    DATA.creator_user_name = 'jApple'; //from context
+
     for (const [key, value] of Object.entries(DATA)) {
         if (value == null && key !== 'assignee') {
         return setError(key, '', 'This field is required');
         }
       }
 
-      IssueApiService.postIssue(DATA, 1)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      IssueApiService.postIssue(DATA, DATA.team_id)
+      .then(res => {
+          console.log(res)
+          showSuccess(true);
+          setTimeout(props.closeSif, 2000);  
 
-    //get team and user
-console.log(DATA)
-console.log(assignee)
+          //refresh issues
+          IssueApiService.getActiveIssues(2)
+          .then(issues => {
+            ContextMain.setActiveIssues(issues);
+          })
+          IssueApiService.getIssuesByTeamId(DATA.team_id)
+          .then(issues => {
+            ContextMain.setTeamIssues(issues);   
+      }) 
+    })
+      .catch(err => console.log(err));
 }
 
     return (
-<form className='SubmitIssueForm' onSubmit={handleSubmit(onSubmit)}>
+<form className='SubmitIssueForm' onSubmit={handleSubmit(onSubmit)} >
+   { success ? <div className='sif-success'>
+       <FontAwesomeIcon className='green-logo-sif' icon={faCheckCircle}/>
+       <h2 className='sif-success-banner'>Your issue was added</h2>
+</div> : (
+   <React.Fragment>
     <div className='Sif-header'>
         <label className='Sif-header-label'>Submit new issue</label>
         <span className='Sif-close-b' onClick={props.closeSif}>X</span>
@@ -120,6 +144,8 @@ console.log(assignee)
         <button type='submit' className='Sif-submit-b Radial-button'>Create Issue</button> 
         <button type='button' className='Sif-cancel-b' onClick={props.closeSif}>Cancel</button>
     </div>
+    </React.Fragment>
+   )}
 </form>
     )
 }
