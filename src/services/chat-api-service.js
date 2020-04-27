@@ -13,6 +13,18 @@ getMessagesByUser(partner){
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       );
     },
+  postNewMessage(newMessage){
+    return fetch(`${config.API_ENDPOINT}/chat/messages`, {
+      method: "POST",
+      headers: {
+        //get teamaid from context
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(newMessage)
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+},
 }
 
 export default ChatApiService;

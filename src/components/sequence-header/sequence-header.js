@@ -4,7 +4,7 @@ import "./sequence-header.css";
 export default function SequenceHeader() {
     return (
 <div className='Sequence-header'>
-<span className="Landing-logo">BugTrax</span>
+<span className="Sequence-logo">BugTrax</span>
 </div>
 
     )

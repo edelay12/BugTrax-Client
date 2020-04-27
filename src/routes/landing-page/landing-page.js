@@ -3,6 +3,8 @@ import "./landing-page.css";
 import typer from "typer-js";
 import { Link } from "react-router-dom";
 import TeamSearch from "../../components/team-search-input/ts-input";
+import { faBurn } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class LandingPage extends Component {
   componentDidMount() {
@@ -29,9 +31,8 @@ export default class LandingPage extends Component {
       <div className="Landing-page">
         <header className="Landing-header">
           <div className="Landing-logo-container">
-            <span className="Landing-logo">BugTrax</span>
+            <span className="Landing-logo"><FontAwesomeIcon icon={faBurn} />  BugTrax</span>
           </div>
-          <div className="Landing-header-whitespace"></div>
           <div className="Landing-links-container">
             <span className="Links Links-about">About</span>
             <span className="Links Links-login">
@@ -292,9 +293,22 @@ export default class LandingPage extends Component {
                 chains!
               </h4>
             </div>
+            <div className="signup-container">
+            <h1 className='signup-banner-h1'>The new way of bug killing<br />for everyone</h1> 
+            <button className='Links-getStarted'><Link to="/register">Get Started</Link></button>
+            </div>
           </section>
-          <div className="signup-container"></div>
-          <section className="Landing-footer-container"></section>
+        
+          <section className="Landing-footer-container">
+          <div className='landing-footer-left'>
+                <span className='footer-madeby'>{"Made with coffee & love by "}<br /><b classname='footer-name'>Evan Miller</b> &#169;2020</span>
+            </div>
+            <ul className='landing-footer-right'>
+            <li className='footer-about f-li'>About</li>
+                <li className='footer-contact f-li'>Contact Me</li>
+                <li className='footer-portfolio f-li'>View more work</li>
+            </ul>
+          </section>
         </main>
       </div>
     );

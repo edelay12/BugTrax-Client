@@ -1,11 +1,10 @@
 .Register-page {
     width: calc(100% -30px);
-    min-height: calc(100vh - 30px);
+    min-height: 100vh;
     border: 15px solid var(--lightgrey);
     background: var(--backgroundGrey);
     padding: 30px 0;
 }
-
 
 .Register {
 width: 500px;

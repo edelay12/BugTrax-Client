@@ -19,7 +19,7 @@ const TokenService = {
   },
   saveAuthToken(token) {
     window.sessionStorage.setItem(config.TOKEN_KEY, token);
-  },
+    },
   getAuthToken() {
     return window.sessionStorage.getItem(config.TOKEN_KEY);
   },
@@ -39,6 +39,12 @@ const TokenService = {
   _getTimeUntilExpiry(payload) {
     return payload.exp * 1000 - Date.now();
   },
+  _getUserInfo(payload){
+    return { userId: payload.userId, teamId : payload.teamId } 
+   },
+   _getUserId(payload){
+     return payload.userId;
+   },
   queueCallbackBeforeExpiry(callback) {
     /* get the number of ms from now until the token expires */
     const msUntilExpiry = TokenService._getTimeUntilExpiry(

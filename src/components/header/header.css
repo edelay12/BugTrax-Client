@@ -7,10 +7,50 @@
     margin: 0 10px;
 }
 
+.header-dropdown {
+position: absolute;
+right: 0;
+top: 0;
+}
 
+.header-dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background:  white;
+    z-index: 4;
+    width: fit-content;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    animation-name: fadein;
+animation-duration: .7s;
+        animation-direction: alternate;
+}
+
+.header-dropdown-list > li {
+    padding: 15px 35px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.header-dropdown-list > li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-dropdown-list :first-child{
+border-bottom: 1px solid var(--lightgrey);
+}
+
+.header-dropdown-hidden {
+    display: none;
+}
 
 .header-profile-container {
-position: relative;
 padding: 0;
 display: flex;
 align-items: center;
@@ -24,10 +64,20 @@ flex: .5;
     min-height: 100%;
     flex: .5;
     display: flex;
-    position: relative;
     justify-content: space-around;
     align-items: center;
     }
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 @media screen and (max-width: 812px) {
     #Sidebar-toggle-mobile {
@@ -39,6 +89,7 @@ flex: .5;
     font-size: 18px;
     margin-left: 20px;
 }
+
 #Sidebar-toggle-mobile-closed {
 transition: all 1s ease;
 }
@@ -48,6 +99,10 @@ justify-content: unset;
 flex: unset;
 }
 
+.Team-name-closed {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
 
 .Team-name-closed, .Header-right-c-closed {
     display: none;

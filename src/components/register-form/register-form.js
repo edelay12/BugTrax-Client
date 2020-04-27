@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './register-form.css';
 import SequenceHeader from '../../components/sequence-header/sequence-header';
+import SequenceFooter from '../sequence-footer/sequence-footer';
 
 export default function RegisterForm({onSubmit}){
   const { register, handleSubmit, errors, getValues} = useForm();
@@ -65,7 +66,7 @@ export default function RegisterForm({onSubmit}){
         {errors.passwordRepeat && <p className='red'>{errors.passwordRepeat.message}</p>}
         <button className='Register-submit-b Radial-button' type="submit">Create account</button>
       </form>
-
+      <SequenceFooter />
       </section>
     );
     }

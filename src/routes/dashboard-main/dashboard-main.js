@@ -14,21 +14,25 @@ import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
 import DashboardFooter from "../../components/dashboard/dashboard-footer/dashboard-footer";
 import EventsApiService from "../../services/issue-events-api-service";
+import TokenService from "../../services/token-service";
+import Profile from "../profile/profile";
 
 export default function Dashboard({ match }) {
   const ContextMain = useContext(MainContext);
 
-  let { path, url } = useRouteMatch();
-  let { teamId } = match.params;
-  let [sidebar, sIsOpen] = useState(true);
-  let [sif, showSif] = useState(false);
+  const { path, url } = useRouteMatch();
+  const { teamId } = match.params;
+  const [sidebar, sIsOpen] = useState(true);
+  const [sif, showSif] = useState(false);
+  const [dropdown, showDropdown] = useState(false)
   const [partnerId, setPartnerId] = useState(null);
 
   useEffect(() => {
     if(window.innerWidth <= 812) {
         sIsOpen(false);
     }
-    
+
+   
     //get team member list
     TeamsApiService.getTeamUserList(2)
       .then(users => ContextMain.setTeamList(users))
@@ -63,14 +67,16 @@ export default function Dashboard({ match }) {
       })
       .catch(err => console.log(err));
 
-
+      TeamsApiService.getTeamName(TokenService._getUserId(TokenService.readJwtToken()))
+      .then(res => ContextMain.setTeamName(res))
+      .catch(err => console.log(err))
   },[]);
 
   return (
     <div className={sidebar ? "Dashboard" : "Dashboard-closed"}>
-      <Header sidebar={sidebar} sIsOpen={sIsOpen} showSif={() => showSif(true)} />
+      <Header sidebar={sidebar} sIsOpen={sIsOpen} showSif={() => showSif(true)} dropdown={dropdown} showDropdown={showDropdown} teamName={ContextMain.teamName}/>
       <Sidebar url={url} sidebar={sidebar} sIsOpen={sIsOpen} />
-      <section className="Dashboard-main">
+      <section className="Dashboard-main" onClick={() => dropdown ? showDropdown(false): null}>
         {/* pass team id in route params from props */}
         <Route
           exact
@@ -93,6 +99,11 @@ export default function Dashboard({ match }) {
           exact
           path={`${url}/trends`}
           render={props => <TeamTrends teamId={teamId} />}
+        />
+        <Route
+          exact
+          path={`${url}/profile`}
+          render={props => <Profile user={teamId} />}
         />
         <Route
          exact

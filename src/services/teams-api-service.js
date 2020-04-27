@@ -14,9 +14,20 @@ getTeamUserList(teamId){
   return fetch(`${config.API_ENDPOINT}/teams/${teamId}/users`, {
     headers: {
       //auth
-      //teamid
-      team_id : teamId, 
-      user_id: 1 // context
+      authorization: `Bearer ${TokenService.getAuthToken()}`,
+      
+    }
+  }).then(res =>
+    !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+  );
+},
+getTeamName(teamId){
+  console.log('teamid    ' +teamId)
+  return fetch(`${config.API_ENDPOINT}/teams/teamname`, {
+    headers: {
+      //auth
+      authorization: `Bearer ${TokenService.getAuthToken()}`,
+      teamId: teamId,
     }
   }).then(res =>
     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()

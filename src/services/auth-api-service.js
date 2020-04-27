@@ -1,6 +1,8 @@
 import config from '../config';
 import TokenService from "./token-service";
 import IdleService from "./idle-service";
+import MainContext from '../contexts/main-context';
+import React, {useContext} from 'react';
 
 const AuthApiService = {
     postUser(user) {
@@ -42,8 +44,9 @@ const AuthApiService = {
           IdleService.regiserIdleTimerResets();
           TokenService.queueCallbackBeforeExpiry(() => {
             AuthApiService.postRefreshToken();
-          });
-          return res;
+          })
+          console.log(res.authToken)
+          return TokenService._getUserInfo(TokenService.readJwtToken())
         });
     },
     postRefreshToken() {
@@ -61,6 +64,7 @@ const AuthApiService = {
           TokenService.queueCallbackBeforeExpiry(() => {
             AuthApiService.postRefreshToken();
           });
+          
           return res;
         })
         .catch(err => {

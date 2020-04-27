@@ -6,9 +6,11 @@ const MainContext = React.createContext({
   setError: () => {},
   clearError: () => {},
   setTeamId: () => {},
+  setTeamName: () => {},
   setTeamList: () => {},
-  setUserId: () => {},
+  setUserInfo: () => {},
   setUser: () => {},
+  setTeamName: () => {},
   setTeamIssues: () => {},
   setTimeline: () => {},
   clearProduct: () => {},
@@ -20,7 +22,7 @@ export default MainContext;
 export class MainProvider extends Component {
   state = {
     teamId: null,
-    userId: null,
+    teamName: '',
     user: null,
     teamList: ['user'],
     error: null,
@@ -43,8 +45,14 @@ export class MainProvider extends Component {
     this.setState({ teamId });
   };
 
-  setUserId = userId => {
-    this.setState({ userId });
+  setTeamName = teamName => {
+    this.setState({ teamName })
+  }
+
+  setUserInfo = userInfo => {
+    console.log('user info')
+    console.log(userInfo)
+    this.setState({ teamId: userInfo.teamId, });
   };
 
   setUser = user => {
@@ -73,12 +81,11 @@ export class MainProvider extends Component {
   }
 
 
-
-
   render() {
     const value = {
       teamId: this.state.teamId,
       userId: this.state.userId,
+      teamName: this.state.teamName,
       user: this.state.user,
       teamList: this.state.teamList,
       saleProducts: this.state.saleProducts,
@@ -95,7 +102,8 @@ export class MainProvider extends Component {
       setTeamIssues: this.setTeamIssues,
       setActiveIssues: this.setActiveIssues,
       setResolvedIssues: this.setResolvedIssues,
-      setUserId: this.setUserId,
+      setUserInfo: this.setUserInfo,
+      setTeamName: this.setTeamName,
       setUser: this.setUser,
       setTeamList: this.setTeamList,
       setTimeline: this.setTimeline,

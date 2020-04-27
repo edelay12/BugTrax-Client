@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/fontawesome-free-regular';
 
 export default function EventItem({change, date, summary, comments}) {
-    const [details, showDetails] = useState(false)
+    const [details, showDetails] = useState(true)
     return (
         <div className='Timeline-event-outer'>
     <section className='TimelineEvent' onClick={() => showDetails(!details)}>

@@ -21,10 +21,6 @@ export default class Overview extends Component {
   static contextType = MainContext;
   state = { error: null };
 
-  componentDidMount() {
-    console.log(this.props.teamId);
-  }
-
   render() {
     const { error } = this.state;
     //move error to dash main
@@ -46,8 +42,6 @@ export default class Overview extends Component {
               }
             >
               <div className="Overview-issues-frame">
-               
-
                 <div className="O-issue">
                   <p>
                     It can even be another Collapsible component. Check out the
@@ -75,7 +69,6 @@ export default class Overview extends Component {
         <section className="Overview-row">
           <section className="Overview-issues-container">
         <OverviewResolvedIssues />
-        <OverviewRecentlyModIssues />
           </section>
           <section className="Overview-timeline">
          <OverviewTimeline />

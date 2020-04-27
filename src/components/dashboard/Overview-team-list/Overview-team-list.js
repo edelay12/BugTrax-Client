@@ -9,7 +9,6 @@ export default function OverviewTeamList({setPartnerId}){
 
     const goToMessageList = user => {
      console.log(user);
-        
      //get chat where sender id = userId context
      //and user is = user 
     }
@@ -26,7 +25,7 @@ return (
                     <span className='team-li-name'>{user.full_name}</span>
                     <span className='team-li-title'>{user.title}</span>
                 </div>
-                <span className='team-li-message'  onClick={() => setPartnerId(user.id)}><Link to={`/dashboard/chat/team`} >Chat</Link></span>
+                <span className='team-li-message'  onClick={() => setPartnerId(user.id)}><Link to={`/dashboard/team`} >Chat</Link></span>
                 </div>
             </li>
         )}
@@ -34,4 +33,4 @@ return (
 
     </div>
 )
-}
+} 

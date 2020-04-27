@@ -10,11 +10,15 @@ import ChatApiService from "../../../services/chat-api-service";
 
 export default function TeamChat({partnerId, setPartnerId}) {
 const [messages, setMessages] = useState([]);
+const [messageInput, input] = useState(null);
 useEffect(() => {
  // get message list
 console.log(partnerId)
 ChatApiService.getMessagesByUser(partnerId)
-.then(res => setMessages(res))
+.then(res => {
+  console.log(res)
+  setMessages(res)
+})
 .catch(err => console.log(err));
 
 // start timer
@@ -32,8 +36,22 @@ return () => clearInterval(timer);
 },[partnerId])
 
 
-    const handleNewMessageSend = () => {
-        
+    const handleNewMessageSend = data => {
+      data.preventDefault();
+        const newMessage = {
+            message : data.target.newMessage.value,
+            user_id_sender: 1, //get from context
+            user_id_reciever: partnerId
+        }
+        console.log(newMessage)
+        ChatApiService.postNewMessage(newMessage)
+        .then(res => {
+          console.log(res)
+          setMessages(res)
+        })
+        .catch(err => console.log(err))
+
+        data.target.newMessage.value = '';
     }
 
   return (
@@ -50,12 +68,12 @@ return () => clearInterval(timer);
            <MessagesContainer messages={messages} />
             </div>
           </div>
-          <div className="Message-input-container">
-            <textarea className="New-message-i" placeholder="Type message..." />
+          <form className="Message-input-container" onSubmit={handleNewMessageSend}>
+            <textarea className="New-message-i" placeholder="Type message..." name='newMessage'/>
             <button type="submit" className="New-message-b Radial-button">
               Send
             </button>
-          </div>
+          </form>
         </div>
       </section>
     </section>

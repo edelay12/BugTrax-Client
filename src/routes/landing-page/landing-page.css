@@ -4,21 +4,28 @@
     width: 100%;
     display: flex;
     align-items: center;
+    padding-top: 30px;
 }
 
 .Landing-page {
-    border: 15px solid var(--lightgrey);
-}
-.Landing-header-whitespace {
-    flex: 2;
+    border: 15px solid #EEEFF0;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .Landing-logo-container {
     flex: 1;
+position: absolute;
+left: 15px;
 }
 
 .Landing-links-container {
-flex: 1
+flex: 1;
+padding-right: auto;
+position: absolute;
+right: 15px;
 }
 
 .Landing-logo {
@@ -28,18 +35,26 @@ flex: 1
 font-size: 16px;
 font-weight: 600;
 letter-spacing: 1px;
-position: absolute;
-left: 80px;
-top: 30px;
+margin-left: 30px;
 }
 
 .Links-about , .Links-login > a {
     color: #6d7785;
 }
 
+.Links-getStarted {
+    border-radius: 100px;
+    background-color: #199DFF;
+    padding: 12px 30px;
+    border: none;
+}
+
+.Links-getStarted > a{
+    color: white;
+}
 
 .Links {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 
@@ -98,10 +113,12 @@ height: 100%;
     background-color: #199DFF;
 }
 
+
 .rBody-title {
 font-size: 26px;
 margin-bottom: 20px;
 }
+
 
 .Landing-dir {
     color: var(--darkgrey);
@@ -113,7 +130,7 @@ width: 450px;
 padding: 23px 30px;
 color: #1D1D1F;
 box-shadow: var(--boxshadow);
-border: 0;
+border: none;
 font-size: 1rem;
 background: white;
 margin: auto;
@@ -121,4 +138,64 @@ margin: auto;
 
 .Landing-email-i ::placeholder {
 color: var(--darkgrey);
+}
+
+.Landing-footer-container {
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 7.5rem 6.875rem;
+    background-color: #EEEFF0;
+}
+
+.signup-container {
+    text-align: center;
+    padding: 80px 100px;
+}
+
+.signup-banner-h1 {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #1D1D1F;
+    line-height: 1.4;
+}
+
+.landing-footer-right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.landing-footer-right > li {
+   margin: 5px 0;
+   font-size: 16px;
+}
+
+.landing-footer-left {
+text-align: center;
+}
+
+.landing-footer-left > span {
+font-size: 16px;
+line-height: 2;
+}
+
+@media screen and (max-width: 812px) {
+
+    .rBody-frame {
+        padding: 6.25rem 5.3125rem;
+    }
+
 }

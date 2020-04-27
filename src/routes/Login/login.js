@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
 import './login.css';
 import SequenceFooter from '../../components/sequence-footer/sequence-footer';
+import MainContext from '../../contexts/main-context';
+import TeamsApiService from '../../services/teams-api-service';
 
 export default class Login extends Component {
+  static contextType = MainContext;
     state = {
       error: null,
       user_name: null,
@@ -25,10 +28,11 @@ export default class Login extends Component {
             console.log(res)
             user_name.value = "";
             password.value = "";
-           console.log('sucess')
+          //if no team.. 
 //get token & user
-           this.props.history.push('/dashboard/team');
-          })
+this.props.history.push('/dashboard/overview');
+this.context.setUserInfo(res);
+        })
           .catch(res => {
             console.log(res.error)
             this.setState({ error: res.error });

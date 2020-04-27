@@ -103,21 +103,6 @@ min-width: 32%;
 
 @media screen and (max-width: 812px) {
     .O-card {
-min-width: 90% !important;
-
-    }
-
-
-    .Overview-cards-container {
-    
-    }
-        
-
-}
-
-@media screen and (max-width: 812px) {
-    .O-card {
-        min-width: 95% !important;
-        
+        min-width: 400px !important;
             }
 }

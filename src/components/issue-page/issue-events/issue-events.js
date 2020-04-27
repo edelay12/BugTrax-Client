@@ -20,7 +20,7 @@ import EventItem from '../event-item/event-item';
           >
             <div className="Issue-events-frame">
                 {events.map(event => 
-            <EventItem date={event.date} change={event.change} summary={event.change_summary} comments={event.change_description}/>
+            <EventItem date={event.date_created} change={event.change} summary={event.change_summary} comments={event.change_description}/>
             )}
             </div>
         

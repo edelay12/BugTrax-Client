@@ -76,7 +76,6 @@ export default function IssuesFilters({results, allIssues, filteredResults, team
 </div>
 
 <div className='Issue-grid-container-b'>
-        <label className='issueLabel'>Priority</label>
        </div>
 
        <div className='Issue-grid-container-b'>

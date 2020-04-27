@@ -9,6 +9,7 @@ import Dashboard from './routes/dashboard-main/dashboard-main';
 import TeamAuth from './routes/team-auth/team-auth';
 import TeamJoinSuccessful from './routes/team-join/team-join-successful/team-join-successful';
 import IssuePage from './routes/issue-page/issue-page';
+import PrivateRoute from './components/utils/Private-route';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Route exact path={"/team-join"} component={TeamJoin} />
       <Route exact path={"/team-join/:teamId/:teamName/auth"} component={TeamAuth} />
       <Route path={"/team-join/:teamId/:teamName/join=success"} component={TeamJoinSuccessful} />
-      <Route path={"/dashboard/:teamId"} component={Dashboard} />
+      <PrivateRoute path={"/dashboard"} component={Dashboard} />
       </Switch>
       </main>
     </div>
