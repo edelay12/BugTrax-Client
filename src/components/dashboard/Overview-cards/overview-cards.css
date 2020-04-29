@@ -69,23 +69,27 @@ display: block;
 .blue {
     background-color: #007aff;
     box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
+    -webkit-box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
 }
 .O-card-footer > span {
     font-size: 14px;
 }
 .green {
     background-color: #34c759;
-   box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2)
+   box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2);
+   -webkit-box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2);
 }
 
 .grey {
     background-color: #8e8e93;
-    box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2)
+    box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2);
+    -webkit-box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2)
 }
 
 .light-blue {
     background-color: #5ac8fa;
     box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
+    -webkit-box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
 }
 
 @media screen and (max-width: 1300px) {
@@ -103,6 +107,7 @@ min-width: 32%;
 
 @media screen and (max-width: 812px) {
     .O-card {
-        min-width: 400px !important;
+        width: 95%;
+        min-width: 350px !important;
             }
 }

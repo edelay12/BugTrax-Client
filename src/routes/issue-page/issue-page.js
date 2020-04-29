@@ -42,7 +42,7 @@ export default function IssuePage({match}){
         <section className='IssuePage'> 
         <DashboardRouteHeader title={`Issue #${issueId}`} />
             <IssueDetails issue={issue} />
-            <button className='Add-update-button' onClick={() => {showUpdate(!update)}}>Add Update</button>
+    {issue.resolution !== 'resolved' && <button className='Add-update-button' onClick={() => {showUpdate(!update)}}>Add Update</button> }
             {update && <NewEventForm issueId={issueId} showUpdate={showUpdate}/> }
             <IssueEvents events={events}/>
         </section>

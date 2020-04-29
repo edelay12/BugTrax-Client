@@ -32,8 +32,8 @@ export default function Header({sidebar, showSif, sIsOpen, dropdown, showDropdow
         <FontAwesomeIcon className='Profile-options-toggle' icon={faEllipsisV} />
         <div className={dropdown ? 'header-dropdown' : 'header-dropdown-hidden'} onClick={() => showDropdown(false)}>
           <ul className='header-dropdown-list'>
-        <li className='Header-logout-link' onClick={handleLogoutClick}>Profile</li>
-        <li className='Header-logout-link'><Link to={'/profile'}>Logout</Link></li>
+        <li className='Header-logout-link'><Link to={'/profile'}>Profile</Link></li>
+        <li className='Header-logout-link' onClick={handleLogoutClick}>Logout</li>
         </ul>
       </div>
         </div>

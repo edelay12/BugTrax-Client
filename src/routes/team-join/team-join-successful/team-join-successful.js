@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/fontawesome-free-solid';
 import './team-join-successful.css';
+import LandingHeader from "../../../components/landing-page/header/header";
 
 export default function TeamJoinSuccessful(props) {
     const [id, setId] = useState(0);
@@ -21,6 +22,8 @@ export default function TeamJoinSuccessful(props) {
 
       }
     return (
+        <React.Fragment>
+            <LandingHeader />
         <section className='Team-join-successful'>
             <div className='Tjs'>
             <h2 className='Tjs-banner'>Success</h2>
@@ -34,5 +37,6 @@ export default function TeamJoinSuccessful(props) {
             </div>
             </div>
         </section>
+        </React.Fragment>
     )
 }

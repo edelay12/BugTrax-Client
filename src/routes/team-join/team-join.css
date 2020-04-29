@@ -1,8 +1,12 @@
 .Team-join {
-    width: calc(100% -30px);
-    min-height: calc(100vh - 30px);
-    border: 15px solid var(--lightgrey);
-    background: var(--backgroundGrey);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 15px solid var(--border);
     padding: 30px 0;
 }
 
@@ -13,6 +17,7 @@
     min-width: 300px;
 overflow-y: auto;
 box-shadow: var(--boxshadow);
+-webkit-box-shadow: var(--boxshadow);
 }
 
 .Tc-search-container {
@@ -27,6 +32,7 @@ box-shadow: var(--boxshadow);
 .Team-choose-search {
     width: 300px;
     box-shadow: var(--boxshadow);
+    -webkit-box-shadow: var(--boxshadow);
 }
 
 .Team-name-ul {
@@ -64,3 +70,12 @@ background: white;
     font-size: 21px;
 }
 
+
+@media screen and (max-width: 612px) {
+
+    .Team-choose {
+        width: 100%;
+        box-shadow: none;
+    }
+
+}

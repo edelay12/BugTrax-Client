@@ -32,11 +32,11 @@ export default function TeamRegister(){
             <span className='Team-register-dir'>Register your team</span>
             <div className='Tr-col'>
             <label htmlFor='Team-register-c' className='Team-register-l'>Company*</label>
-            <input required className='Team-register-c' name='company' type='text' ref={register}/>
+            <input required className='Team-register-c bt-input' name='company' type='text' ref={register}/>
             </div>
             <div className='Tr-col'>
             <label htmlFor='Team-register-c2' className='Team-register-l'>Team name*</label>
-            <input className='Team-register-c' name='team_name' type='text' required ref={register}/>
+            <input className='Team-register-c bt-input' name='team_name' type='text' required ref={register}/>
             </div>
             <div className="Register-password">
             {errors.team_password && (
@@ -53,11 +53,11 @@ export default function TeamRegister(){
           </div>
             <div className='Tr-col'>
             <label className='Team-register-l'>Choose a password*</label>
-            <input className='Team-register-c' name='team_password' type='text' required ref={register({ pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/ , minLength : 10})}/>
+            <input className='Team-register-c bt-input' name='team_password' type='text' required ref={register({ pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/ , minLength : 10})}/>
             </div>
             <div className='Tr-col'>
             <label className='Team-register-l' htmlFor='team_passwordRepeat'>Re-enter password*</label>
-            <input className='Team-register-c' name='team_passwordRepeat' type='text' required ref={register( {   validate: { matchesPreviousPassword: (value) => {
+            <input className='Team-register-c bt-input' name='team_passwordRepeat' type='text' required ref={register( {   validate: { matchesPreviousPassword: (value) => {
               const { team_password } = getValues();
               return team_password === value || 'Passwords should match';
             },
@@ -65,8 +65,8 @@ export default function TeamRegister(){
             </div>
             {errors.team_passwordRepeat && <p className='red'>{errors.team_passwordRepeat.message}</p>}
             <div className='Tr-row'>
-            <input className='Team-register-check' name='team_admin' type='checkbox' ref={register}/>
-            <label className='Team-register-l' htmlFor='team_admin'> Are you this team's administrator?</label>
+            <input className='Team-register-check bt-input' name='team_admin' type='checkbox' ref={register}/>
+            <label className='Team-register-l' htmlFor='team_admin'>  Are you this team's administrator?</label>
             </div>
 
             <button className='Team-register-submit-b Radial-button' type="submit">Create team</button>

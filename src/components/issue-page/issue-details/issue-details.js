@@ -18,12 +18,12 @@ import './issue-details.css';
   >
     <div className="Issue-details-frame">
 <div className='Issue-details-top'>
-<label id='Issue-details-label'>Category</label>
-<labe id='Issue-details-label'>Reporter</labe>
+<label id='Issue-details-label' className='l1'>Category</label>
+<labe id='Issue-details-label' className='l1'>Reporter</labe>
 <label id='Issue-details-label'>Date Submitted</label>
 <label id='Issue-details-label'>Last Updated</label>
-<span id='Issue-details-span'>{issue.category}</span>
-<span id='Issue-details-span'><Link>{issue.creator_user_name}</Link></span>
+<span id='Issue-details-span' className='s2'>{issue.category}</span>
+<span id='Issue-details-span' className='s2'><Link>{issue.creator_user_name}</Link></span>
 
 <span id='Issue-details-span'>{issue.date_created}</span>
 <span id='Issue-details-span'>{issue.date_updated}</span>

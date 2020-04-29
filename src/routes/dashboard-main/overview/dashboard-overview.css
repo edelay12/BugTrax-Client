@@ -36,7 +36,6 @@ min-height: 100%;
 
 .Overview-analytics {
 flex: 2;
-max-height: 300px;
 }
 
 .Overview-team {
@@ -59,6 +58,20 @@ flex: 1;
 .Overview-timeline {
     min-width: 200px;
     flex: 1;
+}
+
+.Pie-chart-frame {
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+    max-height: 400px;
+    border-top: 1px solid #e5e5e5;
+}
+
+#Pie-chart {
+    width: 300px;
+    height: 300px !important;
+    display: block;
 }
 
 .Overview-issues-frame {
@@ -93,10 +106,19 @@ flex: 1;
 
 .Overview-analytics {
     flex: 1;
+    max-height: unset;
     }
 
     .Overview-row {
         flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 812px) {
+
+    .Pie-chart-frame {
+        max-width: 390px;
     }
 
 }

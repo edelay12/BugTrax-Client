@@ -6,14 +6,20 @@ padding: 20px 30px;
 border-radius: 4px;
 align-items: center;
 box-shadow: var(--boxshadowform);
+-webkit-box-shadow: var(--boxshadowform);
 background: white;
 }
 
 .Login-page {
-    width: calc(100% -30px);
-    height: 100vh;
-    border: 15px solid var(--lightgrey);
-    background: var(--backgroundGrey);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 15px solid var(--border);
+    z-index: 0;
 }
 
 .Login, .Login-user, .Login-password {
@@ -41,4 +47,14 @@ align-content: flex-start;
     height: 20px;
     padding: 5px;
     margin-bottom: 10px;
+    }
+
+
+    @media screen and (max-width: 612px) {
+
+        .Login {
+            width: 100%;
+            box-shadow: none;
+        }
+
     }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./team-auth.css";
+import LandingHeader from "../../components/landing-page/header/header";
 
 export default function TeamAuth(props) {
   const [id, setId] = useState(0);
@@ -28,6 +29,8 @@ export default function TeamAuth(props) {
   };
 
   return (
+  <React.Fragment>
+    <LandingHeader />
     <section className="Team-auth">
       <form className="Team-auth-form" onSubmit={handleSubmit}>
         <h2 className="Team-auth-label">Selected Team ({name})</h2>
@@ -49,5 +52,6 @@ export default function TeamAuth(props) {
         </button>
       </form>
     </section>
+    </React.Fragment>
   );
 }

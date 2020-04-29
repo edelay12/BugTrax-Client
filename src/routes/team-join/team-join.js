@@ -3,11 +3,14 @@ import TeamsApiService from '../../services/teams-api-service';
 import './team-join.css'
 import TeamSearch from '../../components/team-search-input/ts-input';
 import TeamRegister from '../../components/team-register/team-register';
+import LandingHeader from '../../components/landing-page/header/header';
 
 export default function TeamJoin(){
  const [register, showRegister] = useState(false);
         return (
-            <section className='Team-join'>
+            <React.Fragment>
+            <LandingHeader />
+            <main className='Team-join'>
             <div className='Team-choose'>
                { register ? <TeamRegister /> :
                <div>
@@ -20,7 +23,8 @@ export default function TeamJoin(){
                 </div>
                }
             </div>
-            </section>
+            </main>
+            </React.Fragment>
         )
 
 }

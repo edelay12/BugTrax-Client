@@ -6,10 +6,14 @@
 }
 
 .Image-upload {
-    width: calc(100% -30px);
-    height: calc(100vh - 30px);
-    border: 15px solid var(--lightgrey);
-    background: var(--backgroundGrey);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 15px solid var(--border);
 }
 
 .Image-upload-container {
@@ -19,6 +23,7 @@ margin: 100px auto auto;
 padding: 20px 30px;
 border-radius: 4px;
 box-shadow: var(--boxshadowform);
+-webkit-box-shadow: var(--boxshadowform);
 background: white;
 }
 
@@ -28,4 +33,13 @@ background: white;
 
 .Use-demo-photo-dir {
     font-size: 12px;
+}
+
+@media screen and (max-width: 612px) {
+
+    .Image-upload-container  {
+        width: 100%;
+        box-shadow: none;
+    }
+
 }

@@ -31,8 +31,8 @@ export default function Dashboard({ match }) {
     if(window.innerWidth <= 812) {
         sIsOpen(false);
     }
-
-   
+const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
+   console.log('team id > ' + team_id)
     //get team member list
     TeamsApiService.getTeamUserList(2)
       .then(users => ContextMain.setTeamList(users))
@@ -101,14 +101,14 @@ export default function Dashboard({ match }) {
           render={props => <TeamTrends teamId={teamId} />}
         />
         <Route
-          exact
-          path={`${url}/profile`}
-          render={props => <Profile user={teamId} />}
-        />
-        <Route
          exact
           path={`${url}/issues/:issueId`}
           component={IssuePage}
+        />
+          <Route
+          exact
+          path={`${url}/profile`}
+          render={props => <Profile user={teamId} />}
         />
         {sif && <SubmitIssueForm closeSif={() => showSif(false)} />}
         <DashboardFooter />

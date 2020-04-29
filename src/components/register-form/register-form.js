@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './register-form.css';
-import SequenceHeader from '../../components/sequence-header/sequence-header';
-import SequenceFooter from '../sequence-footer/sequence-footer';
+import LandingHeader from '../landing-page/header/header';
 
 export default function RegisterForm({onSubmit}){
   const { register, handleSubmit, errors, getValues} = useForm();
@@ -11,23 +10,22 @@ export default function RegisterForm({onSubmit}){
     //check user available on key input
     return (
       <section className='Register-page'>
-        <SequenceHeader />
       <form className="Register" onSubmit={handleSubmit(onSubmit)}>
         <h2 className='Register-title'>Register an account</h2>
         <div className="Register-user">
           <label className='Register-label' htmlFor="Register-user-input">Full name</label>
-          <input required name="full_name" id="Register-user-input" ref={register}></input>
+          <input className='bt-input' required name="full_name" id="Register-user-input" ref={register}></input>
         </div>
         <div className="Register-user">
           <label className='Register-label' htmlFor="Register-user-input">Title</label>
-          <input required name="title" id="Register-user-input" ref={register}></input>
+          <input className='bt-input' required name="title" id="Register-user-input" ref={register}></input>
         </div>
         <div role="alert">
           {errors.user_name && <p className="red">Invalid username or is taken</p>}
         </div>
         <div className="Register-user">
           <label className='Register-label' htmlFor="Register-name-input">User name</label>
-          <input required name="user_name" id="Register-name-input" ref={register}></input>
+          <input className='bt-input' required name="user_name" id="Register-name-input" ref={register}></input>
         </div>
         <div className="Register-password">
         {errors.password && (
@@ -43,6 +41,7 @@ export default function RegisterForm({onSubmit}){
       }
           <label className='Register-label' htmlFor="Register-password-input">Password</label>
           <input
+          className='bt-input' 
             required
             name="password"
             type="text"
@@ -52,6 +51,7 @@ export default function RegisterForm({onSubmit}){
 <br />
 <label className='Register-label-bottom' htmlFor="Register-passwordRe-input">Confirm password</label>
 <input
+className='bt-input' 
             required
             name="passwordRepeat"
             type="text"
@@ -66,7 +66,6 @@ export default function RegisterForm({onSubmit}){
         {errors.passwordRepeat && <p className='red'>{errors.passwordRepeat.message}</p>}
         <button className='Register-submit-b Radial-button' type="submit">Create account</button>
       </form>
-      <SequenceFooter />
-      </section>
+            </section>
     );
     }

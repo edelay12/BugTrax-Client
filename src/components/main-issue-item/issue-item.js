@@ -13,7 +13,7 @@ return (
             <span className='Issue-item-priority'>{issue.priority}</span>
         </div>
         <div className='Issue-item-right'>
-           <Link to={`/dashboard/${issue.team_id}/issues/${issue.id}`}><span className='Issue-item-summary'>{issue.summary}</span></Link>
+           <Link to={`/dashboard/issues/${issue.id}`}><span className='Issue-item-summary'>{issue.summary}</span></Link>
             <div className='Issue-item-right-bottom-row'>
                 <span className='Issue-item-category'>{issue.category}</span>
                 <span className='Issue-item-hyph'> - </span>

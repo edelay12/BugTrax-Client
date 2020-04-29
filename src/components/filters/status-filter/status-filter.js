@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Select from 'react-select';
 
-export default function StatusFilter({results, allIssues, filteredResults}){
+export default function StatusFilter({results, allIssues, filteredResults, filter}){
     const [disable , setDisable] = useState(false);
 
     const options = [
@@ -20,6 +20,7 @@ export default function StatusFilter({results, allIssues, filteredResults}){
        const filtered = results.length > 0 ? results.filter(item => {return item.resolution == e}) : allIssues.filter(item => {return item.resolution == e})
        
       filteredResults(filtered);
+      filter(true);
       return setDisable(true);
       }
 

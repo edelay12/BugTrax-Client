@@ -9,14 +9,19 @@ flex-direction: column;
     border-radius: 4px; 
     justify-content: center;
     box-shadow: var(--boxshadowform);
+    -webkit-box-shadow: var(--boxshadowform);
     background: white;
 }
 
 .Team-join-successful {
-    width: calc(100% -30px);
-    height: calc(100vh - 30px);
-    border: 15px solid var(--lightgrey);
-    background: var(--backgroundGrey);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 15px solid var(--border);
     display: flex;
     align-items: center;
 }

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Select from 'react-select';
 
-export default function ReporterFilter({results, allIssues, filteredResults, teamList}){
+export default function ReporterFilter({results, allIssues, filteredResults, teamList, filter}){
     const [disable , setDisable] = useState(false);
    
     const team = teamList.map(v => {
-        return { value : v.id, label: v.user_name };
+        return { value : v.id, label: v.full_name };
     })
     const options = [...team];
 
@@ -17,6 +17,7 @@ export default function ReporterFilter({results, allIssues, filteredResults, tea
        const filtered = results.length > 0 ? results.filter(item => {return item.creator_id == e}) : allIssues.filter(item => {return item.creator_id == e})
        
       filteredResults(filtered);
+      filter(true);
       return setDisable(true);
       }
 

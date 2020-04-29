@@ -55,3 +55,27 @@ position: relative;
     font-size: 14px;
     font-weight: 500;
 }
+
+@media screen and (max-width: 712px) {
+    .Issue-details-top {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr .5fr .5fr .5fr;
+    }
+
+    .l1 {
+        order: 1;
+    }
+
+    .s2 {
+        order: 2;
+
+    }
+    .Issue-details-row {
+flex-direction: column;
+    }
+
+    .Issue-details-bottom {
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr .5fr .5fr .5fr;
+    }
+}

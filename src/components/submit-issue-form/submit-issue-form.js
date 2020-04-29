@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/fontawesome-free-solid';
 import MainContext from '../../contexts/main-context';
 import * as Scroll from 'react-scroll';
+import TokenService from '../../services/token-service';
 
 
 
@@ -45,20 +46,21 @@ export default function SubmitIssueForm(props){
         { value: 'migration', label: 'migration' },
         { value: 'other', label: 'other' }
       ],
-      assignee : [],
     }
+
+    const assigneeOptions = [];
 
     const ContextMain = useContext(MainContext);
 
     useEffect(() => {
-        TeamsApiService.getTeamUserList(2)
+        TeamsApiService.getTeamUserList(TokenService._getUserInfo(TokenService.readJwtToken()).teamId)
         .then(users => {
+            console.log('user')
             console.log(users)
-            users.every((v, i) => defaultOptions.assignee.push({value: v.full_name, label: v.full_name}))
+            users.every((v, i) => assigneeOptions.push({value: v.full_name, label: v.full_name}))
         })
         .catch(err => console.log(err))
-      //get options from team context 
-      }, []);
+      }, [assigneeOptions]);
 
 const onSubmit = DATA => {
 
@@ -131,7 +133,7 @@ const onSubmit = DATA => {
 
     <div className='Fis-row'>
     <label className='Fis-label'>Assignee:</label>
-    <Select ref={register({name: 'assignee', required: true})} options={defaultOptions.assignee} onChange={e => changeAssignee(e.value)} name='assignee'/>
+    <Select ref={register({name: 'assignee', required: true})} options={assigneeOptions} onChange={e => changeAssignee(e.value)} name='assignee'/>
     </div>
 {errors.assignee && <span className='red'>{errors.assignee.message}</span>}
 

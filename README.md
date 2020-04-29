@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BugTrax
 
-## Available Scripts
+#### This project was created by Evan Miller
+## To get started
 
-In the project directory, you can run:
+To get started
 
-### `yarn start`
+### Link to app: https//estore-app.emiller12.now.sh/
+- The best way to demo the site is to click the login button at the top of the site and use the demo login below or feel free to register and make a new account:
+```bash
+Username: jApple
+Password (case sensitive): Guest2021!
+```
+- This project is a bug/issue management tracking system built using **React** , **CSS**, **Node**, **Express**, and **PostgreSQL**.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screen 1](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_1.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![screen 2](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
 
-### `yarn test`
+![screen 3](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_3.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Usage
+### To run the server on a local host: 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Scripts
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Start the application `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start nodemon for the application `npm run dev`
 
-### `yarn eject`
+Run the tests in watch mode `npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Migrate the dev database `npm run migrate`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Migrate the test database `npm run migrate:test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Configuring Postgres
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
 
-## Learn More
+1. Locate the `postgresql.conf` file for your Postgres installation.
+   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
+   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
+2. Find the `timezone` line and set it to `UTC`:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## About this project
+### Server
+- The site delivers full user functionality, with, JWT Tokens, and JWT Token refresh, registration, secure login, and secure endpoints.
+All user functions are encrypted with proper security measures in mind. These measures include:
+JWT Tokens and Refresh are issued securly, while expiring along with the session if the user goes idle for more then 5 minutes
+Password incryption using the NPM library BCrypt, with secure hashing and salting rounds
+Cross Site Scripting (XSS) prevention on product adds and user registration
+KnexJS provides built in SQL injection prevention
+- Protected endpoints are authenticated through a JWT service middleware that checks for the API token in the header provided through the client.
+- All of the client side enviornmental variables are securly hidden in .env files.
+- Best RESTful practices were used when building the server.
+### Client
+- The client side uses React Router, with public and private routes.
+- Context API provides State management.

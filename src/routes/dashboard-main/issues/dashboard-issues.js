@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Collapsible from 'react-collapsible';
 import { Trigger } from '../../../components/utils/utils';
 import './dashboard-issues.css'
@@ -11,47 +11,20 @@ import IssuesFilters from '../../../components/dashboard/issues/issues-filters/i
 
 export default function Issues(props){
         const ContextMain = useContext(MainContext);
-
+        const [filter, setFilter] = useState(false)
         const [results, changeResults] = useState([])
-        const filteredResults = [];
+        const filteredResults = []
 
-        /*
-        const handleFilter = (filter, data) => {
-          switch (filter) {
-            case 'category':
-              console.log('category')
-              console.log(data)
-              console.log(results)
-            break;
-            case 'priority':
 
-            break;
-            case 'status':
-
-            break;
-            case 'assignee':
-
-            break;
-            case 'category':
-
-            break;
-            default:
-              return changeResults(ContextMain.teamIssues)
-          }
-          changeResults([...data]);
-          console.log(data)
-          // clear results referesh page
-          // pass array of filtered items down to add to
-        } */
     return (
 <section className='Issues'>
         <DashboardRouteHeader title='Issues' />
         <section className='Issues-filters'>
-        <IssuesFilters allIssues={ContextMain.teamIssues} filteredResults={changeResults} results={results} teamList={ContextMain.teamList}/>
+        <IssuesFilters allIssues={ContextMain.teamIssues} filteredResults={changeResults} results={results} teamList={ContextMain.teamList} filter={setFilter} isFilter={filter}/>
         </section>
 
         <section className='Issues-display'>
-      <IssuesDisplay issues={results.length == 0 ? ContextMain.teamIssues : results}/>
+      <IssuesDisplay issues={filter ? results : ContextMain.teamIssues} allIssues={ContextMain.teamIssues} changeResults={changeResults}/>
         </section>
         </section>
     )

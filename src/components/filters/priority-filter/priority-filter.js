@@ -1,7 +1,7 @@
 import React, {useState}  from 'react';
 import Select from 'react-select';
 
-export default function PriorityFilter({results, allIssues, filteredResults}){
+export default function PriorityFilter({results, allIssues, filteredResults, filter}){
     const [disable , setDisable] = useState(false);
 
     const options = [
@@ -19,6 +19,7 @@ export default function PriorityFilter({results, allIssues, filteredResults}){
        const filtered = results.length > 0 ? results.filter(item => {return item.priority == e}) : allIssues.filter(item => {return item.priority == e})
     
       filteredResults(filtered);
+      filter(true);
       return setDisable(true);
       }
 

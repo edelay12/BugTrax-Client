@@ -3,3 +3,25 @@
     flex-direction: column;
     padding: 0 20px;
 }
+
+.charts-display-frame {
+    display: flex;
+    justify-content: space-around;
+}
+
+.New-issues-line-container , .Issues-pie-container {
+    max-height: 400px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 10px 5px;
+    background: white;
+    border: 1px solid var(--lightgrey);
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 612px) {
+    .charts-display-frame {
+        flex-direction: column;
+    }
+}

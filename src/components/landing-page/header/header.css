@@ -1,0 +1,136 @@
+.Landing-logo-container {
+    flex: 1;
+position: absolute;
+left: 15px;
+top: 30px;
+}
+
+.Landing-logo-container > a:visited, .Landing-logo-container > a {
+color: #1D1D1F;
+}
+
+.Landing-links-container {
+flex: 1;
+padding-right: auto;
+position: absolute;
+right: 50px;
+top: 30px;
+}
+
+.Landing-logo {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 1px;
+margin-left: 30px;
+}
+
+.Landing-logo:hover {
+    cursor: pointer;
+}
+
+.Links-about , .Links-login > a {
+    color: #6d7785;
+}
+
+.Links-getStarted {
+    border-radius: 100px;
+    background-color: #199DFF;
+    padding: 12px 30px;
+    border: none;
+}
+
+.Links-getStarted > a{
+    color: white;
+}
+
+.Links {
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.burger-icon-hidden {
+    display: none;
+}
+
+@media screen and (max-width: 612px) {
+    .Landing-links-container {
+        position: fixed;
+        padding: 35px;
+        top: 15px;
+        left: 2px;
+        right: 10px;
+        margin: auto;
+        transform: translateY(-250px);
+        transition: transform .4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background: white;
+        z-index: 3;
+        height: 200px;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    }
+    
+        .Landing-links-container-open {
+            position: fixed;
+            padding: 30px;
+            top: 15px;
+            left: 2px;
+            right: 10px;
+            margin: auto;
+            background: white;
+            z-index: 3;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            transition: all .4s;
+            transform: translateY(0);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+            -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        }
+    
+        .burger-icon-hidden {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 35px;
+            right: 50px;
+            z-index: 5;
+        }
+    
+        .burger {
+            min-width: 18px;
+            min-height: 2px;
+            background: #1D1D1F;
+            margin: 2px 0;
+            transition: all .3s;
+        }
+    
+        .line1-close {
+            transform: rotate(-45deg) translate(-2px, 2px);
+        }
+    
+        .line2-close {
+            display: none;
+        }
+    
+        .line3-close {
+           transform: rotate(45deg) translate(-2px, -3px)    }
+        
+        .Landing-logo {
+            margin-left: 0px;
+        }
+        .Landing-logo-container {
+            position: fixed;
+            left: 50px;
+            z-index: 3;
+        }
+
+}

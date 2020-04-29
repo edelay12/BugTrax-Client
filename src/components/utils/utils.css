@@ -8,8 +8,19 @@
     margin: 15px !important;
     font-weight: 300;
     box-shadow: var(--boxshadowdeep) !important;
+    -webkit-box-shadow: var(--boxshadowdeep) !important;
     background-color: #007aff !important;
     background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 244, 240, 0.3) 100%);
+}
+
+.bt-input {
+    padding: 17px 10px !important;
+    color: #1D1D1F !important;
+    border: 1px solid var(--lightgrey) !important;
+    font-size: 1rem !important;
+    background: white !important;
+    margin: auto !important;
+    z-index: 1 !important;
 }
 
 .Trigger-name-container {

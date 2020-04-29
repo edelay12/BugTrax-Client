@@ -16,6 +16,8 @@ import OverviewActiveIssues from "../../../components/dashboard/overview-issue-f
 import OverviewResolvedIssues from "../../../components/dashboard/overview-issue-frames/resolved/overview-resolved-issues";
 import OverviewRecentlyModIssues from "../../../components/dashboard/overview-issue-frames/recently-modified/overview-recently-modified-issues";
 import OverviewTimeline from "../../../components/dashboard/overview-timeline/overview-timeline";
+import IssuesPieChart from "../../../components/charts/issues-pie-chart";
+import NewIssuesLineChart from "../../../components/charts/new-issues-line-chart";
 
 export default class Overview extends Component {
   static contextType = MainContext;
@@ -41,13 +43,9 @@ export default class Overview extends Component {
                 />
               }
             >
-              <div className="Overview-issues-frame">
-                <div className="O-issue">
-                  <p>
-                    It can even be another Collapsible component. Check out the
-                    next section!
-                  </p>
-                </div>
+              <div className="Pie-chart-frame">
+            { /*<IssuesPieChart />  */ }
+                <NewIssuesLineChart />          
               </div>
             </Collapsible>{" "}
           </div>

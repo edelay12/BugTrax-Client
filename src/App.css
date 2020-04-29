@@ -32,5 +32,6 @@ font-size: 14px;
   margin: 15px;
   text-shadow: var(--boxshadow);
   box-shadow: var(--boxshadowdeep);
+  -webkit-box-shadow: var(--boxshadowdeep);
   background: linear-gradient(to right, #87B7F3, #7A8AEE);
 }

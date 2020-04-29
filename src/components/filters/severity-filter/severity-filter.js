@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function SeverityFilter({results, allIssues, filteredResults}){
+export default function SeverityFilter({results, allIssues, filteredResults, filter}){
     const [disable , setDisable] = useState(false);
 
     const options = [
@@ -10,6 +10,7 @@ export default function SeverityFilter({results, allIssues, filteredResults}){
         { value: 'major', label: 'major' },
         { value: 'crash', label: 'crash' },
       ];
+
       const handleFilter = e => {
         if(e === 'null' || undefined){
            return console.log('undefined')
@@ -18,6 +19,7 @@ export default function SeverityFilter({results, allIssues, filteredResults}){
        const filtered = results.length > 0 ? results.filter(item => {return item.severity == e}) : allIssues.filter(item => {return item.severity == e})
        
       filteredResults(filtered);
+      filter(true);
       return setDisable(true);
       }
     return (
