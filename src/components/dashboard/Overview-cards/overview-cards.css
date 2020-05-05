@@ -42,7 +42,11 @@ position: relative;
 
 .O-card-footer {
 flex: .3;
+margin-top: 2px;
+}
 
+.link-to-chat > a, .O-card > a {
+    color: white;
 }
 
 .O-card-in-left {

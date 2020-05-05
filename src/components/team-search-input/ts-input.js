@@ -54,7 +54,7 @@ export default function TeamSearch(){
 
                 { teams.length < 1 ? <div className='Ts-results-empty'><span >No teams found...</span></div> :
                     teams.map(team => 
-                    <li className='Ts-li'><Link to={`/team-join/${team.id}/${team.team_name}/auth`}>{team.team_name}</Link></li>
+                        <Link to={`/team-join/${team.id}/${team.team_name}/auth`}><li className='Ts-li'>{team.team_name}</li></Link>
                     )}
                     </ul>
                 </div>

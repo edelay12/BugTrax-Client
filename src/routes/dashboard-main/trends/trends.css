@@ -7,6 +7,7 @@
 .charts-display-frame {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .New-issues-line-container , .Issues-pie-container {
@@ -20,8 +21,14 @@
     border-radius: 5px;
 }
 
-@media screen and (max-width: 612px) {
+.activities-by-user-frame {
+    margin: 20px 0;
+    display: flex;
+}
+
+@media screen and (max-width: 812px) {
     .charts-display-frame {
         flex-direction: column;
+        min-width: 315px;
     }
 }

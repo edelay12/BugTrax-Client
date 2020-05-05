@@ -9,9 +9,7 @@ export default function TeamJoinSuccessful(props) {
     const [name, setName] = useState(0);
 
     useEffect(() => {
-        console.log('load')
         const { teamId, teamName } = props.match.params;
-        console.log(teamId);
         setId(teamId);
         setName(teamName);
         //animate

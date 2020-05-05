@@ -11,7 +11,6 @@ export default function Register(props){
   const ContextMain = useContext(MainContext);
 
   const onSubmit = DATA => {
-    console.log(DATA);
     //check fields
     //return to login
     AuthApiService.postUser(DATA)

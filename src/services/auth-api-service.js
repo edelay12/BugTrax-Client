@@ -45,7 +45,6 @@ const AuthApiService = {
           TokenService.queueCallbackBeforeExpiry(() => {
             AuthApiService.postRefreshToken();
           })
-          console.log(res.authToken)
           return TokenService._getUserInfo(TokenService.readJwtToken())
         });
     },

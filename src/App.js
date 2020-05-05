@@ -20,9 +20,9 @@ function App() {
       <Route exact path={"/landing"} component={LandingPage} />
       <Route exact path={"/login"} component={Login} />
       <Route path={"/register"} component={Register} />
-      <PrivateRoute exact path={"/team-join"} component={TeamJoin} />
-      <PrivateRoute exact path={"/team-join/:teamId/:teamName/auth"} component={TeamAuth} />
-      <PrivateRoute path={"/team-join/:teamId/:teamName/join=success"} component={TeamJoinSuccessful} />
+      <Route exact path={"/team-join"} component={TeamJoin} />
+      <Route exact path={"/team-join/:teamId/:teamName/auth"} component={TeamAuth} />
+      <Route path={"/team-join/:teamId/:teamName/join=success"} component={TeamJoinSuccessful} />
       <PrivateRoute path={"/dashboard"} component={Dashboard} />
       </Switch>
     </div>

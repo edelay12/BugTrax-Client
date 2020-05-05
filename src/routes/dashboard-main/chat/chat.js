@@ -13,17 +13,14 @@ const [messages, setMessages] = useState([]);
 const [messageInput, input] = useState(null);
 useEffect(() => {
  // get message list
-console.log(partnerId)
 ChatApiService.getMessagesByUser(partnerId)
 .then(res => {
-  console.log(res)
   setMessages(res)
 })
 .catch(err => console.log(err));
 
 // start timer
 const timer = setInterval(() => {
-  console.log('This will run after 30 second!')
   ChatApiService.getMessagesByUser(partnerId)
   .then(res => setMessages(res))
   .catch(err => {
@@ -43,10 +40,8 @@ return () => clearInterval(timer);
             user_id_sender: 1, //get from context
             user_id_reciever: partnerId
         }
-        console.log(newMessage)
         ChatApiService.postNewMessage(newMessage)
         .then(res => {
-          console.log(res)
           setMessages(res)
         })
         .catch(err => console.log(err))

@@ -13,7 +13,6 @@ export default function AssigneeFilter({results, allIssues, filteredResults, tea
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-        console.log(e)
        const filtered = results.length > 0 ? results.filter(item => {return item.assignee == e}) : allIssues.filter(item => {return item.assignee == e})
        
       filteredResults(filtered);

@@ -55,8 +55,6 @@ export default function SubmitIssueForm(props){
     useEffect(() => {
         TeamsApiService.getTeamUserList(TokenService._getUserInfo(TokenService.readJwtToken()).teamId)
         .then(users => {
-            console.log('user')
-            console.log(users)
             users.every((v, i) => assigneeOptions.push({value: v.full_name, label: v.full_name}))
         })
         .catch(err => console.log(err))
@@ -82,7 +80,6 @@ const onSubmit = DATA => {
 
       IssueApiService.postIssue(DATA, DATA.team_id)
       .then(res => {
-          console.log(res)
           showSuccess(true);
           setTimeout(props.closeSif, 2000);  
 

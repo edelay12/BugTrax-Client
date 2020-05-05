@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import ChartApiService from '../../services/chart-api-service';
 
 export default function NewIssuesLineChart(){
-    const data = { labels: ['Active', 'Resolved', 'New', 'In-progress'],
+    const [chartData, setData] = useState([0, 0, 0, 0])
+
+    useEffect(() => {
+        ChartApiService.getIssuesMonthly()
+        .then(res => {
+            console.log('chart res')
+            console.log(res)
+            setData(res)
+        })
+        .catch(e => console.log(e))
+    },[])
+
+    const data = { labels: ['Janurary','Februrary', 'March', 'April', 'May'],
     datasets: [{
         label: 'Issues-line',
-        backgroundColor: ['#5ac8fa', '#8e8e93', '#007aff', '#34c759'],
-        data: [4, 8, 10, 2]
+        data: chartData
     }]
 }
     return (

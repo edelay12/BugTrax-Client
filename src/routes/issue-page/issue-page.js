@@ -15,11 +15,9 @@ export default function IssuePage({match}){
     const [events, setEvents] = useState([])
 
     useEffect(() => {
-        console.log(match)
         const { issueId } = match.params;
         IssueApiService.getIssueById(issueId)
         .then(res => {
-            console.log(res);
              setIssue(res);   
         })
         .catch(err => console.log(err));
@@ -27,14 +25,9 @@ export default function IssuePage({match}){
         //get events that match issue id
         EventsApiService.getEventsByIssueId(issueId)
         .then(res => {
-            console.log('events')
-            console.log(res);
              setEvents(res);   
         })
         .catch(err => console.log(err));
-
-        //create form that lets you add event
-        console.log(issueId)
 
     }, [])
     const { issueId } = match.params;

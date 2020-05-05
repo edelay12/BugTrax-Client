@@ -27,7 +27,6 @@ const onSubmit = DATA => {
 
     EventApiService.postNewEvent(DATA)
     .then(res => {
-        console.log(res)
         EventApiService.getEventsByIssueId(issueId)
         .then(events => {
             ContextMain.setTimeline(events)

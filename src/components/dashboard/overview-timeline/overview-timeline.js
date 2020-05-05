@@ -21,10 +21,10 @@ return (
       />
     }
   >
-    <div className="Overview-issues-frame">
+    <div className="Overview-issues-timeline-frame">
       { //make own timeline component for event/comment
          ContextMain.teamTimeline.map(event => 
-      <TimelineEvent change={event.change} date={event.date_updated} />
+      <TimelineEvent change={event.change} date={event.date_updated} id={event.creator_id}/>
       )}
     </div>
   </Collapsible>

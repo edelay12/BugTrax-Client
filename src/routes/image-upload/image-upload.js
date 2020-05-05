@@ -1,10 +1,11 @@
 import React from 'react';
 import ImageUploader from 'react-images-upload';
 import './image-upload.css';
+import { withRouter } from 'react-router-dom';
 import MainContext from '../../contexts/main-context'
 import UserApiService from '../../services/user-api-service';
 
-export default class ImageUpload extends React.Component {
+class ImageUpload extends React.Component {
     constructor(props) {
         super(props);
         this.state = { picture: [] };
@@ -19,11 +20,13 @@ export default class ImageUpload extends React.Component {
         });
     }
 
-    userDemoPhoto = () => {
-        UserApiService.userRandomProfileImage(this.context.userId)
+    useDemoPhoto = () => {
+    console.log('demo')
+    return this.props.history.push('/team-join');
+    /*    UserApiService.userRandomProfileImage(this.context.userId)
         .then(user => {
             user.team == null ? this.props.history.push('/team-join') : this.props.history.push(`/dashboard/${user.team}`);
-        })
+        }) */
     }
 
 
@@ -48,3 +51,5 @@ export default class ImageUpload extends React.Component {
         );
     }
 }
+
+export default withRouter(ImageUpload)

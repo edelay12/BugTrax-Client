@@ -40,6 +40,7 @@ const TokenService = {
     return payload.exp * 1000 - Date.now();
   },
   _getUserInfo(payload){
+    console.log('pload teamid  ' + payload.teamId)
     return { userId: payload.userId, teamId : payload.teamId, user_name: payload.user_name, full_name: payload.full_name } 
    },
    _getUserId(payload){

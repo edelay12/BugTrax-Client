@@ -15,7 +15,6 @@ export default function PriorityFilter({results, allIssues, filteredResults, fil
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-        console.log(e)
        const filtered = results.length > 0 ? results.filter(item => {return item.priority == e}) : allIssues.filter(item => {return item.priority == e})
     
       filteredResults(filtered);

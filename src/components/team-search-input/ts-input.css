@@ -25,7 +25,17 @@ margin-top: 20px;
     padding: 0;
     list-style: none;
     margin: 0;
+    position: relative;
+}
 
+.Ts-ul > li{
+min-width: 100%;
+}
+
+.Ts-ul > a, .Ts-ul > a:visited {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .Ts-results {

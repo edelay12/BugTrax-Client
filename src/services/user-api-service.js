@@ -20,11 +20,27 @@ userRandomProfileImage(userId){
     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
   );
 },
-
-//random profile images
-getRandomImage(){
-
+setUserTeam(teamId){
+  return fetch(`${config.API_ENDPOINT}/users/setteam/${teamId}`, {
+    method: "PATCH",
+    headers: {
+      authorization: `Bearer ${TokenService.getAuthToken()}`,
+      user_id: TokenService._getUserId(TokenService.readJwtToken())
+    }
+  }).then(res =>
+    !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+  );
 },
+getUser(userId) {
+  return fetch(`${config.API_ENDPOINT}/users/getuser/${userId}`, {
+    headers: {
+      authorization: `Bearer ${TokenService.getAuthToken()}`,
+      user_id: TokenService._getUserId(TokenService.readJwtToken())
+    }
+  }).then(res =>
+    !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+  );
+}
 }
 
 export default UserApiService;

@@ -46,6 +46,10 @@
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
   }
+
+  .f-li > a, .f-li > a:visited {
+    color: rgba(0, 0, 0, 0.7);
+  }
   
 
   @media screen and (max-width: 812px) {

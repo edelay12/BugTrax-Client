@@ -2,22 +2,24 @@ import React from 'react';
 import './team-register.css';
 import { useForm } from 'react-hook-form';
 import AuthApiService from '../../services/auth-api-service';
+import UserApiService from '../../services/user-api-service';
 
-export default function TeamRegister(){
+export default function TeamRegister({history}){
     const { register, handleSubmit, errors, getValues} = useForm();
 
     const onSubmit = DATA => {
-        console.log(DATA);
         //check fields
         //return to login
-
-//token get user header ***
+        //token get user header ***
 
 
         AuthApiService.postTeam(DATA)
         .then(success => {
             console.log('Success')
             console.log(success)
+            UserApiService.setUserTeam(success.id)
+            .then(() => history.push('/dashboard/overview'))
+            .catch(err => console.log(err))
             //history push 
         })
         .catch(err=> console.log(err)); 
@@ -28,6 +30,7 @@ export default function TeamRegister(){
             }
 
     return (
+
         <form className='Team-register-form' onSubmit={handleSubmit(onSubmit)}>
             <span className='Team-register-dir'>Register your team</span>
             <div className='Tr-col'>
@@ -53,11 +56,11 @@ export default function TeamRegister(){
           </div>
             <div className='Tr-col'>
             <label className='Team-register-l'>Choose a password*</label>
-            <input className='Team-register-c bt-input' name='team_password' type='text' required ref={register({ pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/ , minLength : 10})}/>
+            <input className='Team-register-c bt-input' name='team_password' type='password' required ref={register({ pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/ , minLength : 10})}/>
             </div>
             <div className='Tr-col'>
             <label className='Team-register-l' htmlFor='team_passwordRepeat'>Re-enter password*</label>
-            <input className='Team-register-c bt-input' name='team_passwordRepeat' type='text' required ref={register( {   validate: { matchesPreviousPassword: (value) => {
+            <input className='Team-register-c bt-input' name='team_passwordRepeat' type='password' required ref={register( {   validate: { matchesPreviousPassword: (value) => {
               const { team_password } = getValues();
               return team_password === value || 'Passwords should match';
             },

@@ -1,7 +1,10 @@
 table, th, td {
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid var(--gray);
     margin: 0;
+    padding: 5px;
   }       
+.user-activity-table-wrap {
+  overflow-x: auto;
+}
   
   

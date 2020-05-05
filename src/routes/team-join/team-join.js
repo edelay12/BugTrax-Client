@@ -14,7 +14,7 @@ export default function TeamJoin(){
             <div className='Team-choose'>
                { register ? <TeamRegister /> :
                <div>
-                <h2 className='Team-choose-dir'>Search for a team</h2>
+                <h2 className='Team-choose-dir'>Please join a team</h2>
                 <div className='Tc-search-container'>
                     <TeamSearch />
                 </div>

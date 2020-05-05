@@ -8,9 +8,14 @@ export default function PrivateRoute({ component, ...props }) {
     <Route
       {...props}
       render={componentProps =>
-        TokenService.hasAuthToken() ? (
-          <Component {...componentProps} />
-        ) : (
+        TokenService.hasAuthToken() ? 
+         (TokenService._getUserInfo(TokenService.readJwtToken()).teamId === null ? <Redirect
+         to={{
+           pathname: "/team-join",
+           state: { from: componentProps.location }
+         }}
+  /> : <Component {...componentProps} /> )
+         : (
           <Redirect
             to={{
               pathname: "/login",

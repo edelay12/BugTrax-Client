@@ -2,12 +2,13 @@ import React from 'react';
 import './timeline-event.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/fontawesome-free-regular';
+import getUserPhoto from '../dashboard/Overview-team-list/get-user-photo/get-user-photo';
 
-export default function TimelineEvent({change, date}) {
+export default function TimelineEvent({change, date, id}) {
     return (
     <section className='TimelineEvent'>
         <div className='T-img-container'>
-<img id='headshotTl' src='https://images.unsplash.com/photo-1533075377664-f5c0cbc5a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=672&q=80' alt='headshot-1' />
+<img id='headshotTl' src={getUserPhoto(id)} alt='headshot-1' />
         </div>
         <div className='T-details-containerTl'>
 <span className='T-user-event'>{change}</span>

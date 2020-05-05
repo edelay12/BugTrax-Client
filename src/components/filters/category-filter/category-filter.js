@@ -21,7 +21,6 @@ export default function CategoryFilter({results, allIssues, filteredResults, fil
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-        console.log(e)
        const filtered = results.length > 0 ? results.filter(item => {return item.category == e}) : allIssues.filter(item => {return item.category == e})
        
       filteredResults(filtered);

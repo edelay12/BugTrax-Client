@@ -40,6 +40,17 @@ overflow: hidden;
 
 .Dashboard-sidebar-closed {
     max-width: 70px;
+    animation: sidebar 1s ease;
+    }
+
+    @keyframes sidebar {
+        from {
+            max-width: unset;
+        }
+
+        to {
+            max-width: 70px;
+        }
     }
 
 .Dashboard-main {
@@ -156,9 +167,6 @@ box-sizing: unset;
 }
 
 
-.Team-name {
-    
-}
 
 .Team-name-c {
     text-align: center;
@@ -170,9 +178,6 @@ flex: 2;
     width: 32px;
     border-radius: 50%;
     margin: 0 10px 0 20px;
-}
-
-.Profile-options-toggle {
 }
 
 .Header-right-c {

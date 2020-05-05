@@ -50,8 +50,6 @@ export class MainProvider extends Component {
   }
 
   setUserInfo = userInfo => {
-    console.log('user info')
-    console.log(userInfo)
     this.setState({ teamId: userInfo.teamId });
   };
 
@@ -65,7 +63,6 @@ export class MainProvider extends Component {
 
   setTeamIssues = teamIssues => {
       this.setState({ teamIssues })
-      console.log(teamIssues)
   }
 
   setActiveIssues = activeIssues => {

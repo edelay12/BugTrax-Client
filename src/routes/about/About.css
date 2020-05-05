@@ -9,6 +9,22 @@
     overflow-x: hidden;
 }
 
+.About-page::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .About-page {
+    -ms-overflow-style: none;
+  }
+
+.bug-bg {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 7;
+}
+
 .About-main {
     padding: 20px 200px;
     min-height: 100vh;
@@ -36,7 +52,7 @@ color: #1D1D1F;
 }
 
 .About-dir {
-    padding: 10px 30px;
+    padding: 10px 30px 0 30px;
     text-align: center;
     margin-top: 15px;
     border-bottom: 1px solid var(--lightgrey);
@@ -44,11 +60,13 @@ color: #1D1D1F;
 
 .About-sub-title {
     font-weight: 500;
+color: rgba(0, 0, 0, 0.7);
 }
 
 
 #centerText {
     text-align: center;
+    padding: 0;
     text-decoration: underline;
     font-weight: 600;
 }
@@ -58,9 +76,13 @@ color: #1D1D1F;
     margin: 40px auto;
 }
 
+.detailsRow > p {
+ line-height: 1.7;
+}
 
 .About-get-started {
     border: 1px solid var(--lightgrey);
+    border-radius: 4px;
     padding: 20px;
     max-width: 500px;
     margin: 20px 0;
@@ -70,4 +92,23 @@ color: #1D1D1F;
 .About-button-container {
     text-align: center;
     margin: 20px 0;
+}
+
+@media screen and (max-width: 812px) {
+
+    .About-main {
+
+        padding: 20px 30px;
+
+    }
+
+    .About-dir {
+        margin-top: 40px;
+    }
+
+    .About-get-started {
+        padding: 10px;
+
+    }
+
 }

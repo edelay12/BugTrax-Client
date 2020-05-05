@@ -32,7 +32,6 @@ export default function Dashboard({ match }) {
         sIsOpen(false);
     }
 const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
-   console.log('team id > ' + team_id)
     //get team member list
     TeamsApiService.getTeamUserList(2)
       .then(users => ContextMain.setTeamList(users))
@@ -41,28 +40,24 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
     //get issues
     IssueApiService.getIssuesByTeamId(2)
       .then(issues => {
-        console.log(issues);
         ContextMain.setTeamIssues(issues);
       })
       .catch(err => console.log(err));
 
       IssueApiService.getActiveIssues(2)
       .then(issues => {
-        console.log(issues);
         ContextMain.setActiveIssues(issues);
       })
       .catch(err => console.log(err));
 
       IssueApiService.getResolvedIssues(2)
       .then(issues => {
-        console.log(issues);
         ContextMain.setResolvedIssues(issues);
       })
       .catch(err => console.log(err));
 
       EventsApiService.getEventsByTeamId(2)
       .then(events => {
-        console.log(events);
         ContextMain.setTimeline(events);
       })
       .catch(err => console.log(err));
@@ -107,7 +102,7 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
         />
           <Route
           exact
-          path={`${url}/profile`}
+          path={`${url}/profile/:userId`}
           render={props => <Profile user={teamId} />}
         />
         {sif && <SubmitIssueForm closeSif={() => showSif(false)} />}

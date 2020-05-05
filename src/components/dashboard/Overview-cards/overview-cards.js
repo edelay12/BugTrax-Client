@@ -1,12 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./overview-cards.css";
 import MainContext from "../../../contexts/main-context";
+import ChartApiService from "../../../services/chart-api-service";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretUp, faCaretDown } from "@fortawesome/fontawesome-free-solid";
 
 export default function OverviewCards() {
   const ContextMain = useContext(MainContext)
+  const [percentageChange , setPercentageChange] = useState(0)
+  const [resolvedChange , setResolvedChange] = useState(0)
+  useEffect(() => {
+    ChartApiService.getPercentageChange()
+    .then(res => {
+      setPercentageChange(res);
+    })
+    .catch(err => console.log(err))
+  
+    ChartApiService.getResolvedPercentageChange()
+    .then(res => {
+      setResolvedChange(res);
+    })
+    .catch(err => console.log(err))
+  }, []);
+
   return (
     <section className="Overview-cards-container">
       <div className="O-card blue">
+      <Link to='/dashboard/issues'>
         <div className="O-card-in">
           <div className="O-card-in-left">
             <span className="O-card-title">New Issues</span>
@@ -18,11 +39,16 @@ export default function OverviewCards() {
         </div>
 
         <div className="O-card-footer">
-          <span>Placeholder</span>
+          {percentageChange > 0 ?
+           <FontAwesomeIcon icon={faCaretUp}/>:
+           <FontAwesomeIcon icon={faCaretDown} />
+          } <span>{percentageChange} this month</span>
         </div>
+        </Link>
       </div>
 
       <div className="O-card green">
+      <Link to='/dashboard/team'>
         <div className="O-card-in">
           <div className="O-card-in-left">
             <span className="O-card-title">Team Members</span>
@@ -34,11 +60,13 @@ export default function OverviewCards() {
         </div>
 
         <div className="O-card-footer">
-          <span className="">Placeholder</span>
+          <span className="link-to-chat">Chat</span>
         </div>
+        </Link>
       </div>
 
       <div className="O-card grey">
+      <Link to='/dashboard/issues'>
         <div className="O-card-in">
           <div className="O-card-in-left">
             <span className="O-card-title">Resolved Issues</span>
@@ -50,11 +78,16 @@ export default function OverviewCards() {
         </div>
 
         <div className="O-card-footer">
-          <span className="">Placeholder</span>
-        </div>
+        {resolvedChange > 0 ?
+           <FontAwesomeIcon icon={faCaretUp}/>:
+           <FontAwesomeIcon icon={faCaretDown} />
+          } <span>{resolvedChange} this month</span>        
+          </div>
+          </Link>
       </div>
 
       <div className="O-card light-blue">
+        <Link to='/dashboard/issues'>
         <div className="O-card-in">
           <div className="O-card-in-left">
             <span className="O-card-title">Open Issues</span>
@@ -66,8 +99,12 @@ export default function OverviewCards() {
         </div>
 
         <div className="O-card-footer">
-          <span className="">Placeholder</span>
+        {ContextMain.activeIssues.length / percentageChange > 0 ?
+           <FontAwesomeIcon icon={faCaretUp}/>:
+           <FontAwesomeIcon icon={faCaretDown} />
+          } <span>{((ContextMain.activeIssues.length / percentageChange)).toFixed(2).slice(2,4)}% this month</span>
         </div>
+        </Link>
       </div>
     </section>
   );

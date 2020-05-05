@@ -9,7 +9,6 @@ export default function TeamAuth(props) {
   const [error, setError] = useState(false);
   useEffect(() => {
     const { teamId, teamName } = props.match.params;
-    console.log(teamId);
     setId(teamId);
     setName(teamName);
   }, []);
@@ -25,7 +24,6 @@ export default function TeamAuth(props) {
     //submit team password to team id
 
    // check token service? 
-    console.log("submit");
   };
 
   return (
@@ -41,7 +39,7 @@ export default function TeamAuth(props) {
           <span className="Team-auth-e-alert">Password must be entered</span>
         )}
         <input
-          className="Team-auth-i"
+          className="Team-auth-i bt-input"
           type="text"
           name="passwordInput"
           placeholder="Please enter password..."

@@ -18,12 +18,12 @@ export default function LandingHeader(){
       </Link>
     </div>
     <div className={menu ?  "Landing-links-container-open" : "Landing-links-container"}>
-      <span className="Links Links-about">About</span>
+      <span className="Links Links-about"><Link to='/'>About</Link></span>
       <span className="Links Links-login">
     { TokenService.hasAuthToken() ? <Link to="/" onClick={() => TokenService.clearAuthToken()}>Logout</Link> : <Link to="/login">Login</Link> }
       </span>
       <span className="Links Links-getStarted">
-        <Link to="/register">Get Started</Link>
+        <Link to="/register">Create Account</Link>
       </span>
     </div>
   <BurgerIcon menu={menu} isOpen={isOpen} />

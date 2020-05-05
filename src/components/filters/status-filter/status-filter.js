@@ -16,7 +16,6 @@ export default function StatusFilter({results, allIssues, filteredResults, filte
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-        console.log(e)
        const filtered = results.length > 0 ? results.filter(item => {return item.resolution == e}) : allIssues.filter(item => {return item.resolution == e})
        
       filteredResults(filtered);

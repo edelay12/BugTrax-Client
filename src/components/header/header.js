@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faCaretDown, faPlusCircle, faEllipsisV } from '@fortawesome/fontawesome-free-solid';
 import { faAngleDoubleRight } from '@fortawesome/fontawesome-free-solid';
 import './header.css';
+import getUserPhoto from '../dashboard/Overview-team-list/get-user-photo/get-user-photo';
 
 export default function Header({sidebar, showSif, sIsOpen, dropdown, showDropdown, teamName}){
 
@@ -28,11 +29,11 @@ export default function Header({sidebar, showSif, sIsOpen, dropdown, showDropdow
     <div className={sidebar ? 'Header-right-c-closed' :'Header-right-c'}>
         <span className='Show-sif-toggle' onClick={showSif}><FontAwesomeIcon icon={faPlusCircle}/></span>
         <div className='header-profile-container' onClick={() => showDropdown(true)}>
-         <img id='Header-profile' src='https://images.unsplash.com/photo-1533075377664-f5c0cbc5a91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=672&q=80' alt='headshot-1' />
+         <img id='Header-profile' src={getUserPhoto(TokenService._getUserId(TokenService.readJwtToken()))} alt='headshot-1' />
         <FontAwesomeIcon className='Profile-options-toggle' icon={faEllipsisV} />
         <div className={dropdown ? 'header-dropdown' : 'header-dropdown-hidden'} onClick={() => showDropdown(false)}>
           <ul className='header-dropdown-list'>
-        <li className='Header-logout-link'><Link to={'/profile'}>Profile</Link></li>
+        <li className='Header-logout-link' onClick={() => showDropdown(false)}><Link to={`/dashboard/profile/${TokenService._getUserId(TokenService.readJwtToken())}`}>Profile</Link></li>
         <li className='Header-logout-link' onClick={handleLogoutClick}>Logout</li>
         </ul>
       </div>

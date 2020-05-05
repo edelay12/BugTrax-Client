@@ -27,7 +27,6 @@ export default class Login extends Component {
           password: password.value
         })
           .then(res => {
-            console.log(res)
             user_name.value = "";
             password.value = "";
           //if no team.. 

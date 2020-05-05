@@ -320,12 +320,12 @@ line-height: 2;
 
 @keyframes onload {
     from {
-        left: 20%;
-        right: 20%;
-        top: 20%;
-        bottom: 20%;
+        left: 40%;
+        right: 40%;
+        top: 40%;
+        bottom: 40%;
         background: white;
-        border: 100px solid var(--border);
+        border: 200px solid var(--border);
     }
 
     to {

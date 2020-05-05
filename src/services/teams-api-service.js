@@ -22,7 +22,6 @@ getTeamUserList(teamId){
   );
 },
 getTeamName(teamId){
-  console.log('teamid    ' +teamId)
   return fetch(`${config.API_ENDPOINT}/teams/teamname`, {
     headers: {
       //auth

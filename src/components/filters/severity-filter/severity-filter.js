@@ -15,7 +15,6 @@ export default function SeverityFilter({results, allIssues, filteredResults, fil
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-        console.log(e)
        const filtered = results.length > 0 ? results.filter(item => {return item.severity == e}) : allIssues.filter(item => {return item.severity == e})
        
       filteredResults(filtered);
