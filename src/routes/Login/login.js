@@ -49,8 +49,8 @@ this.context.setUserInfo(res);
       <form className="Login" onSubmit={this.handleLogin}>
         <h2 className='Login-title'>Log in</h2>
         <div role="alert">
-          {error && <p className="red">{ error }</p>}{" "}
-        </div>{" "}
+          {error && <p className="red">{ error }</p>}
+        </div>
         <div className="Login-user">
           <label className='Login-label' htmlFor="LoginForm__user_name">User name: </label>{" "}
           <input className='bt-input' required name="user_name" id="LoginForm__user_name"></input>{" "}

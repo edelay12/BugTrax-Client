@@ -4,8 +4,6 @@ import { faBurn } from "@fortawesome/fontawesome-free-solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import LandingFooter from "../../components/landing-page/footer/footer";
-import Particles from "react-particles-js";
-import LandingBg from "../../components/landing-page/landing-bg/landing-bg";
 
 export default function About() {
   return (
@@ -30,7 +28,7 @@ export default function About() {
           <p>
             This project is a bug/issue management tracking system built using{" "}
             <b>React </b>, <b>CSS</b>, <b>Node</b>, <b>Express</b>, and{" "}
-            <b>PostgreSQL</b>. ...mantisbt
+            <b>PostgreSQL</b>. The features of this app was inspired by Mantisbt.
           </p>
         </div>
         <div className="About-get-started">
