@@ -1,9 +1,11 @@
 import config from '../config';
+import TokenService from '../services/token-service';
 
 const EventsApiService = {
     getEventsByTeamId(teamId){
         return fetch(`${config.API_ENDPOINT}/events/team/${teamId}`, {
           headers: {
+            authorization: `Bearer ${TokenService.getAuthToken()}`,
             "content-type": "application/json"
           }
         }).then(res =>
@@ -13,6 +15,7 @@ const EventsApiService = {
     getEventsByIssueId(issueId){
         return fetch(`${config.API_ENDPOINT}/events/issue/${issueId}`, {
           headers: {
+            authorization: `Bearer ${TokenService.getAuthToken()}`,
             "content-type": "application/json"
           }
         }).then(res =>
@@ -24,7 +27,7 @@ const EventsApiService = {
         return fetch(`${config.API_ENDPOINT}/events/newevent`, {
           method: "POST",
           headers: {
-            //get teamaid from context
+            authorization: `Bearer ${TokenService.getAuthToken()}`,
             "content-type": "application/json"
           },
           body: JSON.stringify(event)

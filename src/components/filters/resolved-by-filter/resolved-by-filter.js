@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
+import React, { useState , useContext} from 'react';
+import Select from 'react-dropdown-select';
+import MainContext from '../../../contexts/main-context';
 
-export default function ResolvedByFilter({results, allIssues, filteredResults, teamList, filter}){
+export default function ResolvedByFilter({results,  filteredResults, filter}){
     const [disable , setDisable] = useState(false);
+    const ContextMain = useContext(MainContext)
 
-    const team = teamList.map(v => {
+    const team = ContextMain.teamList.map(v => {
         return { value : v.id, label: v.full_name };
     })
     const options = [...team];
@@ -13,7 +15,7 @@ export default function ResolvedByFilter({results, allIssues, filteredResults, t
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-       const filtered = results.length > 0 ? results.filter(item => {return item.resolved_by == e}) : allIssues.filter(item => {return item.resolved_by == e})
+       const filtered = results.length > 0 ? results.filter(item => {return item.resolved_by == e}) : ContextMain.teamIssues.filter(item => {return item.resolved_by == e})
        
       filteredResults(filtered);
       filter(true);
@@ -21,6 +23,6 @@ export default function ResolvedByFilter({results, allIssues, filteredResults, t
       }
 
     return (
-<Select isDisabled={disable} className='filterSelect' onChange={e=> handleFilter(e.value)} options={options}/>
+<Select disabled={disable} className='filterSelect' onChange={e=> handleFilter(e.value)} options={options}/>
     )
 }

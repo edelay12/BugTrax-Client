@@ -19,7 +19,6 @@ const AuthApiService = {
     postTeam(team) {
       return fetch(`${config.API_ENDPOINT}/teams`, {
         method: "POST",
-        //add userid in header
         headers: {
           "content-type": "application/json"
         },

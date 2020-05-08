@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
-import Select from 'react-select';
+import React, {useState, useContext} from 'react';
+import Select from 'react-dropdown-select';
+import MainContext from '../../../contexts/main-context';
 
-export default function StatusFilter({results, allIssues, filteredResults, filter}){
+export default function StatusFilter({results, filteredResults, filter}){
     const [disable , setDisable] = useState(false);
+    const ContextMain = useContext(MainContext)
 
     const options = [
         { value: 'acknowladgement', label: 'acknowladgement' },
@@ -16,7 +18,7 @@ export default function StatusFilter({results, allIssues, filteredResults, filte
         if(e === 'null' || undefined){
            return console.log('undefined')
         }
-       const filtered = results.length > 0 ? results.filter(item => {return item.resolution == e}) : allIssues.filter(item => {return item.resolution == e})
+       const filtered = results.length > 0 ? results.filter(item => {return item.resolution == e}) : ContextMain.teamIssues.filter(item => {return item.resolution == e})
        
       filteredResults(filtered);
       filter(true);
@@ -24,6 +26,6 @@ export default function StatusFilter({results, allIssues, filteredResults, filte
       }
 
     return (
-<Select isDisabled={disable} className='filterSelect' onChange={e=> handleFilter(e.value)} options={options}/>
+<Select disabled={disable} className='filterSelect' onChange={e=> handleFilter(e[0].value)} options={options}/>
     )
 }

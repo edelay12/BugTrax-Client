@@ -26,8 +26,7 @@ TeamsApiService.getTeamUserList(TokenService._getUserInfo(TokenService.readJwtTo
   .catch(err => console.log(err));
 });
 });
-   
-    },[ContextMain, days])
+    },[ContextMain, days]);
 
 
 
@@ -55,7 +54,7 @@ TeamsApiService.getTeamUserList(TokenService._getUserInfo(TokenService.readJwtTo
     }
 
     const getIssuesResolved = user => {
-        return  [ ...ContextMain.resolvedIssues.filter(issue => Number(issue.resolved_by) === user) ].length
+        return  [ ...ContextMain.resolvedIssues.filter(issue => Number(issue.resolved_by) === user)].length
     }
 
     const getDaysOnTeam = user => {

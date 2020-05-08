@@ -1,12 +1,11 @@
 import config from '../config';
-
+import TokenService from '../services/token-service';
 const IssueApiService = {
-//team id 
     postIssue(issue, teamId) {
         return fetch(`${config.API_ENDPOINT}/issues/team/${teamId}`, {
             method: "POST",
             headers: {
-              //get teamaid from context
+              authorization: `Bearer ${TokenService.getAuthToken()}`,
               "content-type": "application/json"
             },
             body: JSON.stringify(issue)
@@ -17,6 +16,7 @@ const IssueApiService = {
     getIssuesByTeamId(teamId){
       return fetch(`${config.API_ENDPOINT}/issues/team/${teamId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>
@@ -26,6 +26,7 @@ const IssueApiService = {
     getIssueById(issueId){
       return fetch(`${config.API_ENDPOINT}/issues/issue/${issueId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>
@@ -35,6 +36,7 @@ const IssueApiService = {
     getActiveIssues(teamId){
       return fetch(`${config.API_ENDPOINT}/issues/active/${teamId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>
@@ -44,6 +46,7 @@ const IssueApiService = {
     getResolvedIssues(teamId){
       return fetch(`${config.API_ENDPOINT}/issues/resolved/${teamId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>
@@ -53,6 +56,7 @@ const IssueApiService = {
     getRecentlyModifiedIssues(teamId){
       return fetch(`${config.API_ENDPOINT}/issues/recently-modified/${teamId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>
@@ -62,6 +66,7 @@ const IssueApiService = {
     getTimeline(teamId){
       return fetch(`${config.API_ENDPOINT}/issues/timeline/${teamId}`, {
         headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
           "content-type": "application/json"
         }
       }).then(res =>

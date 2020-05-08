@@ -7,9 +7,7 @@ import {  faCaretDown, faPlusCircle, faEllipsisV } from '@fortawesome/fontawesom
 import { faAngleDoubleRight } from '@fortawesome/fontawesome-free-solid';
 import './header.css';
 import getUserPhoto from '../dashboard/Overview-team-list/get-user-photo/get-user-photo';
-
 export default function Header({sidebar, showSif, sIsOpen, dropdown, showDropdown, teamName}){
-
    const handleLogoutClick = () => {
         TokenService.clearAuthToken()
         /* when logging out, clear the callbacks to the refresh api and idle auto logout */
@@ -42,8 +40,3 @@ export default function Header({sidebar, showSif, sIsOpen, dropdown, showDropdow
     </header>
     )
 }
-
-/* 
-
-        <span className='Header-logout-link' onClick={handleLogoutClick}>Logout</span>
-*/

@@ -19,10 +19,9 @@ export default function Issues(props){
     return (
 <section className='Issues'>
         <DashboardRouteHeader title='Issues' />
-        <section className='Issues-filters'>
-        <IssuesFilters allIssues={ContextMain.teamIssues} filteredResults={changeResults} results={results} teamList={ContextMain.teamList} filter={setFilter} isFilter={filter}/>
+     <section className='Issues-filters'>
+        <IssuesFilters filteredResults={changeResults} results={results} filter={setFilter} isFilter={filter}/>
         </section>
-
         <section className='Issues-display'>
       <IssuesDisplay issues={filter ? results : ContextMain.teamIssues} allIssues={ContextMain.teamIssues} changeResults={changeResults}/>
         </section>

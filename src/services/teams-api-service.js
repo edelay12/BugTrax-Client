@@ -4,18 +4,18 @@ import TokenService from "./token-service";
 const TeamsApiService = {
 getTeams(){
     return fetch(`${config.API_ENDPOINT}/teams`, {
-        headers: {}
+        headers: {
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
+        }
       }).then(res =>
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       );
 },
-
 getTeamUserList(teamId){
   return fetch(`${config.API_ENDPOINT}/teams/${teamId}/users`, {
     headers: {
       //auth
-      authorization: `Bearer ${TokenService.getAuthToken()}`,
-      
+      authorization: `Bearer ${TokenService.getAuthToken()}`, 
     }
   }).then(res =>
     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()

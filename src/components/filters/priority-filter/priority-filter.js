@@ -1,5 +1,6 @@
-import React, {useState}  from 'react';
-import Select from 'react-select';
+import React, {useState, useContext}  from 'react';
+import Select from 'react-dropdown-select';
+import MainContext from '../../../contexts/main-context';
 
 export default function PriorityFilter({results, allIssues, filteredResults, filter}){
     const [disable , setDisable] = useState(false);
@@ -24,7 +25,7 @@ export default function PriorityFilter({results, allIssues, filteredResults, fil
 
     return (
         //"any" default option
-<Select isDisabled={disable} className='filterSelect' onChange={e=> handleFilter(e.value)} options={options}/>
+<Select disabled={disable} className='filterSelect' onChange={e=> handleFilter(e[0].value)} options={options}/>
     )
 }
 

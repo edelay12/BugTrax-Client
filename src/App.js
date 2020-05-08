@@ -8,7 +8,6 @@ import TeamJoin from './routes/team-join/team-join';
 import Dashboard from './routes/dashboard-main/dashboard-main';
 import TeamAuth from './routes/team-auth/team-auth';
 import TeamJoinSuccessful from './routes/team-join/team-join-successful/team-join-successful';
-import IssuePage from './routes/issue-page/issue-page';
 import PrivateRoute from './components/utils/Private-route';
 import About from './routes/about/About';
 

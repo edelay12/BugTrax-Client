@@ -19,7 +19,7 @@ import Profile from "../profile/profile";
 
 export default function Dashboard({ match }) {
   const ContextMain = useContext(MainContext);
-
+  
   const { path, url } = useRouteMatch();
   const { teamId } = match.params;
   const [sidebar, sIsOpen] = useState(true);
@@ -33,30 +33,30 @@ export default function Dashboard({ match }) {
     }
 const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
     //get team member list
-    TeamsApiService.getTeamUserList(2)
+    TeamsApiService.getTeamUserList(team_id)
       .then(users => ContextMain.setTeamList(users))
       .catch(err => console.log(err));
 
     //get issues
-    IssueApiService.getIssuesByTeamId(2)
+    IssueApiService.getIssuesByTeamId(team_id)
       .then(issues => {
         ContextMain.setTeamIssues(issues);
       })
       .catch(err => console.log(err));
 
-      IssueApiService.getActiveIssues(2)
+      IssueApiService.getActiveIssues(team_id)
       .then(issues => {
         ContextMain.setActiveIssues(issues);
       })
       .catch(err => console.log(err));
 
-      IssueApiService.getResolvedIssues(2)
+      IssueApiService.getResolvedIssues(team_id)
       .then(issues => {
         ContextMain.setResolvedIssues(issues);
       })
       .catch(err => console.log(err));
 
-      EventsApiService.getEventsByTeamId(2)
+      EventsApiService.getEventsByTeamId(team_id)
       .then(events => {
         ContextMain.setTimeline(events);
       })
@@ -75,34 +75,34 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
         {/* pass team id in route params from props */}
         <Route
           exact
-          path={`${path}/overview`}
+          path={`/dashboard/overview`}
           render={props => <Overview setPartnerId={setPartnerId} teamId={teamId} />}
         />
         <Route
           exact
-          path={`${url}/issues`}
+          path={`/dashboard/issues`}
           render={props => (
             <Issues toggleSif={() => showSif(!sif)} teamId={teamId} />
           )}
         />
         <Route
           exact
-          path={`${url}/team`}
+          path={`/dashboard/team`}
           render={props => <TeamChat partnerId={partnerId} setPartnerId={setPartnerId} teamId={teamId} />}
         />
         <Route
           exact
-          path={`${url}/trends`}
+          path={`/dashboard/trends`}
           render={props => <TeamTrends teamId={teamId} />}
         />
         <Route
          exact
-          path={`${url}/issues/:issueId`}
+          path={`/dashboard/issues/:issueId`}
           component={IssuePage}
         />
-          <Route
+        <Route
           exact
-          path={`${url}/profile/:userId`}
+          path={`/dashboard/profile/:userId`}
           render={props => <Profile user={teamId} />}
         />
         {sif && <SubmitIssueForm closeSif={() => showSif(false)} />}

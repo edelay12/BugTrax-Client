@@ -40,7 +40,6 @@ const TokenService = {
     return payload.exp * 1000 - Date.now();
   },
   _getUserInfo(payload){
-    console.log('pload teamid  ' + payload.teamId)
     return { userId: payload.userId, teamId : payload.teamId, user_name: payload.user_name, full_name: payload.full_name } 
    },
    _getUserId(payload){
@@ -52,7 +51,7 @@ const TokenService = {
       TokenService.readJwtToken()
     );
     /*
-          queue a callback that will happen 10 seconds before the token expires
+          queue callback that will happen 10 seconds before the token expires
           the callback is passed in as an argument so could be anything,
             in this app, the callback is for calling the refresh endpoint
         */

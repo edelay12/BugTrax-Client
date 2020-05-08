@@ -6,7 +6,8 @@ const ChartApiService = {
     getIssuesMonthly(){
         return fetch(`${config.API_ENDPOINT}/charts/monthly/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {
           headers: {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            authorization: `Bearer ${TokenService.getAuthToken()}`
           }
         }).then(res =>
           !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -16,7 +17,8 @@ const ChartApiService = {
       return fetch(`${config.API_ENDPOINT}/charts/userdays/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {
         headers: {
           "content-type": "application/json",
-          user_id : user
+          user_id : user,
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
         }
       }).then(res =>
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -25,7 +27,9 @@ const ChartApiService = {
     getPercentageChange(){
       return fetch(`${config.API_ENDPOINT}/charts/changepercentage/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {
         headers: {
-          "content-type": "application/json"
+          "content-type": "application/json",
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
+
         }
       }).then(res =>
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -34,7 +38,8 @@ const ChartApiService = {
     getResolvedPercentageChange(){
       return fetch(`${config.API_ENDPOINT}/charts/changeresolved/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {
         headers: {
-          "content-type": "application/json"
+          "content-type": "application/json",
+          authorization: `Bearer ${TokenService.getAuthToken()}`,
         }
       }).then(res =>
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
