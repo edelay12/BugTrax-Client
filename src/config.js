@@ -5,7 +5,7 @@ module.exports = {
   CART_STORAGE: "estore-cart"
 };
 
-//
+//https://mysterious-cliffs-68493.herokuapp.com/api
 
 //http://localhost:8000/api
 

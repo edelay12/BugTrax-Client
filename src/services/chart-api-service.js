@@ -13,11 +13,12 @@ const ChartApiService = {
           !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
         );
       },
-    getDaysOnTeam(user){
-      return fetch(`${config.API_ENDPOINT}/charts/userdays/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {
+    getDaysOnTeam(teamId){
+      return fetch(`${config.API_ENDPOINT}/charts/userdays/${teamId}`, {
         headers: {
           "content-type": "application/json",
-          user_id : user,
+          teamId : teamId,
+          userId : TokenService._getUserId(TokenService.readJwtToken()),
           authorization: `Bearer ${TokenService.getAuthToken()}`,
         }
       }).then(res =>

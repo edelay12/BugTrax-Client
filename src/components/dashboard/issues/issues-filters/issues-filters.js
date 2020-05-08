@@ -16,7 +16,10 @@ export default function IssuesFilters({
   results,
   filteredResults,
   filter,
-  isFilter
+  isFilter,
+  removeFilters,
+  clear,
+  setClear
 }) {
   return (
     <Collapsible
@@ -34,6 +37,8 @@ export default function IssuesFilters({
             results={results}
             filteredResults={filteredResults}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
         <div className="Issue-grid-container">
@@ -45,6 +50,8 @@ export default function IssuesFilters({
             results={results}
             filteredResults={filteredResults}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
 
@@ -57,6 +64,8 @@ export default function IssuesFilters({
             filteredResults={filteredResults}
             results={results}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
         <div className="Issue-grid-container">
@@ -68,6 +77,8 @@ export default function IssuesFilters({
             filteredResults={filteredResults}
             results={results}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
 
@@ -80,6 +91,8 @@ export default function IssuesFilters({
             filteredResults={filteredResults}
             results={results}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
 
@@ -92,6 +105,8 @@ export default function IssuesFilters({
             filteredResults={filteredResults}
             results={results}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
 
@@ -104,6 +119,8 @@ export default function IssuesFilters({
             filteredResults={filteredResults}
             results={results}
             filter={filter}
+            clear={clear}
+            setClear={setClear}
           />
         </div>
         <div className="Issue-grid-container-b"></div>
@@ -111,14 +128,14 @@ export default function IssuesFilters({
         <div className="Issue-grid-container-b"></div>
       </div>
 
-      {isFilter && (
+      {isFilter ? (
         <button
           className="clear-filters-toggle"
-          onClick={() => window.location.reload()}
+          onClick={removeFilters}
         >
           Clear filters
         </button>
-      )}
+      ) : null}
     </Collapsible>
   );
 }

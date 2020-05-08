@@ -1,60 +1,71 @@
 .Login {
-    width: 500px;
-max-height: 400px;
-margin: 100px auto auto;
-padding: 20px 30px;
-border-radius: 4px;
-align-items: center;
-box-shadow: var(--boxshadowform);
--webkit-box-shadow: var(--boxshadowform);
-background: white;
+  width: 500px;
+  max-height: 400px;
+  margin: 100px auto auto;
+  padding: 20px 30px;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: var(--boxshadowform);
+  -webkit-box-shadow: var(--boxshadowform);
+  background: white;
 }
 
 .Login-page {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border: 15px solid var(--border);
-    z-index: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 15px solid var(--border);
+  z-index: 0;
 }
 
-.Login, .Login-user, .Login-password {
-    display: flex;
-flex-direction: column;
-align-content: flex-start;
+.Login,
+.Login-user,
+.Login-password {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 .Login-title {
-    font-size: 21px;
-    text-align: center;
+  font-size: 21px;
+  text-align: center;
 }
 
 .Login-label {
-    font-size: 14px;
-    margin: 10px 0;
-    font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
-#LoginFormPassword , #LoginForm__user_name {
-    border: 1px solid var(--lightgrey);
-    background: none;
-    border-radius: 3px;
-    width: 200px;
-    height: 20px;
-    padding: 5px;
-    margin-bottom: 10px;
-    }
+#LoginFormPassword,
+#LoginForm__user_name {
+  border: 1px solid var(--lightgrey);
+  background: none;
+  border-radius: 3px;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
 
+.Demo-login-dir {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.Demo-login-dir > div {
+  line-height: 1.5em;
+  font-size: 18px;
+}
 
-    @media screen and (max-width: 612px) {
-
-        .Login {
-            width: 100%;
-            box-shadow: none;
-        }
-
-    }
+@media screen and (max-width: 612px) {
+  .Login {
+    width: 100%;
+    box-shadow: none;
+  }
+}
