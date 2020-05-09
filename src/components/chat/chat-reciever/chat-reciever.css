@@ -1,15 +1,14 @@
 .Message-reciever-bubble {
-    padding: 5px;
-    margin: 10px 0;
-    position: relative;
-
-    height: fit-content;
+  padding: 5px;
+  margin: 10px 0;
+  position: relative;
+  height: fit-content;
 }
 
 .Reciever-message {
-    background-color: #2C78F0;
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 55%;
-    margin-left: 10px;
+  background-color: #2c78f0;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 55%;
+  margin-left: 10px;
 }

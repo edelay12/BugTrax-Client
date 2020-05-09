@@ -1,81 +1,79 @@
-
 .Issue-details-frame {
   margin: 0 auto;
-  padding:5px;
+  padding: 5px;
   width: 100%;
   border-top: 1px solid #e5e5e5;
-position: relative;
+  position: relative;
 }
 
 .Issue-details-frame > div {
-    min-width: 100%;
-    border: 1px solid var(--gray);
+  min-width: 100%;
+  border: 1px solid var(--gray);
 }
 
 .Issue-details-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row: 0 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row: 0 1;
 }
 
 .Issue-details-row {
-    display: flex;
-    margin: 15px 0;
+  display: flex;
+  margin: 15px 0;
 }
 
 .Issue-details-left {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: 0 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 0 1;
 }
 
 .Issue-details-right {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: 0 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 0 1;
 }
 
 .Issue-details-bottom {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-row: 0 1;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-row: 0 1;
 }
 #Issue-details-span {
-    border: 1px solid var(--gray);
-    padding: 5px;
-    font-size: 14px;
+  border: 1px solid var(--gray);
+  padding: 5px;
+  font-size: 14px;
 }
 
 #Issue-details-label {
-    border: 1px solid var(--gray);
-    background: var(--lightgrey);
-    padding: 5px;
-    font-size: 14px;
-    font-weight: 500;
+  border: 1px solid var(--gray);
+  background: var(--lightgrey);
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 712px) {
-    .Issue-details-top {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: .5fr .5fr .5fr .5fr;
-    }
+  .Issue-details-top {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+  }
 
-    .l1 {
-        order: 1;
-    }
+  .l1 {
+    order: 1;
+  }
 
-    .s2 {
-        order: 2;
+  .s2 {
+    order: 2;
+  }
+  .Issue-details-row {
+    flex-direction: column;
+  }
 
-    }
-    .Issue-details-row {
-flex-direction: column;
-    }
-
-    .Issue-details-bottom {
-        grid-template-columns: 1fr;
-        grid-template-rows: .5fr .5fr .5fr .5fr;
-    }
+  .Issue-details-bottom {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+  }
 }

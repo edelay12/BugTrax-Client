@@ -1,123 +1,123 @@
-
-#Sidebar-toggle-mobile, #Sidebar-toggle-mobile-closed {
-    display: none;
+#Sidebar-toggle-mobile,
+#Sidebar-toggle-mobile-closed {
+  display: none;
 }
 
 .Header-logout-link {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .Header-logout-link > a {
-    color: black;
-    text-decoration: none;
-    border-bottom: none !important;
+  color: black;
+  text-decoration: none;
+  border-bottom: none !important;
 }
 .Header-logout-link > a:visited {
-    color: black;
+  color: black;
 }
 
 .header-dropdown {
-position: absolute;
-right: 0;
-top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .header-dropdown-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background:  white;
-    z-index: 4;
-    width: fit-content;
-    color: black;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    animation-name: fadein;
-animation-duration: .7s;
-        animation-direction: alternate;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background: white;
+  z-index: 4;
+  width: fit-content;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation-name: fadein;
+  animation-duration: 0.7s;
+  animation-direction: alternate;
 }
 
 .header-dropdown-list > li {
-    padding: 15px 35px;
-    text-align: center;
-    margin: 0;
-    letter-spacing: 1px;
-    cursor: pointer;
+  padding: 15px 35px;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 .header-dropdown-list > li:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.header-dropdown-list :first-child{
-border-bottom: 1px solid var(--lightgrey);
+.header-dropdown-list :first-child {
+  border-bottom: 1px solid var(--lightgrey);
 }
 
 .header-dropdown-hidden {
-    display: none;
+  display: none;
 }
 
 .header-profile-container {
-padding: 0;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-border-left: 1px solid rgba(255, 255, 255, 0.1);
-min-height: 100%;
-flex: .5;
-cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 100%;
+  flex: 0.5;
+  cursor: pointer;
 }
 
 .Header-right-c-closed {
-    min-height: 100%;
-    flex: .5;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    }
+  min-height: 100%;
+  flex: 0.5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 @keyframes fadein {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 812px) {
-    #Sidebar-toggle-mobile {
-        transform: rotate(-180deg);
-        transition: all 1s ease;
-}
-#Sidebar-toggle-mobile, #Sidebar-toggle-mobile-closed {
+  #Sidebar-toggle-mobile {
+    transform: rotate(-180deg);
+    transition: all 1s ease;
+  }
+  #Sidebar-toggle-mobile,
+  #Sidebar-toggle-mobile-closed {
     display: inline;
     font-size: 18px;
     margin-left: 20px;
-}
+  }
 
-#Sidebar-toggle-mobile-closed {
-transition: all 1s ease;
-}
+  #Sidebar-toggle-mobile-closed {
+    transition: all 1s ease;
+  }
 
-.Header-left-c {
-justify-content: unset;
-flex: unset;
-}
+  .Header-left-c {
+    justify-content: unset;
+    flex: unset;
+  }
 
-.Team-name-closed {
+  .Team-name-closed {
     font-weight: 300;
     letter-spacing: 1px;
-}
+  }
 
-.Team-name-closed, .Header-right-c-closed {
+  .Team-name-closed,
+  .Header-right-c-closed {
     display: none;
-}
-
-
+  }
 }

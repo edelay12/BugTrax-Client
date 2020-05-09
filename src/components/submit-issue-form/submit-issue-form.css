@@ -1,129 +1,128 @@
 .SubmitIssueForm {
-position: absolute;
-top: 20px;
-right: 20px;
-left: 20px;
-box-shadow: var(--boxshadowform);
--webkit-box-shadow: var(--boxshadowform);
-background: white;
-z-index: 3;
-display: flex;
-flex-direction: column;
-border-radius: 4px;
-padding: 30px 30px 20px 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  box-shadow: var(--boxshadowform);
+  -webkit-box-shadow: var(--boxshadowform);
+  background: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 30px 30px 20px 30px;
 }
 
 .SubmitIssueForm > * {
-margin-bottom: 10px;
-} 
+  margin-bottom: 10px;
+}
 
 .Sif-header {
-    display: flex;
-    position: relative;
-    align-items: center;
-    min-height: 40px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--lightgrey);
+  display: flex;
+  position: relative;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--lightgrey);
 }
 
 .Sif-header-label {
-position: absolute;
-top: 0;
-left: 0;
-font-size: 18px;
-font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .Sif-close-b {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .Sif-summary {
-    display: flex;
-    max-width: calc(100% - 5px);
-    flex-direction: column;
-position: relative;
-width: 100%;
+  display: flex;
+  max-width: calc(100% - 5px);
+  flex-direction: column;
+  position: relative;
+  width: 100%;
 }
 
 .Fis-summary-i {
-width: 100%;
-height: 25px;
-border: 1px solid var(--darkgrey);
-border-radius: 3px;
-padding: 15px 5px;
+  width: 100%;
+  height: 25px;
+  border: 1px solid var(--darkgrey);
+  border-radius: 3px;
+  padding: 15px 5px;
 }
 
 .Fis-description {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .Fis-description-i {
-    min-height: 70px;
-    margin: 10px 0;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid var(--darkgrey);
+  min-height: 70px;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--darkgrey);
 }
 
 .Fis-row {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 100px 1fr;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100px 1fr;
 }
 
 .Sif-footer {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-   margin: 20px 0 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0;
 }
 
 .Fis-label {
-    margin: auto;
+  margin: auto;
 }
 
 .Sif-cancel-b {
-border: none;
-background: none;
-color: #426ACB;
-font-size: 18px;
-cursor: pointer;
+  border: none;
+  background: none;
+  color: #426acb;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .sif-success {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .sif-success-banner {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .green-logo-sif {
-    font-size: 65px;
-    color: var(--green);
+  font-size: 65px;
+  color: var(--green);
 }
 
 @media screen and (max-width: 812px) {
-    .SubmitIssueForm {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        left: 10px;
-    }
+  .SubmitIssueForm {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
 
-    .sif-success-banner {
-        font-weight: 500;
-        font-size: 18px;
-        margin-left: 10px;
-    }
-
+  .sif-success-banner {
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10px;
+  }
 }

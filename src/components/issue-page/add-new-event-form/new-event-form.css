@@ -1,89 +1,89 @@
 .NeF-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
 }
 
 .NeF-form > * {
-    margin-bottom: 10px;
-    } 
+  margin-bottom: 10px;
+}
 
 .NeF-container {
-    background-color: white;
-    width: 95%;
-    position: relative;
-    display: block;
-    margin: 10px auto;
-        animation: expand 1s ease;
-        overflow-y: auto;
-        border-radius: 4px;
-
+  background-color: white;
+  width: 95%;
+  position: relative;
+  display: block;
+  margin: 10px auto;
+  animation: expand 1s ease;
+  overflow-y: auto;
+  border-radius: 4px;
 }
 
 .NeF-header {
-    min-width: 95%;
-    border-bottom: 1px solid var(--lightgrey);
-    position: relative;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
+  min-width: 95%;
+  border-bottom: 1px solid var(--lightgrey);
+  position: relative;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .NeF-title {
-    position: absolute;
-    left: 5px;
+  position: absolute;
+  left: 5px;
 }
 
 .NeF-number {
-    position: absolute;
-    right: 5px;
+  position: absolute;
+  right: 5px;
 }
 
-.NeF-input-container, .NeF-status-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.NeF-input-container,
+.NeF-status-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .NeF-summary {
-width: 100%;
-height: 35px;
-border: 1px solid var(--darkgrey);
-border-radius: 3px;
-padding: 5px;
-margin-bottom: 10px;
+  width: 100%;
+  height: 35px;
+  border: 1px solid var(--darkgrey);
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .NeF-summary-label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .NeF-description {
-    min-height: 70px;
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid var(--darkgrey);
+  min-height: 70px;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--darkgrey);
 }
 
 .NeF-cancel-button {
-    border: none;
-background: none;
-color: #426ACB;
-font-size: 14px;
+  border: none;
+  background: none;
+  color: #426acb;
+  font-size: 14px;
 }
 
 .NeF-status-label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 @keyframes expand {
-    from {
-        height: 0px;
-    }
+  from {
+    height: 0px;
+  }
 
-    to {
-        height: 400px;
-    }
+  to {
+    height: 400px;
+  }
 }

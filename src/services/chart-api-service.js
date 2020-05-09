@@ -1,7 +1,6 @@
 import config from '../config';
 import TokenService from './token-service';
 
-
 const ChartApiService = {
     getIssuesMonthly(){
         return fetch(`${config.API_ENDPOINT}/charts/monthly/${TokenService._getUserInfo(TokenService.readJwtToken()).teamId}`, {

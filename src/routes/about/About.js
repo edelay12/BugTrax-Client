@@ -28,7 +28,8 @@ export default function About() {
           <p>
             This project is a bug/issue management tracking system built using{" "}
             <b>React </b>, <b>CSS</b>, <b>Node</b>, <b>Express</b>, and{" "}
-            <b>PostgreSQL</b>. The features of this app was inspired by Mantisbt.
+            <b>PostgreSQL</b>. The features of this app were inspired by
+            Mantisbt.
           </p>
         </div>
         <div className="About-get-started">

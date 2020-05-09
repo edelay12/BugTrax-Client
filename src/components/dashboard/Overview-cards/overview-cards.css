@@ -1,117 +1,119 @@
 .Overview-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-position: relative;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .O-card {
-display: flex;
-height: 120px;
-min-width: 120px;
-flex: 1;
-max-width: 50%;
-border-radius: 10px;
-flex-direction: column;
-padding: 20px;
-margin: 15px;    
-background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 244, 240, 0.3) 100%);
-color: white;
+  display: flex;
+  height: 120px;
+  min-width: 120px;
+  flex: 1;
+  max-width: 50%;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 244, 240, 0.3) 100%
+  );
+  color: white;
 }
 
 .O-card-in {
-display: flex;
-flex: 1;
-position: relative;
+  display: flex;
+  flex: 1;
+  position: relative;
 }
 
-.O-card-in-left , .O-card-in-right{
-    flex-grow: 0 !important;
-    flex-shrink: 0 !important;
+.O-card-in-left,
+.O-card-in-right {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
 }
 
-.O-card-icon , .O-card-in-right{
-    font-size: 40px;
-    min-width: 40px;
-    fill: white;
-    position: absolute;
-    right: 10px;
+.O-card-icon,
+.O-card-in-right {
+  font-size: 40px;
+  min-width: 40px;
+  fill: white;
+  position: absolute;
+  right: 10px;
 }
 
 .O-card-footer {
-flex: .3;
-margin-top: 2px;
+  flex: 0.3;
+  margin-top: 2px;
 }
 
-.link-to-chat > a, .O-card > a {
-    color: white;
+.link-to-chat > a,
+.O-card > a {
+  color: white;
 }
 
 .O-card-in-left {
-    flex: 1;
-
+  flex: 1;
 }
 
 .O-card-in-right {
- flex: .3;
-
+  flex: 0.3;
 }
 
 .O-card-title {
-font-size: 12px;
-display: block;
+  font-size: 12px;
+  display: block;
 }
 
 .O-card-number {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.2em;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2em;
 }
 
 .blue {
-    background-color: #007aff;
-    box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
-    -webkit-box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
+  background-color: #007aff;
+  box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
+  -webkit-box-shadow: 0 15px 20px rgba(0, 122, 255, 0.2);
 }
 .O-card-footer > span {
-    font-size: 14px;
+  font-size: 14px;
 }
 .green {
-    background-color: #34c759;
-   box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2);
-   -webkit-box-shadow:  0 15px 20px rgba(52, 199, 89, 0.2);
+  background-color: #34c759;
+  box-shadow: 0 15px 20px rgba(52, 199, 89, 0.2);
+  -webkit-box-shadow: 0 15px 20px rgba(52, 199, 89, 0.2);
 }
 
 .grey {
-    background-color: #8e8e93;
-    box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2);
-    -webkit-box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2)
+  background-color: #8e8e93;
+  box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2);
+  -webkit-box-shadow: 0 15px 20px rgba(142, 142, 147, 0.2);
 }
 
 .light-blue {
-    background-color: #5ac8fa;
-    box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
-    -webkit-box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
+  background-color: #5ac8fa;
+  box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
+  -webkit-box-shadow: 0 15px 20px rgba(90, 200, 250, 0.2);
 }
 
 @media screen and (max-width: 1300px) {
-    .O-card {
-min-width: 42%;
-
-    }
+  .O-card {
+    min-width: 42%;
+  }
 }
 @media screen and (max-width: 1000px) {
-    .O-card {
-min-width: 32%;
-    }
+  .O-card {
+    min-width: 32%;
+  }
 }
 
-
 @media screen and (max-width: 812px) {
-    .O-card {
-        width: 95%;
-        min-width: 350px !important;
-            }
+  .O-card {
+    width: 95%;
+    min-width: 350px !important;
+  }
 }

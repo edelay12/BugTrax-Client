@@ -19,19 +19,20 @@ import Profile from "../profile/profile";
 
 export default function Dashboard({ match }) {
   const ContextMain = useContext(MainContext);
-  
+
   const { path, url } = useRouteMatch();
   const { teamId } = match.params;
   const [sidebar, sIsOpen] = useState(true);
   const [sif, showSif] = useState(false);
-  const [dropdown, showDropdown] = useState(false)
+  const [dropdown, showDropdown] = useState(false);
   const [partnerId, setPartnerId] = useState(null);
 
   useEffect(() => {
-    if(window.innerWidth <= 812) {
-        sIsOpen(false);
+    if (window.innerWidth <= 812) {
+      sIsOpen(false);
     }
-const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
+    const team_id = TokenService._getUserInfo(TokenService.readJwtToken())
+      .teamId;
     //get team member list
     TeamsApiService.getTeamUserList(team_id)
       .then(users => ContextMain.setTeamList(users))
@@ -44,39 +45,60 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
       })
       .catch(err => console.log(err));
 
-      IssueApiService.getActiveIssues(team_id)
+    IssueApiService.getActiveIssues(team_id)
       .then(issues => {
         ContextMain.setActiveIssues(issues);
       })
       .catch(err => console.log(err));
 
-      IssueApiService.getResolvedIssues(team_id)
+    IssueApiService.getResolvedIssues(team_id)
       .then(issues => {
         ContextMain.setResolvedIssues(issues);
       })
       .catch(err => console.log(err));
 
-      EventsApiService.getEventsByTeamId(team_id)
+    EventsApiService.getEventsByTeamId(team_id)
       .then(events => {
         ContextMain.setTimeline(events);
       })
       .catch(err => console.log(err));
 
-      TeamsApiService.getTeamName(TokenService._getUserId(TokenService.readJwtToken()))
-      .then(res => ContextMain.setTeamName(res))
-      .catch(err => console.log(err))
-  },[]);
+ /*   TeamsApiService.getTeamName(
+      TokenService._getUserId(TokenService.readJwtToken())
+    )
+      .then(res => {
+        console.log('team name')
+        console.log(res)
+        ContextMain.setTeamName(res)
+      })
+      .catch(err => console.log(err)); */
+      ContextMain.setTeamName(TokenService._getUserInfo(TokenService.readJwtToken()).team_name)
+
+
+  }, []);
 
   return (
     <div className={sidebar ? "Dashboard" : "Dashboard-closed"}>
-      <Header sidebar={sidebar} sIsOpen={sIsOpen} showSif={() => showSif(true)} dropdown={dropdown} showDropdown={showDropdown} teamName={ContextMain.teamName}/>
+      <Header
+        sidebar={sidebar}
+        sIsOpen={sIsOpen}
+        showSif={() => showSif(true)}
+        dropdown={dropdown}
+        showDropdown={showDropdown}
+        teamName={ContextMain.teamName}
+      />
       <Sidebar url={url} sidebar={sidebar} sIsOpen={sIsOpen} />
-      <section className="Dashboard-main" onClick={() => dropdown ? showDropdown(false): null}>
+      <section
+        className="Dashboard-main"
+        onClick={() => (dropdown ? showDropdown(false) : null)}
+      >
         {/* pass team id in route params from props */}
         <Route
           exact
           path={`/dashboard/overview`}
-          render={props => <Overview setPartnerId={setPartnerId} teamId={teamId} />}
+          render={props => (
+            <Overview setPartnerId={setPartnerId} teamId={teamId} />
+          )}
         />
         <Route
           exact
@@ -88,7 +110,13 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
         <Route
           exact
           path={`/dashboard/team`}
-          render={props => <TeamChat partnerId={partnerId} setPartnerId={setPartnerId} teamId={teamId} />}
+          render={props => (
+            <TeamChat
+              partnerId={partnerId}
+              setPartnerId={setPartnerId}
+              teamId={teamId}
+            />
+          )}
         />
         <Route
           exact
@@ -96,7 +124,7 @@ const team_id = TokenService._getUserInfo(TokenService.readJwtToken()).teamId;
           render={props => <TeamTrends teamId={teamId} />}
         />
         <Route
-         exact
+          exact
           path={`/dashboard/issues/:issueId`}
           component={IssuePage}
         />

@@ -1,32 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './team-register.css';
+import { withRouter } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import AuthApiService from '../../services/auth-api-service';
 import UserApiService from '../../services/user-api-service';
+import MainContext from '../../contexts/main-context';
 
-export default function TeamRegister({history}){
+function TeamRegister({history}){
     const { register, handleSubmit, errors, getValues} = useForm();
-
+    const ContextMain = useContext(MainContext);
+    
     const onSubmit = DATA => {
-        //check fields
-        //return to login
-        //token get user header ***
-
-
         AuthApiService.postTeam(DATA)
-        .then(success => {
+        .then(team => {
             console.log('Success')
-            console.log(success)
-            UserApiService.setUserTeam(success.id)
-            .then(() => history.push('/dashboard/overview'))
+            console.log(team)
+            UserApiService.setUserTeam(team.id, team.team_name)
+            .then(res => {
+              ContextMain.setUserInfo(res);
+              history.push("/dashboard/overview");
+            })
             .catch(err => console.log(err))
-            //history push 
         })
         .catch(err=> console.log(err)); 
-
-        // on green show success page,
-        //push history to success new team
-        //otherwise show error page
             }
 
     return (
@@ -76,3 +72,5 @@ export default function TeamRegister({history}){
         </form>
     )
 }
+
+export default withRouter(TeamRegister);

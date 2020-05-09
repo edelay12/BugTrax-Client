@@ -1,17 +1,17 @@
 .IssuePage {
-    min-height: 100%;
+  min-height: 100%;
 }
 
 .Add-update-button {
-    min-width: 95%;
-    display: block;
-    background-color: var(--lightgrey);
-    margin: 10px auto;
-    border: 1px solid var(--gray);
-    padding: 5px;
-    min-height: 50px;
-    border-radius: 4px;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: 500;
+  min-width: 95%;
+  display: block;
+  background-color: var(--lightgrey);
+  margin: 10px auto;
+  border: 1px solid var(--gray);
+  padding: 5px;
+  min-height: 50px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
 }

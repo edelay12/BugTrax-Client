@@ -1,73 +1,69 @@
 .Dashboard-footer-content {
-    position: relative;
-    display: flex;
-    height: 100%;
-    max-width: 100%;
-    border-top: 1px solid var(--lightgrey);
+  position: relative;
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+  border-top: 1px solid var(--lightgrey);
+  align-items: center;
+}
+
+.Dashboard-footer {
+  height: 55px;
+  padding: 0 20px;
+}
+
+.D-footer-right,
+.D-footer-left {
+  position: absolute;
+}
+.D-footer-right {
+  right: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.D-footer-left {
+  left: 20px;
+}
+
+.D-footer-madeby {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6em;
+  font-weight: 400;
+}
+
+.footer-name {
+  color: #007aff;
+}
+
+.f-li {
+  margin: 0 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.f-li > a,
+.f-li > a:visited {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 812px) {
+  .Dashboard-footer-content {
+    flex-direction: column;
     align-items: center;
-  }
-  
-  .Dashboard-footer {
-    height: 55px;
-    padding: 0 20px;
+    justify-content: center;
+    text-align: center;
   }
 
   .D-footer-right,
   .D-footer-left {
-    position: absolute;
+    position: relative;
+    left: unset;
+    right: unset;
+    text-align: center;
   }
-  .D-footer-right {
-    right: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  .D-footer-left {
-    left: 20px;
-  }
-
-
-  .D-footer-madeby {
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.7);
-    line-height: 1.6em;
-    font-weight: 400;
-  }
-  
-  .footer-name {
-    color: #007aff;
-  }
-  
-  .f-li {
-    margin: 0 7px;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.7);
-  }
-
-  .f-li > a, .f-li > a:visited {
-    color: rgba(0, 0, 0, 0.7);
-  }
-  
-
-  @media screen and (max-width: 812px) {
-
-    .Dashboard-footer-content {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .D-footer-right,
-    .D-footer-left {
-      position: relative;
-      left: unset;
-      right: unset;
-      text-align: center;
-    }
-
-
-  }
+}

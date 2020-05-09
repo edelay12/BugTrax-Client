@@ -1,340 +1,321 @@
-
 .Landing-header {
-    min-height: 7vh !important;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 30px 30px 0;
-z-index: 4;
-position: fixed;
+  min-height: 7vh !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 30px 30px 0;
+  z-index: 4;
+  position: fixed;
 }
 
 .Landing-page {
-    min-width: 100vw;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .Landing-page-border {
-    border: 15px solid var(--border);
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    animation: onload 1s;
+  border: 15px solid var(--border);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  animation: onload 1s;
 }
 
 .Landing-page-border::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE and Edge */
-  .Landing-page-border {
-    -ms-overflow-style: none;
-  }
+  display: none;
+}
 
+/* Hide scrollbar for IE and Edge */
+.Landing-page-border {
+  -ms-overflow-style: none;
+}
 
 .Banner-frame {
-padding: 90px 328px;
-position: relative;
-text-align: center;
+  padding: 90px 328px;
+  position: relative;
+  text-align: center;
 }
 
 .Landing-banner-container {
-    height: 93vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 93vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Landing-banner {
-    line-height: 1.5em;
-    font-size: 38px;
-    font-weight: bold;
+  line-height: 1.5em;
+  font-size: 38px;
+  font-weight: bold;
 }
 
 .Landing-banner {
-
-    font-size: 38px;
-    font-weight: bold;
+  font-size: 38px;
+  font-weight: bold;
 }
 
 .Landing-body-container {
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 200px;
-    position: relative;
-    z-index: 2;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 200px;
+  position: relative;
+  z-index: 2;
 }
 
 .lBody-frame {
-    text-align: center;
-    width: 450px;
-    padding: 6.25rem 5.3125rem;
-    box-shadow: var(--boxshadow);
-    -webkit-box-shadow: var(--boxshadow);
-    position: relative;
+  text-align: center;
+  width: 450px;
+  padding: 6.25rem 5.3125rem;
+  box-shadow: var(--boxshadow);
+  -webkit-box-shadow: var(--boxshadow);
+  position: relative;
 }
 
 .bug-report-svg {
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .rBody-frame {
-    width: 450px;
-    min-height: 225px;
-    padding: 6.25rem 5.3125rem;
-    box-shadow: var(--boxshadow);
-    -webkit-box-shadow: var(--boxshadow);
-    position: relative;
-    margin-top: 3.125rem !important;
-    margin-left: auto;
-    color: white;
-    background-color: #199DFF;
-    text-align: center;
+  width: 450px;
+  min-height: 225px;
+  padding: 6.25rem 5.3125rem;
+  box-shadow: var(--boxshadow);
+  -webkit-box-shadow: var(--boxshadow);
+  position: relative;
+  margin-top: 3.125rem !important;
+  margin-left: auto;
+  color: white;
+  background-color: #199dff;
+  text-align: center;
 }
 .frame {
-opacity: .96;
+  opacity: 0.96;
 }
 
 .no-svg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 
 .rBody-title {
-font-size: 26px;
-margin-bottom: 20px;
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
-
 .Landing-dir {
-    color: var(--darkgrey);
-    line-height: 1.5em;
+  color: var(--darkgrey);
+  line-height: 1.5em;
 }
 
 .Landing-email-i {
-width: 450px;
-padding: 23px 30px;
-color: #1D1D1F;
-box-shadow: var(--boxshadow);
-border: none;
-font-size: 1rem;
-background: white;
-margin: auto;
+  width: 450px;
+  padding: 23px 30px;
+  color: #1d1d1f;
+  box-shadow: var(--boxshadow);
+  border: none;
+  font-size: 1rem;
+  background: white;
+  margin: auto;
 }
 
 .Landing-email-i ::placeholder {
-color: var(--darkgrey);
+  color: var(--darkgrey);
 }
 
 .Landing-footer-container {
-    font-size: 1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-evenly;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 7.5rem 6.875rem;
-    background-color: #EEEFF0;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 7.5rem 6.875rem;
+  background-color: #eeeff0;
 }
 .landing-card-title {
-    font-size: 26px;
-    font-weight: 600;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .landing-card-sub {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .signup-container {
-    text-align: center;
-    padding: 80px 0;
+  text-align: center;
+  padding: 80px 0;
 }
 
 .frame-yellow {
-    color: white;
-    background-color: #FFB742;
-    margin-top: -30px;
+  color: white;
+  background-color: #ffb742;
+  margin-top: -30px;
 }
 
 .signup-banner-h1 {
-    font-weight: bold;
-    font-size: 38px;
-    margin-bottom: 30px;
-    color: #1D1D1F;
-    line-height: 1.4;
+  font-weight: bold;
+  font-size: 38px;
+  margin-bottom: 30px;
+  color: #1d1d1f;
+  line-height: 1.4;
 }
 
-
 .landing-footer-right {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .landing-footer-right > li {
-   margin: 10px 0;
-   font-size: 16px;
-   font-weight: 400;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .landing-footer-left {
-text-align: center;
+  text-align: center;
 }
 
 .landing-footer-left > span {
-font-size: 16px;
-line-height: 2;
+  font-size: 16px;
+  line-height: 2;
 }
 
-
-
 @media screen and (max-width: 812px) {
+  .rBody-frame {
+    padding: 6.25rem 5.3125rem;
+  }
 
-    .rBody-frame {
-        padding: 6.25rem 5.3125rem;
-    }
-
-    .Links-getStarted {
-        padding: 10px 25px;
-    }
-    .Landing-footer-container {
-        justify-content: space-evenly;
-        padding: 6.5rem 5.875rem;
-        
-    }
-
+  .Links-getStarted {
+    padding: 10px 25px;
+  }
+  .Landing-footer-container {
+    justify-content: space-evenly;
+    padding: 6.5rem 5.875rem;
+  }
 }
 @media screen and (max-width: 1200px) {
-    .Landing-body-container {
-        padding: 0 70px;
+  .Landing-body-container {
+    padding: 0 70px;
+  }
 
-    }
-
-    .Banner-frame {
-        padding: 6.25rem 5.3125rem;
-    }
-
+  .Banner-frame {
+    padding: 6.25rem 5.3125rem;
+  }
 }
 @media screen and (max-width: 1000px) {
-
- 
-
-    .Landing-body-container {
-        padding: 0 50px;
-
-    }
-
+  .Landing-body-container {
+    padding: 0 50px;
+  }
 }
 @media screen and (max-width: 812px) {
-.Banner-frame {
-    padding: 3rem .65rem;
-}
+  .Banner-frame {
+    padding: 3rem 0.65rem;
+  }
 }
 
 @media screen and (max-width: 612px) {
-    .Landing-body-container {
-        padding: 0 15px;
-        position: relative;
-        max-width: 92vw;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .Landing-footer-container {
-        flex-direction: column;
-        text-align: center;
-        justify-content: space-around;
-        padding: 4.5rem 6.875rem;
-    }
+  .Landing-body-container {
+    padding: 0 15px;
+    position: relative;
+    max-width: 92vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Landing-footer-container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding: 4.5rem 6.875rem;
+  }
 
-    .landing-footer-right {
-        margin-top: 35px;
-    }
-    .Banner-frame {
-        padding: 3rem .65rem;
-    }
-    .signup-container {
-        padding: 3rem 0;
-    }
+  .landing-footer-right {
+    margin-top: 35px;
+  }
+  .Banner-frame {
+    padding: 3rem 0.65rem;
+  }
+  .signup-container {
+    padding: 3rem 0;
+  }
 
-    .Landing-banner-container {
-        padding-top: 100px;
-        justify-content: unset;
-    }
+  .Landing-banner-container {
+    padding-top: 100px;
+    justify-content: unset;
+  }
 
-    .Landing-dir {
-       font-size: 14px;
-    }
+  .Landing-dir {
+    font-size: 14px;
+  }
 
-    .Landing-banner {
-        font-size: 25px;
-    }
-    .signup-banner-h1 {
-        font-size: 24px;
+  .Landing-banner {
+    font-size: 25px;
+  }
+  .signup-banner-h1 {
+    font-size: 24px;
+  }
 
-    }
-
-    .Ts-i , .Ts-results {
-        max-width: 100%;
-    }
-.bug-report-svg {
+  .Ts-i,
+  .Ts-results {
+    max-width: 100%;
+  }
+  .bug-report-svg {
     max-width: 90%;
     max-height: 200px;
-}
+  }
 
-.landing-card-title {
+  .landing-card-title {
     font-size: 18px;
-}
+  }
 
-.landing-card-sub {
+  .landing-card-sub {
     font-size: 13px;
-}
-    .lBody-frame , .rBody-frame {
-        margin-top: 30px;
-        padding: 20px 30px;
-        max-width: 100%;
-
-    }
+  }
+  .lBody-frame,
+  .rBody-frame {
+    margin-top: 30px;
+    padding: 20px 30px;
+    max-width: 100%;
+  }
 }
 
 @keyframes onload {
-    from {
-        left: 40%;
-        right: 40%;
-        top: 40%;
-        bottom: 40%;
-        background: white;
-        border: 200px solid var(--border);
-    }
+  from {
+    left: 40%;
+    right: 40%;
+    top: 40%;
+    bottom: 40%;
+    background: white;
+    border: 200px solid var(--border);
+  }
 
-    to {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: none;
-        border: 15px solid var(--border);
-    }
+  to {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: 15px solid var(--border);
+  }
 }
-

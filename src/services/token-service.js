@@ -5,21 +5,9 @@ let _timeout;
 const _TEN_SECONDS = 10000;
 
 const TokenService = {
-  saveCart(cart) {
-    window.localStorage.setItem(config.CART_STORAGE, JSON.stringify(cart));
-  },
-  getCart() {
-    return window.localStorage.getItem(config.CART_STORAGE);
-  },
-  hasCart() {
-    return !!TokenService.getCart();
-  },
-  clearCart() {
-    window.localStorage.removeItem(config.CART_STORAGE);
-  },
   saveAuthToken(token) {
     window.sessionStorage.setItem(config.TOKEN_KEY, token);
-    },
+  },
   getAuthToken() {
     return window.sessionStorage.getItem(config.TOKEN_KEY);
   },
@@ -39,12 +27,18 @@ const TokenService = {
   _getTimeUntilExpiry(payload) {
     return payload.exp * 1000 - Date.now();
   },
-  _getUserInfo(payload){
-    return { userId: payload.userId, teamId : payload.teamId, user_name: payload.user_name, full_name: payload.full_name } 
-   },
-   _getUserId(payload){
-     return payload.userId;
-   },
+  _getUserInfo(payload) {
+    return {
+      userId: payload.userId,
+      teamId: payload.teamId,
+      user_name: payload.user_name,
+      full_name: payload.full_name,
+      team_name: payload.teamName
+    };
+  },
+  _getUserId(payload) {
+    return payload.userId;
+  },
   queueCallbackBeforeExpiry(callback) {
     /* get the number of ms from now until the token expires */
     const msUntilExpiry = TokenService._getTimeUntilExpiry(

@@ -50,7 +50,7 @@ export class MainProvider extends Component {
   }
 
   setUserInfo = userInfo => {
-    this.setState({ teamId: userInfo.teamId });
+    this.setState({ teamId: userInfo.teamId, teamName : userInfo });
   };
 
   setUser = user => {

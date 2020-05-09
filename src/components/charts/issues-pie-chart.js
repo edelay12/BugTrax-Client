@@ -21,7 +21,6 @@ export default function IssuesPieChart() {
     ]
   };
   return (
-    <>
       <Pie
         data={data}
         width={300}
@@ -29,6 +28,5 @@ export default function IssuesPieChart() {
         options={{ maintainAspectRatio: false }}
         id="pie-chart"
       />
-    </>
   );
 }

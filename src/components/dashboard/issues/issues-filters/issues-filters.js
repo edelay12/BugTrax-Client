@@ -129,10 +129,7 @@ export default function IssuesFilters({
       </div>
 
       {isFilter ? (
-        <button
-          className="clear-filters-toggle"
-          onClick={removeFilters}
-        >
+        <button className="clear-filters-toggle" onClick={removeFilters}>
           Clear filters
         </button>
       ) : null}

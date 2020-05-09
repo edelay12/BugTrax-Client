@@ -9,8 +9,7 @@ import LandingFooter from "../../components/landing-page/footer/footer";
 import Particles from "react-particles-js";
 import LandingBg from "../../components/landing-page/landing-bg/landing-bg";
 
-export default function LandingPage(){
-
+export default function LandingPage() {
   useEffect(() => {
     typer(".Landing-banner")
       .line("The new way of bug killing")
@@ -24,13 +23,11 @@ export default function LandingPage(){
       .pause(1000)
       .continue("project managers")
       .pause(2000);
-
   }, []);
 
-
-    return (
-      <div className="Landing-page">
-        <div className='Landing-page-border'>
+  return (
+    <div className="Landing-page">
+      <div className="Landing-page-border">
         <LandingHeader />
         <main className="Landing-main">
           <section className="Landing-banner-container">
@@ -46,8 +43,10 @@ export default function LandingPage(){
           </section>
           <section className="Landing-body-container">
             <div className="lBody-frame frame">
-            <SvgCode />
-              <h3 className="landing-card-sub">Stay on top of current, past, and in-progress bug reports</h3>
+              <SvgCode />
+              <h3 className="landing-card-sub">
+                Stay on top of current, past, and in-progress bug reports
+              </h3>
             </div>
             <div className="rBody-frame no-svg frame">
               <h3 className="landing-card-title">Enjoy pure freedom</h3>
@@ -58,18 +57,25 @@ export default function LandingPage(){
               </h4>
             </div>
             <div className="lBody-frame frame-yellow frame">
-            <SvgCode />
-              <h3 className='landing-card-sub'>Stay on top of current, past, and in-progress bug reports</h3>
+              <SvgCode />
+              <h3 className="landing-card-sub">
+                Stay on top of current, past, and in-progress bug reports
+              </h3>
             </div>
             <div className="signup-container">
-            <h1 className='signup-banner-h1'>The new way of bug killing<br />for everyone</h1> 
-            <button className='Links-getStarted'><Link to="/register">Create Account</Link></button>
+              <h1 className="signup-banner-h1">
+                The new way of bug killing
+                <br />
+                for everyone
+              </h1>
+              <button className="Links-getStarted">
+                <Link to="/register">Create Account</Link>
+              </button>
             </div>
           </section>
         </main>
         <LandingFooter />
-        </div>
       </div>
-    );
-  }
-
+    </div>
+  );
+}

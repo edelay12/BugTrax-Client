@@ -49,3 +49,12 @@ margin: 10px 0;
 .Team-auth-e-alert {
     color: red;
 }
+
+.Demo-password-dir {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    line-height: 1.5em;
+    font-size: 18px;
+  }

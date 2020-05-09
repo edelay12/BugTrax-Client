@@ -1,99 +1,96 @@
 .Team-chat {
-width: 100%;
-display: flex;
-overflow: hidden;
-background: var(--backgroundGrey);
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background: var(--backgroundGrey);
 }
 
 .Team {
-    overflow-y: auto;
-min-height: 87vh;
+  overflow-y: auto;
+  min-height: 87vh;
 }
 
 .Team-list {
-min-width: 320px;
-padding: 10px 10px 0;
-overflow-y: auto !important;
-border-right: 1px solid var(--darkgrey);
+  min-width: 320px;
+  padding: 10px 10px 0;
+  overflow-y: auto !important;
+  border-right: 1px solid var(--darkgrey);
 }
 
 .Team-display {
-width: 100%;
-display: flex;
-flex-direction: column;
-overflow-y: auto;
-min-height: 87vh;
-position: relative;
-} 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 87vh;
+  position: relative;
+}
 
 .Chat-display {
-    position: relative;
-    width: 100%;
-min-height: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
 }
 
 .Chat-box {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    position: relative;
-    overflow-y: auto;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  position: relative;
+  overflow-y: auto;
 }
 
 .Message-input-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    min-height: 9vh;
-    background: var(--backgroundGrey);
-    border-top: 1px solid var(--darkgrey);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  min-height: 9vh;
+  background: var(--backgroundGrey);
+  border-top: 1px solid var(--darkgrey);
 }
 
 .Messages-container {
-    display: flex;
-overflow-y: auto;
-flex-direction: column;
-position: absolute;
-bottom: 0;
-width: 100%;
-padding-bottom: 9vh;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 9vh;
 }
 
-
 .New-message-i {
-    min-height: 100%;
-width: 90%;
-padding: 10px;
-border: none;
-border-radius: 4px;
-z-index: 3;
+  min-height: 100%;
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  z-index: 3;
 }
 
 .New-message-b {
-min-height: 100%;
-border-radius: 4px;
-padding: 5px;
-border: 1px solid var(--lightgrey);
-background: var(--lightgrey);
+  min-height: 100%;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid var(--lightgrey);
+  background: var(--lightgrey);
 }
 
 @media screen and (max-width: 912px) {
-
-    .Team-chat {
-flex-direction: column;
-    }
-.Chat-display {
+  .Team-chat {
+    flex-direction: column;
+  }
+  .Chat-display {
     min-height: 87vh;
     min-width: 100%;
-}
-.Team-display {
+  }
+  .Team-display {
     min-width: 100%;
+  }
 
-}
-
-.Chat-box {
+  .Chat-box {
     min-height: 87vh;
-}
+  }
 }

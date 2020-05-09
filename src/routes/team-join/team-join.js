@@ -25,6 +25,5 @@ export default function TeamJoin(){
             </div>
             </main>
             </React.Fragment>
-        )
-
+        );
 }

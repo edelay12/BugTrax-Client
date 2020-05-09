@@ -42,7 +42,7 @@ export default class Login extends Component {
   render() {
     const { error } = this.state;
     return (
-      <>
+      <React.Fragment>
         <LandingHeader />
         <main className="Login-page">
           <form className="Login" onSubmit={this.handleLogin}>
@@ -75,16 +75,16 @@ export default class Login extends Component {
               Login
             </button>
           </form>
-          <div className='Demo-login-dir'>
+          <div className="Demo-login-dir">
             <div>
               <b>Guest Login</b> <br />
-          <b>User:</b> <mark>jApple</mark>
-            <br />
-            <b>Password:</b> <mark>Guest2021!</mark>
+              <b>User:</b> <mark>jApple</mark>
+              <br />
+              <b>Password:</b> <mark>Guest2021!</mark>
             </div>
           </div>
         </main>
-      </>
+      </React.Fragment>
     );
   }
 }

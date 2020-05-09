@@ -1,70 +1,76 @@
 .Register-page {
-position: fixed;
-top: 0;
-bottom: 0;
-right: 0;
-left: 0;
-overflow-y: auto;
-overflow-x: hidden;
-    border: 15px solid var(--border);
-    padding: 50px 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 15px solid var(--border);
+  padding: 50px 0;
 }
 
 .Register {
-width: 500px;
-min-height: 400px;
-margin: 30px auto auto;
-display: flex;
-flex-direction: column;
-padding: 20px 30px;
-border-radius: 4px;
-align-items: center;
-box-shadow: var(--boxshadowform);
--webkit-box-shadow: var(--boxshadowform);
-background: white;
+  width: 500px;
+  min-height: 400px;
+  margin: 30px auto auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: var(--boxshadowform);
+  -webkit-box-shadow: var(--boxshadowform);
+  background: white;
 }
 
-.Register, .Register-user, .Register-password {
-    display: flex;
-flex-direction: column;
-align-content: flex-start;
+.Register,
+.Register-user,
+.Register-password {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 .Register-title {
-    font-size: 21px;
-    text-align: center;
+  font-size: 21px;
+  text-align: center;
 }
 
 .Register-label {
-    font-size: 14px;
-    margin: 10px 0;
-    font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
-#Register-password-input , #Register-user-input , #Register-name-input, #Register-passwordRe-input {
-border: 1px solid var(--lightgrey);
-background: none;
-border-radius: 3px;
-width: 200px;
-height: 20px;
-padding: 5px;
+#Register-password-input,
+#Register-user-input,
+#Register-name-input,
+#Register-passwordRe-input {
+  border: 1px solid var(--lightgrey);
+  background: none;
+  border-radius: 3px;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
 }
 
-.Register-label-bottom , #Register-user-input, #Register-name-input, #Register-passwordRe-input {
-    margin-bottom: 10px;
+.Register-label-bottom,
+#Register-user-input,
+#Register-name-input,
+#Register-passwordRe-input {
+  margin-bottom: 10px;
 }
 
-.Register-label-bottom  {
-    font-size: 14px;
-    font-weight: 500;
+.Register-label-bottom {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 612px) {
-
-    .Register {
-        width: 100%;
-        box-shadow: none;
-        margin-top: 0;
-    }
-
+  .Register {
+    width: 100%;
+    box-shadow: none;
+    margin-top: 0;
+  }
 }

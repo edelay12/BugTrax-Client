@@ -1,145 +1,132 @@
 .Collapsible {
-    margin: 20px auto 50px;
-    width: 96%;
-    min-width: 280px;
-    border-radius: 10px;
-    background: white;
-    border: 1px solid #e5e5e5;
-    overflow: hidden;
+  margin: 20px auto 50px;
+  width: 96%;
+  min-width: 280px;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
 }
 
 .Collapsible__contentOuter {
-    height: 95%;
-margin: auto 0;
-background: white;
+  height: 95%;
+  margin: auto 0;
+  background: white;
 }
 
-
-.is-open{
-min-width: 90%;
-min-height: 100%;
+.is-open {
+  min-width: 90%;
+  min-height: 100%;
 }
-
-
 
 .is-closed {
-    min-width: 90%;
-    max-height: 30px !important;
-    }
-
+  min-width: 90%;
+  max-height: 30px !important;
+}
 
 .Overview-row {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
 }
 
 .Overview-analytics {
-flex: 2;
+  flex: 2;
 }
 
 .Overview-team {
-flex: 1;
+  flex: 1;
 }
 
-
 .Overview {
-    display: flex;
-    background: var(--backgroundGrey);
-    overflow: hidden;
-    flex-direction: column;
+  display: flex;
+  background: var(--backgroundGrey);
+  overflow: hidden;
+  flex-direction: column;
 }
 
 .Overview-issues-container {
-    flex: 2;
-    overflow-y: auto;
+  flex: 2;
+  overflow-y: auto;
 }
 
 .Overview-timeline {
-    min-width: 200px;
-    flex: 1;
-
+  min-width: 200px;
+  flex: 1;
 }
 
 .Pie-chart-frame {
-    padding: 10px;
-    margin: 0 auto;
-    width: 100%;
-    max-height: 400px;
-    border-top: 1px solid #e5e5e5;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-height: 400px;
+  border-top: 1px solid #e5e5e5;
 }
 
 #Pie-chart {
-    width: 300px;
-    height: 300px !important;
-    display: block;
+  width: 300px;
+  height: 300px !important;
+  display: block;
 }
 
 .Overview-issues-frame {
-    margin: 0 auto;
-    padding: 0 5px;
-    width: 100%;
-    border-top: 1px solid #e5e5e5;
-    display: flex;
-    flex-direction: column-reverse;
+  margin: 0 auto;
+  padding: 0 5px;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .Overview-issues-timeline-frame {
-    margin: 0 auto;
-    padding: 0 5px;
-    width: 100%;
-    border-top: 1px solid #e5e5e5;
-    display: flex;
-    flex-direction: column-reverse;
-    max-height: 700px;
-    overflow-y: auto;
+  margin: 0 auto;
+  padding: 0 5px;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column-reverse;
+  max-height: 700px;
+  overflow-y: auto;
 }
 
 .Overview-team-frame {
-    margin: 0 auto;
-    padding: 0 5px;
-    max-height: 300px;
-    overflow-y: auto;
-    width: 100%;
-    border-top: 1px solid #e5e5e5;
-    display: flex;
-    flex-direction: column-reverse;
+  margin: 0 auto;
+  padding: 0 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .O-issue {
-    border-radius: 5px;
-    border: 1px solid var(--lightgrey);
-    padding: 5px;
-    margin: 10px 0;
-    background: white;
+  border-radius: 5px;
+  border: 1px solid var(--lightgrey);
+  padding: 5px;
+  margin: 10px 0;
+  background: white;
 }
-
 
 @media screen and (max-width: 1012px) {
-
-    .Overview-issues-container {
-        flex: 1.5;
-    }
+  .Overview-issues-container {
+    flex: 1.5;
+  }
 }
 
-
 @media screen and (max-width: 812px) {
-
-.Overview-analytics {
+  .Overview-analytics {
     flex: 1;
     max-height: unset;
-    }
+  }
 
-    .Overview-row {
-        flex-direction: column;
-    }
-
+  .Overview-row {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 812px) {
-
-    .Pie-chart-frame {
-        max-width: 390px;
-    }
-
+  .Pie-chart-frame {
+    max-width: 390px;
+  }
 }

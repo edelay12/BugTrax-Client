@@ -1,12 +1,8 @@
 .SidebarLActive {
-height: 100%;
-padding: 0 70%;
-background: #3a3939;
-opacity: 1;
-transition: all .6s ease;
-border-radius: 500px;
+  height: 100%;
+  padding: 0 70%;
+  background: #3a3939;
+  opacity: 1;
+  transition: all 0.6s ease;
+  border-radius: 500px;
 }
-
-
-
-
