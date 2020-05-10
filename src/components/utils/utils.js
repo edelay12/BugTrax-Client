@@ -10,6 +10,3 @@ export function Trigger({name, icon , iconClass}){
 
 }
 
-// error util *********!
-
-

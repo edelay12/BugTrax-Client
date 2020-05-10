@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Line } from "react-chartjs-2";
 import ChartApiService from "../../services/chart-api-service";
+import MainContext from "../../contexts/main-context";
 
 export default function NewIssuesLineChart() {
-  const [chartData, setData] = useState([0, 0, 0, 0]);
-
+  const ContextMain = useContext(MainContext);
+  const [monthData, setData] = useState([0, 0, 0, 0, 0]);
+  const [labels, setLabels] = useState([]);
   useEffect(() => {
     ChartApiService.getIssuesMonthly()
       .then(res => {
-        console.log("chart res");
-        console.log(res);
-        setData(res);
+        setData(res.chartData);
+        setLabels(res.labels);
       })
       .catch(e => console.log(e));
-  }, []);
+  }, [ContextMain.teamIssues]);
 
   const data = {
-    labels: ["Janurary", "Februrary", "March", "April", "May"],
+    labels: labels,
     datasets: [
       {
-        label: "Issues-line",
-        data: chartData
+        label: "Issues",
+        data: monthData
       }
     ]
   };
@@ -31,7 +32,7 @@ export default function NewIssuesLineChart() {
       height={280}
       options={{
         maintainAspectRatio: false,
-        fill: false,
+        fill: true,
         title: {
           display: true,
           text: "New Issues by Month"

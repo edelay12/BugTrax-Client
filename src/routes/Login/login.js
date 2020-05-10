@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import AuthApiService from "../../services/auth-api-service";
 import "./login.css";
-import SequenceFooter from "../../components/sequence-footer/sequence-footer";
 import MainContext from "../../contexts/main-context";
 import TeamsApiService from "../../services/teams-api-service";
 import LandingHeader from "../../components/landing-page/header/header";
-import LandingFooter from "../../components/landing-page/footer/footer";
 
 export default class Login extends Component {
   static contextType = MainContext;

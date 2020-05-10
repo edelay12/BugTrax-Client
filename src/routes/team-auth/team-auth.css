@@ -1,60 +1,60 @@
 .Team-auth {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: 15px solid var(--border);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 15px solid var(--border);
 }
 
 .Team-auth-form {
-    width: 500px;
-    max-height: 400px;
-    margin: 100px auto auto;
-    display: flex;
-flex-direction: column;
-    padding: 40px 30px;
-    border-radius: 4px;
-    align-items: center;
-    box-shadow: var(--boxshadowform);
-    -webkit-box-shadow: var(--boxshadowform);
-    background: white;
+  width: 500px;
+  max-height: 400px;
+  margin: 100px auto auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: var(--boxshadowform);
+  -webkit-box-shadow: var(--boxshadowform);
+  background: white;
 }
 
 .Team-auth-form > * {
-margin: 10px 0;
+  margin: 10px 0;
 }
 
 .Team-auth-label {
-    font-size: 21px;
-    text-align: center;
+  font-size: 21px;
+  text-align: center;
 }
 
 .Team-auth-dir {
-    font-size: 14px;
-    margin: 10px 0;
+  font-size: 14px;
+  margin: 10px 0;
 }
 
 .Team-auth-i {
-    border: 1px solid var(--lightgrey);
-    background: none;
-    border-radius: 3px;
-    width: 200px;
-    height: 20px;
-    padding: 5px;
+  border: 1px solid var(--lightgrey);
+  background: none;
+  border-radius: 3px;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
 }
 
 .Team-auth-e-alert {
-    color: red;
+  color: red;
 }
 
 .Demo-password-dir {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    line-height: 1.5em;
-    font-size: 18px;
-  }
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  line-height: 1.5em;
+  font-size: 18px;
+}

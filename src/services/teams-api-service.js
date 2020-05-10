@@ -14,7 +14,6 @@ const TeamsApiService = {
   getTeamUserList(teamId) {
     return fetch(`${config.API_ENDPOINT}/teams/${teamId}/users`, {
       headers: {
-        //auth
         authorization: `Bearer ${TokenService.getAuthToken()}`
       }
     }).then(res =>
@@ -24,7 +23,6 @@ const TeamsApiService = {
   getTeamName(teamId) {
     return fetch(`${config.API_ENDPOINT}/teams/teamname`, {
       headers: {
-        //auth
         authorization: `Bearer ${TokenService.getAuthToken()}`,
         teamId: teamId
       }

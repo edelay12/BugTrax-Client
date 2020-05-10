@@ -45,7 +45,7 @@ const AuthApiService = {
         return TokenService._getUserInfo(TokenService.readJwtToken());
       });
   },
-  postTeamAuth(auth){
+  postTeamAuth(auth) {
     return fetch(`${config.API_ENDPOINT}/auth/teamauth`, {
       method: "POST",
       headers: {

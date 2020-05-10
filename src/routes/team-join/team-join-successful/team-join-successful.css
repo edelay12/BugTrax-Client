@@ -1,40 +1,40 @@
 .Tjs {
-    width: 500px;
-    min-height: 400px;
-    margin: auto auto;
-    display: flex;
-flex-direction: column;
-    padding: 20px 30px;
-    align-items: center;
-    border-radius: 4px; 
-    justify-content: center;
-    box-shadow: var(--boxshadowform);
-    -webkit-box-shadow: var(--boxshadowform);
-    background: white;
+  width: 500px;
+  min-height: 400px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  align-items: center;
+  border-radius: 4px;
+  justify-content: center;
+  box-shadow: var(--boxshadowform);
+  -webkit-box-shadow: var(--boxshadowform);
+  background: white;
 }
 
 .Team-join-successful {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border: 15px solid var(--border);
-    display: flex;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 15px solid var(--border);
+  display: flex;
+  align-items: center;
 }
 
 .green-logo {
-    font-size: 105px;
-    color: var(--green);
+  font-size: 105px;
+  color: var(--green);
 }
 
 .green-logo-div {
-    padding: 15px;
+  padding: 15px;
 }
 
 .Tjs-banner {
-    font-weight: 700;
+  font-weight: 700;
 }

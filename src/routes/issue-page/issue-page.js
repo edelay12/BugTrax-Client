@@ -21,8 +21,6 @@ export default function IssuePage({ match }) {
         setIssue(res);
       })
       .catch(err => console.log(err));
-
-    //get events that match issue id
     EventsApiService.getEventsByIssueId(issueId)
       .then(res => {
         setEvents(res);

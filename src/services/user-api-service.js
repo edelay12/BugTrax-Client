@@ -30,19 +30,20 @@ const UserApiService = {
       headers: {
         authorization: `Bearer ${TokenService.getAuthToken()}`,
         user_id: TokenService._getUserId(TokenService.readJwtToken()),
-        teamName : teamName
+        teamName: teamName
       }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    )
-    .then(res => {
-      TokenService.saveAuthToken(res.authToken);
-      IdleService.regiserIdleTimerResets();
-      TokenService.queueCallbackBeforeExpiry(() => {
-        AuthApiService.postRefreshToken();
+    })
+      .then(res =>
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      )
+      .then(res => {
+        TokenService.saveAuthToken(res.authToken);
+        IdleService.regiserIdleTimerResets();
+        TokenService.queueCallbackBeforeExpiry(() => {
+          AuthApiService.postRefreshToken();
+        });
+        return TokenService._getUserInfo(TokenService.readJwtToken());
       });
-      return TokenService._getUserInfo(TokenService.readJwtToken());
-    });
   },
   getUser(userId) {
     return fetch(`${config.API_ENDPOINT}/users/getuser/${userId}`, {

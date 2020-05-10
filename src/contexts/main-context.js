@@ -13,8 +13,6 @@ const MainContext = React.createContext({
   setTeamName: () => {},
   setTeamIssues: () => {},
   setTimeline: () => {},
-  clearProduct: () => {},
-  addProduct: () => {}
 });
 
 export default MainContext;
@@ -22,14 +20,14 @@ export default MainContext;
 export class MainProvider extends Component {
   state = {
     teamId: null,
-    teamName: '',
+    teamName: "",
     user: null,
-    teamList: ['user'],
+    teamList: ["user"],
     error: null,
     teamIssues: [],
     activeIssues: [],
     resolvedIssues: [],
-    teamTimeline: [],
+    teamTimeline: []
   };
 
   setError = error => {
@@ -46,11 +44,11 @@ export class MainProvider extends Component {
   };
 
   setTeamName = teamName => {
-    this.setState({ teamName })
-  }
+    this.setState({ teamName });
+  };
 
   setUserInfo = userInfo => {
-    this.setState({ teamId: userInfo.teamId, teamName : userInfo });
+    this.setState({ teamId: userInfo.teamId, teamName: userInfo });
   };
 
   setUser = user => {
@@ -62,21 +60,20 @@ export class MainProvider extends Component {
   };
 
   setTeamIssues = teamIssues => {
-      this.setState({ teamIssues })
-  }
+    this.setState({ teamIssues });
+  };
 
   setActiveIssues = activeIssues => {
-      this.setState({ activeIssues })
-  }
+    this.setState({ activeIssues });
+  };
 
   setResolvedIssues = resolvedIssues => {
-      this.setState({ resolvedIssues })
-  }
+    this.setState({ resolvedIssues });
+  };
 
   setTimeline = teamTimeline => {
-    this.setState({ teamTimeline })
-  }
-
+    this.setState({ teamTimeline });
+  };
 
   render() {
     const value = {
@@ -89,7 +86,9 @@ export class MainProvider extends Component {
       teamTimeline: this.state.teamTimeline,
       activeIssues: this.state.activeIssues,
       resolvedIssues: this.state.resolvedIssues,
-      newIssues: this.state.teamIssues.filter((v, i) => {return v.resolution === 'new'}),
+      newIssues: this.state.teamIssues.filter((v, i) => {
+        return v.resolution === "new";
+      }),
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
@@ -101,7 +100,7 @@ export class MainProvider extends Component {
       setTeamName: this.setTeamName,
       setUser: this.setUser,
       setTeamList: this.setTeamList,
-      setTimeline: this.setTimeline,
+      setTimeline: this.setTimeline
     };
     return (
       <MainContext.Provider value={value}>

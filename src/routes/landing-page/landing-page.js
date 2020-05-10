@@ -59,7 +59,8 @@ export default function LandingPage() {
             <div className="lBody-frame frame-yellow frame">
               <SvgMessages />
               <h3 className="landing-card-sub">
-                Chat in real time with members on your team. All of your conversations in one place!
+                Chat in real time with members on your team. All of your
+                conversations in one place!
               </h3>
             </div>
             <div className="signup-container">

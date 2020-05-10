@@ -9,13 +9,16 @@ export default function UserActivityTable() {
   const ContextMain = useContext(MainContext);
   const [days, setDays] = useState([]);
   useEffect(() => {
-    ChartApiService.getDaysOnTeam(
+    /* *********************
+   FEATURE TO BE ADDED IN NEXT VERSION
+   ChartApiService.getDaysOnTeam(
       TokenService._getUserInfo(TokenService.readJwtToken()).teamId
     )
       .then(newDays => {
         setDays(newDays);
       })
       .catch(err => console.log(err));
+        ********************** */
   }, []);
 
   const userInfo = TokenService._getUserInfo(TokenService.readJwtToken());
@@ -67,7 +70,7 @@ export default function UserActivityTable() {
           <th scope="col">Issues Created</th>
           <th scope="col">Issues Contributed</th>
           <th scope="col">Issues Resolved</th>
-        {/*  <th scope="col">Time on team (days)</th> */ }
+          {/*  <th scope="col">Time on team (days)</th> */}
         </tr>
 
         <tr>

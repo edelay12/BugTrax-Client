@@ -29,7 +29,6 @@ function TeamAuth(props) {
       return setError(true);
     }
     setError(false);
-    //submit team password to team id
     data.team_id = id;
     data.password_input = input;
     data.user_id = TokenService._getUserId(TokenService.readJwtToken());
@@ -67,7 +66,7 @@ function TeamAuth(props) {
 
         <div className="Demo-password-dir">
           <b>Demo team password:</b> <br />
-           <mark>Guest2021!</mark>
+          <mark>Guest2021!</mark>
         </div>
       </section>
     </React.Fragment>

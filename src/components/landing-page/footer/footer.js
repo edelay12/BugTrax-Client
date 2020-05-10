@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 export default function LandingFooter() {
   return (
     <footer className="Landing-footer-container">
@@ -11,9 +11,9 @@ export default function LandingFooter() {
         </span>
       </div>
       <ul className="landing-footer-right">
-        <li className="footer-about f-li">About</li>
-        <li className="footer-contact f-li">Contact Me</li>
-        <li className="footer-portfolio f-li">View more work</li>
+        <li className="footer-about f-li"><Link to={'/'}>About</Link></li>
+        <li className="footer-contact f-li"><a href={'https://www.linkedin.com/in/evan-miller-b3b278182/'} target='_blank'>Contact Me</a></li>
+        <li className="footer-portfolio f-li"><a href={'https://www.evanmiller.co'} target='_blank'>View more work</a></li>
       </ul>
     </footer>
   );
