@@ -13,11 +13,11 @@ Password (case sensitive): Guest2021!
 ```
 - This project is a bug/issue management tracking system built using **React** , **CSS**, **Node**, **Express**, and **PostgreSQL**.
 
-![screen 1](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_1.png)
+![screen 1](https://github.com/edelay12/BugTrax-Client/blob/master/public/screenshots/BugTrax_screen_1.png)
 
-![screen 2](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_2.png)
+![screen 2](https://github.com/edelay12/BugTrax-Client/blob/master/public/screenshots/Bugtrax_screen_2.png)
 
-![screen 3](https://github.com/edelay12/eStore-client/blob/master/public/screenshots/java_screen_3.png)
+![screen 3](https://github.com/edelay12/BugTrax-Client/blob/master/public/screenshots/BugTrax_screen_3.png)
 
 
 ## Usage
