@@ -34,7 +34,6 @@ export default class Login extends Component {
         this.context.setUserInfo(res);
       })
       .catch(res => {
-        console.log(res.error);
         this.setState({ error: res.error });
       });
   };

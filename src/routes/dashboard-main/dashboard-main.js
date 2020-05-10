@@ -67,8 +67,6 @@ export default function Dashboard({ match }) {
       TokenService._getUserId(TokenService.readJwtToken())
     )
       .then(res => {
-        console.log('team name')
-        console.log(res)
         ContextMain.setTeamName(res)
       })
       .catch(err => console.log(err)); */

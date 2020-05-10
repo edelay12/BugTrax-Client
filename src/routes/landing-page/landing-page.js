@@ -3,7 +3,7 @@ import "./landing-page.css";
 import typer from "typer-js";
 import { Link } from "react-router-dom";
 import TeamSearch from "../../components/team-search-input/ts-input";
-import { SvgCode } from "../../components/landing-page/svg/svg";
+import { SvgCode, SvgMessages } from "../../components/landing-page/svg/svg";
 import LandingHeader from "../../components/landing-page/header/header";
 import LandingFooter from "../../components/landing-page/footer/footer";
 import Particles from "react-particles-js";
@@ -57,9 +57,9 @@ export default function LandingPage() {
               </h4>
             </div>
             <div className="lBody-frame frame-yellow frame">
-              <SvgCode />
+              <SvgMessages />
               <h3 className="landing-card-sub">
-                Stay on top of current, past, and in-progress bug reports
+                Chat in real time with members on your team. All of your conversations in one place!
               </h3>
             </div>
             <div className="signup-container">

@@ -31,7 +31,7 @@ export default function StatusFilter({
 
   const handleFilter = e => {
     if (e === "null" || undefined) {
-      return console.log("undefined");
+      return;
     }
     const filtered =
       results.length > 0

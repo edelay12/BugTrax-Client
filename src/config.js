@@ -4,7 +4,6 @@ module.exports = {
   TOKEN_KEY: "BugTrax-auth-token",
 };
 
-//https://mysterious-cliffs-68493.herokuapp.com/api
-
+//http://mysterious-cliffs-68493.herokuapp.com/api
 //http://localhost:8000/api
 

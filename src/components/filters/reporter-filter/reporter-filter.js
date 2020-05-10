@@ -28,7 +28,7 @@ export default function ReporterFilter({
 
   const handleFilter = e => {
     if (e === "null" || undefined) {
-      return console.log("undefined");
+      return;
     }
     const filtered =
       results.length > 0

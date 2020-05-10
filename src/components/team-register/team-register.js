@@ -9,12 +9,10 @@ import MainContext from '../../contexts/main-context';
 function TeamRegister({history}){
     const { register, handleSubmit, errors, getValues} = useForm();
     const ContextMain = useContext(MainContext);
-    
+
     const onSubmit = DATA => {
         AuthApiService.postTeam(DATA)
         .then(team => {
-            console.log('Success')
-            console.log(team)
             UserApiService.setUserTeam(team.id, team.team_name)
             .then(res => {
               ContextMain.setUserInfo(res);

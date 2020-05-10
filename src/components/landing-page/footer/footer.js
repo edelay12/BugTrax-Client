@@ -7,7 +7,7 @@ export default function LandingFooter() {
         <span className="footer-madeby">
           {"Made with coffee & love by "}
           <br />
-          <b classname="footer-name">Evan Miller</b> &#169;2020
+          <b className="footer-name">Evan Miller</b> &#169;2020
         </span>
       </div>
       <ul className="landing-footer-right">

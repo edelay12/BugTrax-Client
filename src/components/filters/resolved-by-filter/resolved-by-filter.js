@@ -27,7 +27,7 @@ export default function ResolvedByFilter({
   }, [clear]);
   const handleFilter = e => {
     if (e === "null" || undefined) {
-      return console.log("undefined");
+      return;
     }
     const filtered =
       results.length > 0

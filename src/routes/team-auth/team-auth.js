@@ -29,7 +29,6 @@ function TeamAuth(props) {
       return setError(true);
     }
     setError(false);
-    console.log(input);
     //submit team password to team id
     data.team_id = id;
     data.password_input = input;
@@ -37,7 +36,6 @@ function TeamAuth(props) {
 
     AuthApiService.postTeamAuth(data)
       .then(res => {
-        console.log(res);
         ContextMain.setUserInfo(res);
         props.history.push("/dashboard/overview");
       })

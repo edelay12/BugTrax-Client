@@ -280,7 +280,8 @@
   .Ts-results {
     max-width: 100%;
   }
-  .bug-report-svg {
+  
+  .bug-report-svg,  {
     max-width: 90%;
     max-height: 200px;
   }

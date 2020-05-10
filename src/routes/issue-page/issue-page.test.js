@@ -7,7 +7,7 @@ test("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-        <IssuePage />
+        <IssuePage match={{params : {issueId: 1}}}/>
     </BrowserRouter>,
     div
   );

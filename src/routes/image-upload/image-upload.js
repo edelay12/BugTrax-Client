@@ -21,7 +21,6 @@ class ImageUpload extends React.Component {
   }
 
   useDemoPhoto = () => {
-    console.log("demo");
     return this.props.history.push("/team-join");
   };
 

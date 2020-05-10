@@ -9,8 +9,6 @@ export default function UserActivityTable() {
   const ContextMain = useContext(MainContext);
   const [days, setDays] = useState([]);
   useEffect(() => {
-    console.log("team list");
-    console.log(ContextMain.teamList);
     ChartApiService.getDaysOnTeam(
       TokenService._getUserInfo(TokenService.readJwtToken()).teamId
     )
@@ -35,15 +33,6 @@ export default function UserActivityTable() {
       if (!set.includes(v.issue_id) && v.user_id == user) set.push(v.issue_id);
     });
     return set.length;
-    /*
-     ContextMain.teamTimeline.every((v,i) => {
-        
-         set.push({v.issue_id : v.user_id})
-        });
-     set.filter((a, b) => set.indexOf(a) === b)
-     console.log(set)
-     return set.filter(issue => Number(issue.user_id) === user).length
-    */
   };
 
   const getIssuesResolved = user => {
@@ -78,7 +67,7 @@ export default function UserActivityTable() {
           <th scope="col">Issues Created</th>
           <th scope="col">Issues Contributed</th>
           <th scope="col">Issues Resolved</th>
-          <th scope="col">Time on team (days)</th>
+        {/*  <th scope="col">Time on team (days)</th> */ }
         </tr>
 
         <tr>
@@ -96,7 +85,7 @@ export default function UserActivityTable() {
             <td>{getIssuesCreated(user.id)}</td>
             <td>{getIssuesContributed(user.id)}</td>
             <td>{getIssuesResolved(user.id)}</td>
-            {<td className="days">{days[1]}</td>}
+            {/*<td className="days">{days[i]}</td>*/}
           </tr>
         ))}
       </table>

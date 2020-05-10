@@ -6,7 +6,9 @@ import TeamJoinSuccessful from "./team-join-successful";
 test("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
-        <TeamJoinSuccessful />,
+      <BrowserRouter>
+        <TeamJoinSuccessful />
+        </BrowserRouter>,
     div
   );
 });

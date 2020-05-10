@@ -22,7 +22,7 @@ export default function SeverityFilter({results, filteredResults, filter, clear,
        },[clear])
       const handleFilter = e => {
         if(e === 'null' || undefined){
-           return console.log('undefined')
+           return;
         }
        const filtered = results.length > 0 ? results.filter(item => {return item.severity == e}) : ContextMain.teamIssues.filter(item => {return item.severity == e})
        

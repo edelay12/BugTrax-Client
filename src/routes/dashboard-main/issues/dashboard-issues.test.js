@@ -7,7 +7,7 @@ test("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-        <Issues />
+        <Issues issues={{length: 1}}/>
     </BrowserRouter>,
     div
   );

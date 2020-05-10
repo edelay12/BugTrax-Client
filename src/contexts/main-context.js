@@ -85,12 +85,10 @@ export class MainProvider extends Component {
       teamName: this.state.teamName,
       user: this.state.user,
       teamList: this.state.teamList,
-      saleProducts: this.state.saleProducts,
       teamIssues: this.state.teamIssues,
       teamTimeline: this.state.teamTimeline,
       activeIssues: this.state.activeIssues,
       resolvedIssues: this.state.resolvedIssues,
-      //change to use timeline resolved issues
       newIssues: this.state.teamIssues.filter((v, i) => {return v.resolution === 'new'}),
       error: this.state.error,
       setError: this.setError,

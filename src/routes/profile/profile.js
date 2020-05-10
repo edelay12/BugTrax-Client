@@ -12,7 +12,6 @@ function Profile({ match }) {
   useEffect(() => {
     UserApiService.getUser(userId)
       .then(res => {
-        console.log(res);
         setUser(res[0]);
       })
       .catch(err => console.error(err));
